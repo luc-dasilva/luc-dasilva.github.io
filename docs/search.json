@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Lucas da Silva",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur.\nId est voluptatem et parvam et non necessariam et quae vel aliter pararetur et qua etiam carere possent sine dolore tum in damna, tum in damna, tum in dedecora incurrunt, saepe etiam videmus, et perspicuum est nihil ad Epicurum. Nam si concederetur, etiamsi ad corpus nihil referatur, ista.\nErit enim iam de omnium virtutum cursu ad voluptatem proprius disserendi locus. Nunc autem explicabo, voluptas ipsa quae qualisque sit, ut tollatur error omnis imperitorum intellegaturque ea, quae dixi, sole ipso illustriora et clariora sunt, si omnia deorsus e regione ferrentur et, ut modo docui, cognitionis regula et iudicio ab eadem illa constituto veri a falso distinctio traditur. Restat locus huic disputationi vel maxime necessarius de."
+    "text": "Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.\n\n\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul MA B.A in Economics | Sept 2007 - June 2011\n\n\n\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "my_work.html",
+    "href": "my_work.html",
+    "title": "Publications",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "Post With Code\n\n\n\nSep 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nSep 5, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -21,17 +21,31 @@
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur.\nId est voluptatem et parvam et non necessariam et quae vel aliter pararetur et qua etiam carere possent sine dolore tum in damna, tum in damna, tum in dedecora incurrunt, saepe etiam videmus, et perspicuum est nihil ad Epicurum. Nam si concederetur, etiamsi ad corpus nihil referatur, ista.\nErit enim iam de omnium virtutum cursu ad voluptatem proprius disserendi locus. Nunc autem explicabo, voluptas ipsa quae qualisque sit, ut tollatur error omnis imperitorum intellegaturque ea, quae dixi, sole ipso illustriora et clariora sunt, si omnia deorsus e regione ferrentur et, ut modo docui, cognitionis regula et iudicio ab eadem illa constituto veri a falso distinctio traditur. Restat locus huic disputationi vel maxime necessarius de."
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "my_work.html",
-    "href": "my_work.html",
+    "objectID": "index.html#atividades-acadêmicas-e-profissionais",
+    "href": "index.html#atividades-acadêmicas-e-profissionais",
+    "title": "Lucas da Silva",
+    "section": "Atividades acadêmicas e profissionais",
+    "text": "Atividades acadêmicas e profissionais"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
     "title": "Lucas da Silva",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nSep 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nSep 5, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "University of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul MA B.A in Economics | Sept 2007 - June 2011"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Lucas da Silva",
+    "section": "",
+    "text": "Wengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
   }
 ]
