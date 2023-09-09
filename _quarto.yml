@@ -16,12 +16,15 @@ website:
         text: About Me
       - href: my_work.qmd
         text: My Work
+    right: 
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - icon: instagram
+        href: https://www.instagram.com/
       - icon: linkedin
         href: https://www.linkedin.com
+      - icon: twitter
+        href: https://twitter.com
 format:
   html:
     theme: cosmo
