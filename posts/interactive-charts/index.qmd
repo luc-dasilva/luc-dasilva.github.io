@@ -1,0 +1,196 @@
+---
+title: "Interactive Finance Charts"
+format: html
+editor: visual
+author: "Lucas da Silva"
+date: "2024-02-11"
+categories: [Data Science, Finance]
+image: "thumbnail.jpg"
+table-of-contents: true
+code-fold: show
+monofont: "Source Code Pro"
+---
+
+# Interactive finance plots and charts
+
+Interactive charts such as OHLC charts, candlesticks, and time series are quite useful for data presentation. You can effortlessly create them using libraries like `plotly`, `ggplotly`, `ggplot`, and `highcharter`.
+
+The simplicity of these R packages bring to visualizing market trends, making financial analyses more insightful and engaging.
+
+```{r, message=FALSE}
+
+# Install and load required packages
+
+packages <- c(
+    "tidyverse", "highcharter", "quantmod",
+    "plotly", "tidyquant"
+)
+
+installed_packages <- packages %in% row.names(installed.packages())
+
+if (any(installed_packages == FALSE)) {
+    
+    install.packages(
+        packages[!installed_packages],
+        dependencies = TRUE
+    )
+
+}
+
+invisible(lapply(packages, library, character.only = TRUE))
+```
+
+# Highcharter
+
+[Highcharter](https://jkunst.com/highcharter) is a very flexible and customizable charting library and it has a great and powerful API. `Highcharts` offers both a commercial license as well as a free non-commercial license.
+
+## Highcharter OHLC chart
+
+```{r}
+
+# Get Amazon stocks data from yahoo finance with quantmod
+
+ticker <- "AMZN"
+
+stocks <- getSymbols(
+    ticker,
+    from = "1990-01-01",
+    auto.assign = FALSE
+)
+
+# Stock OHLC interactive chart with highchart
+
+highchart(type = "stock") |> 
+    hc_chart(inverted = FALSE) |> 
+    hc_title(text = ticker) |> 
+    hc_add_series(
+        stocks,
+        yAxis = 0,
+        showInLegend = FALSE,
+        color = "black"
+    ) |> 
+    hc_add_yAxis(
+        nid = 1L,
+        title = list(text = "Prices"),
+        relative = 2
+    ) |> 
+    hc_add_series(
+        Vo(stocks), 
+        yAxis = 1,
+        type = "column",
+        showInLegend = FALSE
+    ) |> 
+    hc_add_yAxis(
+        nid = 2L,
+        title = list(text = "Volume"),
+        relative = 1
+    )
+
+```
+
+# Plotly (and ggplotly), a commercial-free alternative
+
+Plotly's R graphing library makes interactive, publication-quality graphs. `plotly` is free and open source.
+
+## Plotly OHLC chart
+
+A simple OHCL chart with `plotly` and `tidyquant`.
+
+```{r}
+
+# This time, get tidy Apple stocks data with tidyquant
+
+apple_stocks <- tq_get(
+    "AAPL",
+    get = "stock.prices",
+    from = "2010-01-01",
+    to = "2023-12-31"
+)
+
+# Plot basic interactive OHLC chart with plotly
+
+apple_stocks |> 
+    plot_ly(
+        x =     ~date,
+        type =  "ohlc",
+        open =  ~open,
+        close = ~close,
+        high =  ~high,
+        low =   ~low
+    ) |> 
+    layout(
+        title = "Basic OHLC chart",
+        xaxis = list(rangeslider = list(visible = FALSE)),
+        hovermode = "x"
+    )
+
+```
+
+## Plotly candlestick plot
+
+Candlestick charts are also quickly and easly done with `plotly` and `tidyquant`.
+
+```{r}
+
+# Get tidy data of NVIDIA stocks with tidyquant
+
+nvidia_stocks <- tq_get(
+    "NVDA",
+    get = "stock.prices",
+    from = "2010-01-01",
+    to = "2023-12-31"
+)
+
+# Plot basic interactive candlestick chart with plotly
+
+nvidia_stocks |> 
+    plot_ly(
+        x =     ~date,
+        type =  "candlestick",
+        open =  ~open,
+        close = ~close,
+        high =  ~high,
+        low =   ~low
+    ) |> 
+    layout(
+        title = "Basic candlestick chart",
+        xaxis = list(rangeslider = list(visible = FALSE)),
+        hovermode = "x"
+    )
+    
+```
+
+## Basic time series chart with ggplot and plotly
+
+Combine `plotly` and `ggplot2` with `ggplotly` to get easy, tidy, and interactive financial charts.
+
+```{r}
+
+# Get amazon stock data again, but this time tidy data
+# with tidyquant
+
+amazon_stocks <- tq_get(
+    "AMZN",
+    get = "stock.prices",
+    from = "2000-01-01",
+    to = "2016-12-31"
+)
+
+# Tell ggplot how to build the chart
+
+amzn_time_series <- amazon_stocks |> 
+    ggplot(aes(date, adjusted)) +
+    geom_line(color = palette_light()[[1]]) + 
+    labs(
+        title =    "AMZN Line Chart", 
+        subtitle = "Continuous Scale", 
+        y =        "Closing Price",
+        x =        element_blank()
+    ) + 
+    theme_tq()
+
+# Call plotly with ggplotly
+
+ggplotly(amzn_time_series)
+
+```

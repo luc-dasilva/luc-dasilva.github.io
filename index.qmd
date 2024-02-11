@@ -1,0 +1,22 @@
+---
+title: Lucas G. da Silva
+image: profile.jpg
+about:
+  template: trestles
+  image-shape: round
+  image-width: 10rem
+---
+
+Sou graduando em Ciências Contábeis pela Universidade Federal da Paraíba (UFPB). Fui intercambista pelo programa Gira Mundo (2018/2019) em Ontário, Canadá. Consegui uma bolsa de estudos para a escola de Idiomas CCAA, onde conclui o curso de língua inglesa em 2020. Fui professor de inglês em 2021.
+
+Hoje, além da minha graduação, estudo Data Science e ferramentas adjacentes, como R/Tidyverse, PowerBI, SQL e Python.
+
+## Educação
+
+Universidade Federal da Paraíba \| Graduação em Ciências Contábeis \| Atualmente
+
+CCAA \| Curso de Língua Inglesa \| Jul 2019 - Ago 2020
+
+Walkerton District Community School \| Intercâmbio \| Ago 2018 - Fev 2019
+
+ECI Alzira Lisboa \| Ensino Médio \| Fev 2017 - Dez 2019

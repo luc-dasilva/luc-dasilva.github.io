@@ -1,0 +1,10 @@
+---
+title: "Test 1"
+author: "Lucas G. da Silva"
+date: "2023-09-05"
+image: "thumbnail.jpg"
+---
+
+This is the first post in a Quarto blog. Welcome!
+
+![](thumbnail.jpg)

@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "my_work.html",
+    "href": "my_work.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Interactive Finance Charts\n\n\n\nFeb 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest 2\n\n\n\nSep 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest 1\n\n\n\nSep 5, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Test 1",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lucas G. da Silva",
+    "section": "",
+    "text": "Sou graduando em Ciências Contábeis pela Universidade Federal da Paraíba (UFPB). Fui intercambista pelo programa Gira Mundo (2018/2019) em Ontário, Canadá. Consegui uma bolsa de estudos para a escola de Idiomas CCAA, onde conclui o curso de língua inglesa em 2020. Fui professor de inglês em 2021.\nHoje, além da minha graduação, estudo Data Science e ferramentas adjacentes, como R/Tidyverse, PowerBI, SQL e Python."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Lucas da Silva",
+    "section": "Education",
+    "text": "Education\nUniversidade Federal da Paraíba | Graduação em Ciências Contábeis | Atualmente\nCCAA | Curso de Língua Inglesa | Jul 2019 - Ago 2020\nWalkerton District Community School | Intercâmbio | Ago 2018 - Fev 2019\nECI Alzira Lisboa | Ensino Médio | Fev 2017 - Dez 2019"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Lucas da Silva",
+    "section": "Experience",
+    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
+  },
+  {
+    "objectID": "finance_tst.html",
+    "href": "finance_tst.html",
+    "title": "CoreFinance",
+    "section": "",
+    "text": "Test"
+  },
+  {
+    "objectID": "docs/posts/interactive_charts/index.html",
+    "href": "docs/posts/interactive_charts/index.html",
+    "title": "Finance charts",
+    "section": "",
+    "text": "Interactive charts such as OHLC charts, candlesticks, and time series are quite useful for data presentation, you can effortlessly create them using libraries like plotly, ggplotly, ggplot, and highcharter.\nThe simplicity of these R packages bring to visualizing market trends, making financial analyses more insightful and engaging.\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.4     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nRegistered S3 method overwritten by 'quantmod':\n  method            from\n  as.zoo.data.frame zoo \n\nLoading required package: xts\n\nLoading required package: zoo\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\n\n\n######################### Warning from 'xts' package ##########################\n#                                                                             #\n# The dplyr lag() function breaks how base R's lag() function is supposed to  #\n# work, which breaks lag(my_xts). Calls to lag(my_xts) that you type or       #\n# source() into this session won't work correctly.                            #\n#                                                                             #\n# Use stats::lag() to make sure you're not using dplyr::lag(), or you can add #\n# conflictRules('dplyr', exclude = 'lag') to your .Rprofile to stop           #\n# dplyr from breaking base R's lag() function.                                #\n#                                                                             #\n# Code in packages is not affected. It's protected by R's namespace mechanism #\n# Set `options(xts.warn_dplyr_breaks_lag = FALSE)` to suppress this warning.  #\n#                                                                             #\n###############################################################################\n\n\nAttaching package: 'xts'\n\n\nThe following objects are masked from 'package:dplyr':\n\n    first, last\n\n\nLoading required package: TTR\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n\nLoading required package: PerformanceAnalytics\n\n\nAttaching package: 'PerformanceAnalytics'\n\n\nThe following object is masked from 'package:graphics':\n\n    legend"
+  },
+  {
+    "objectID": "docs/posts/interactive_charts/index.html#highcharter-ohlc-chart",
+    "href": "docs/posts/interactive_charts/index.html#highcharter-ohlc-chart",
+    "title": "Finance charts",
+    "section": "Highcharter OHLC chart",
+    "text": "Highcharter OHLC chart\n\n# Get Amazon stock data from yahoo finance with quantmod\n\nticker &lt;- \"AMZN\"\n\nstocks &lt;- getSymbols(\n    ticker,\n    from = \"1990-01-01\",\n    auto.assign = FALSE\n)\n\n# Stock OHLC interactive chart with highchart\n\nhighchart(type = \"stock\") |&gt; \n    hc_chart(inverted = FALSE) |&gt; \n    hc_title(text = ticker) |&gt; \n    hc_add_series(\n        stocks,\n        yAxis = 0,\n        showInLegend = FALSE,\n        color = \"black\"\n    ) |&gt; \n    hc_add_yAxis(\n        nid = 1L,\n        title = list(text = \"Prices\"),\n        relative = 2\n    ) |&gt; \n    hc_add_series(\n        Vo(stocks), \n        yAxis = 1,\n        type = \"column\",\n        showInLegend = FALSE\n    ) |&gt; \n    hc_add_yAxis(\n        nid = 2L,\n        title = list(text = \"Volume\"),\n        relative = 1\n    )"
+  },
+  {
+    "objectID": "docs/posts/interactive_charts/index.html#plotly-ohlc-chart",
+    "href": "docs/posts/interactive_charts/index.html#plotly-ohlc-chart",
+    "title": "Finance charts",
+    "section": "Plotly OHLC chart",
+    "text": "Plotly OHLC chart\n\n# This time, get tidy Apple stock data with tidyquant\n\napple_stocks &lt;- tq_get(\n    \"AAPL\",\n    get = \"stock.prices\",\n    from = \"2010-01-01\",\n    to = \"2023-12-31\"\n)\n\n# Plot basic interactive OHLC chart with plotly\n\napple_stocks |&gt; \n    plot_ly(\n        x =     ~date,\n        type =  \"ohlc\",\n        open =  ~open,\n        close = ~close,\n        high =  ~high,\n        low =   ~low\n    )"
+  },
+  {
+    "objectID": "docs/posts/interactive_charts/index.html#plotly-candlestick-plot",
+    "href": "docs/posts/interactive_charts/index.html#plotly-candlestick-plot",
+    "title": "Finance charts",
+    "section": "Plotly candlestick plot",
+    "text": "Plotly candlestick plot\n\n# Get tidy data of NVIDIA stocks with tidyquant\n\nnvidia_stocks &lt;- tq_get(\n    \"NVDA\",\n    get = \"stock.prices\",\n    from = \"2010-01-01\",\n    to = \"2023-12-31\"\n)\n\n# Plot basic interactive candlestick chart with plotly\n\nnvidia_stocks |&gt; \n    plot_ly(\n        x = ~date,\n        type = \"candlestick\",\n        open = ~open,\n        close = ~close,\n        high = ~high,\n        low = ~low\n    ) |&gt; \n    layout(\n        title = \"Basic candlestick chart\",\n        xaxis = list(rangeslider = list(visible = FALSE))\n    )"
+  },
+  {
+    "objectID": "docs/posts/interactive_charts/index.html#basic-time-series-chart-with-ggplot-and-plotly",
+    "href": "docs/posts/interactive_charts/index.html#basic-time-series-chart-with-ggplot-and-plotly",
+    "title": "Finance charts",
+    "section": "Basic time series chart with ggplot and plotly",
+    "text": "Basic time series chart with ggplot and plotly\n\n# Get amazon stock data again, but this time tidy data\n# with tidyquant\n\namazon_stocks &lt;- tq_get(\n    \"AMZN\",\n    get = \"stock.prices\",\n    from = \"2000-01-01\",\n    to = \"2016-12-31\"\n)\n\n# Tell ggplot how to build the chart\n\namzn_time_series &lt;- amazon_stocks |&gt; \n    ggplot(aes(date, adjusted)) +\n    geom_line(color = palette_light()[[1]]) + \n    labs(\n        title = \"AMZN Line Chart\", \n        subtitle = \"Continuous Scale\", \n        y = \"Closing Price\",\n        x = element_blank()\n    ) + \n    theme_tq()\n\n# Call plotly with ggplotly\n\nggplotly(amzn_time_series)"
+  },
+  {
+    "objectID": "posts/interactive-charts/index.html",
+    "href": "posts/interactive-charts/index.html",
+    "title": "Interactive Finance Charts",
+    "section": "",
+    "text": "Interactive charts such as OHLC charts, candlesticks, and time series are quite useful for data presentation. You can effortlessly create them using libraries like plotly, ggplotly, ggplot, and highcharter.\nThe simplicity of these R packages bring to visualizing market trends, making financial analyses more insightful and engaging.\n\n\nCode\n# Install and load required packages\n\npackages &lt;- c(\n    \"tidyverse\", \"highcharter\", \"quantmod\",\n    \"plotly\", \"tidyquant\"\n)\n\ninstalled_packages &lt;- packages %in% row.names(installed.packages())\n\nif (any(installed_packages == FALSE)) {\n    \n    install.packages(\n        packages[!installed_packages],\n        dependencies = TRUE\n    )\n\n}\n\ninvisible(lapply(packages, library, character.only = TRUE))"
+  },
+  {
+    "objectID": "posts/interactive-charts/index.html#highcharter-ohlc-chart",
+    "href": "posts/interactive-charts/index.html#highcharter-ohlc-chart",
+    "title": "Interactive Finance Charts",
+    "section": "Highcharter OHLC chart",
+    "text": "Highcharter OHLC chart\n\n\nCode\n# Get Amazon stocks data from yahoo finance with quantmod\n\nticker &lt;- \"AMZN\"\n\nstocks &lt;- getSymbols(\n    ticker,\n    from = \"1990-01-01\",\n    auto.assign = FALSE\n)\n\n# Stock OHLC interactive chart with highchart\n\nhighchart(type = \"stock\") |&gt; \n    hc_chart(inverted = FALSE) |&gt; \n    hc_title(text = ticker) |&gt; \n    hc_add_series(\n        stocks,\n        yAxis = 0,\n        showInLegend = FALSE,\n        color = \"black\"\n    ) |&gt; \n    hc_add_yAxis(\n        nid = 1L,\n        title = list(text = \"Prices\"),\n        relative = 2\n    ) |&gt; \n    hc_add_series(\n        Vo(stocks), \n        yAxis = 1,\n        type = \"column\",\n        showInLegend = FALSE\n    ) |&gt; \n    hc_add_yAxis(\n        nid = 2L,\n        title = list(text = \"Volume\"),\n        relative = 1\n    )"
+  },
+  {
+    "objectID": "posts/interactive-charts/index.html#plotly-ohlc-chart",
+    "href": "posts/interactive-charts/index.html#plotly-ohlc-chart",
+    "title": "Interactive Finance Charts",
+    "section": "Plotly OHLC chart",
+    "text": "Plotly OHLC chart\nA simple OHCL chart with plotly and tidyquant.\n\n\nCode\n# This time, get tidy Apple stocks data with tidyquant\n\napple_stocks &lt;- tq_get(\n    \"AAPL\",\n    get = \"stock.prices\",\n    from = \"2010-01-01\",\n    to = \"2023-12-31\"\n)\n\n# Plot basic interactive OHLC chart with plotly\n\napple_stocks |&gt; \n    plot_ly(\n        x =     ~date,\n        type =  \"ohlc\",\n        open =  ~open,\n        close = ~close,\n        high =  ~high,\n        low =   ~low\n    ) |&gt; \n    layout(\n        title = \"Basic OHLC chart\",\n        xaxis = list(rangeslider = list(visible = FALSE)),\n        hovermode = \"x\"\n    )"
+  },
+  {
+    "objectID": "posts/interactive-charts/index.html#plotly-candlestick-plot",
+    "href": "posts/interactive-charts/index.html#plotly-candlestick-plot",
+    "title": "Interactive Finance Charts",
+    "section": "Plotly candlestick plot",
+    "text": "Plotly candlestick plot\nCandlestick charts are also quickly and easly done with plotly and tidyquant.\n\n\nCode\n# Get tidy data of NVIDIA stocks with tidyquant\n\nnvidia_stocks &lt;- tq_get(\n    \"NVDA\",\n    get = \"stock.prices\",\n    from = \"2010-01-01\",\n    to = \"2023-12-31\"\n)\n\n# Plot basic interactive candlestick chart with plotly\n\nnvidia_stocks |&gt; \n    plot_ly(\n        x =     ~date,\n        type =  \"candlestick\",\n        open =  ~open,\n        close = ~close,\n        high =  ~high,\n        low =   ~low\n    ) |&gt; \n    layout(\n        title = \"Basic candlestick chart\",\n        xaxis = list(rangeslider = list(visible = FALSE)),\n        hovermode = \"x\"\n    )"
+  },
+  {
+    "objectID": "posts/interactive-charts/index.html#basic-time-series-chart-with-ggplot-and-plotly",
+    "href": "posts/interactive-charts/index.html#basic-time-series-chart-with-ggplot-and-plotly",
+    "title": "Interactive Finance Charts",
+    "section": "Basic time series chart with ggplot and plotly",
+    "text": "Basic time series chart with ggplot and plotly\nCombine plotly and ggplot2 with ggplotly to get easy, tidy, and interactive financial charts.\n\n\nCode\n# Get amazon stock data again, but this time tidy data\n# with tidyquant\n\namazon_stocks &lt;- tq_get(\n    \"AMZN\",\n    get = \"stock.prices\",\n    from = \"2000-01-01\",\n    to = \"2016-12-31\"\n)\n\n# Tell ggplot how to build the chart\n\namzn_time_series &lt;- amazon_stocks |&gt; \n    ggplot(aes(date, adjusted)) +\n    geom_line(color = palette_light()[[1]]) + \n    labs(\n        title =    \"AMZN Line Chart\", \n        subtitle = \"Continuous Scale\", \n        y =        \"Closing Price\",\n        x =        element_blank()\n    ) + \n    theme_tq()\n\n# Call plotly with ggplotly\n\nggplotly(amzn_time_series)"
+  },
+  {
+    "objectID": "index.html#educação",
+    "href": "index.html#educação",
+    "title": "Lucas G. da Silva",
+    "section": "Educação",
+    "text": "Educação\nUniversidade Federal da Paraíba | Graduação em Ciências Contábeis | Atualmente\nCCAA | Curso de Língua Inglesa | Jul 2019 - Ago 2020\nWalkerton District Community School | Intercâmbio | Ago 2018 - Fev 2019\nECI Alzira Lisboa | Ensino Médio | Fev 2017 - Dez 2019"
+  }
+]

@@ -1,0 +1,33 @@
+project:
+  type: website
+
+website:
+  title: "Lucas da Silva"
+  search: false
+  page-footer: 
+    left: "Lucas da Silva." 
+    right: 
+      - href: https://quarto.org/
+        text: "This website was built with Quarto."
+  navbar:
+    title: false
+    left:
+      - href: index.qmd
+        text: About Me
+      - href: my_work.qmd
+        text: My Work
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: instagram
+        href: https://www.instagram.com/
+      - icon: linkedin
+        href: https://www.linkedin.com
+      - icon: twitter
+        href: https://twitter.com
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+editor: visual
+
