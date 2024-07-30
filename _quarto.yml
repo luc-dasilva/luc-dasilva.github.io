@@ -1,0 +1,56 @@
+project:
+  type: website
+  output-dir: docs # Location where quarto renders the files
+
+website:
+    title: Lucas da Silva
+    search: false  
+    favicon: images/favicon.png
+    navbar:
+      pinned: true
+      title: false
+      left:
+        - href: index.qmd # Do not need a lp, just about me
+          text: Sobre mim
+        - href: cv/cv.pdf
+          text: Currículo
+          target: _blank
+        - text: Projetos
+          menu: 
+            - text: Projeto 1
+              href: proj1.qmd
+            - text: Projeto 2
+              href: proj2.qmd
+        - href: blog/index.qmd
+          text: Blog
+      right: 
+        - icon: linkedin
+          href: https://www.linkedin.com
+          target: _blank
+        - icon: envelope-fill
+          href: mailto:lucasgomes.wdcs@gmail.com
+          target: _blank
+        - icon: link-45deg   # signpost-2-fill
+          href: https://linktr.ee
+          target: _blank
+        # - icon: translate
+        #   href: index_en.qmd
+    # page-footer:
+    #   background: light
+    #   left: Lucas da Silva, 2024.
+    #   right: Este website é feito com [Quarto.](https://quarto.org/){target=_blank}
+
+
+format:
+  html:
+    theme: styles.scss
+    title-block-banner: true
+    mainfont: Source Sans 3
+    toc: false
+    lang: pt-BR
+    # grid: 
+    #   sidebar-width: 200px
+    #   margin-width: 200px
+
+editor: visual
+

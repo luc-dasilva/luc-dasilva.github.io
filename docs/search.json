@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Lucas da Silva",
+    "section": "",
+    "text": "Fui intercambista pelo programa Gira Mundo em 2018. Após retornar ao Brasil consegui uma bolsa de estudos na escola de idiomas CCAA, onde conclui o curso de língua inglesa em 2020. Fui professor de língua inglesa em 2021. Atualmente sou graduando em Ciências Contábeis pela Universidade Federal da Paraíba.\nDurante a graduação consegui me engajar em diversos projetos de pesquisa e em um deles conheci a linguagem de programação R, as coleções de pacotes Tidyverse, Tidyquant e Tidymodels, além dos frameworks Shiny e Quarto. Desde então, venho adquirindo experiência com estas ferramentas e em data literacy."
+  },
+  {
+    "objectID": "index.html#formação",
+    "href": "index.html#formação",
+    "title": "Lucas da Silva",
+    "section": "Formação",
+    "text": "Formação\n\nUniversidade Federal da Paraíba | Graduação em Ciências Contábeis | Atualmente\nEscola de Idiomas CCAA | Curso de Língua Inglesa | Jul 2019 - Ago 2020\nWalkerton District Community School | Intercâmbio | Set 2018 - Fev 2019"
+  },
+  {
+    "objectID": "proj1.html",
+    "href": "proj1.html",
+    "title": "Test 1",
+    "section": "",
+    "text": "This is a test."
+  },
+  {
+    "objectID": "blog/blogpost1.html",
+    "href": "blog/blogpost1.html",
+    "title": "Blog Template",
+    "section": "",
+    "text": "This is the first post in my blog!\nNote that all blog posts are frozen, i.e., when we render the entire site the computations are not re-run, but rather read from the previously frozen results\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "blog/blogpost1.html#subsection-header",
+    "href": "blog/blogpost1.html#subsection-header",
+    "title": "Blog Template",
+    "section": "Subsection Header",
+    "text": "Subsection Header\nH2 headers will appear as sub-level navigation items on the right.\n\nSubsubsection Header\nH3 headers will be ignored for the navigation."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Lucas da Silva",
+    "section": "",
+    "text": "Blog Template\n\n\n\n\n\nThis is a blog template\n\n\n\n\n\n20 de jan. de 2023\n\n\nLucas\n\n\n\n\n\n\nSem itens correspondentes"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Lucas da Silva",
+    "section": "",
+    "text": "Blog Template\n\n\n\n\n\nThis is a blog template\n\n\n\n\n\n20 de jan. de 2023\n\n\nLucas da Silva\n\n\n\n\n\n\nSem itens correspondentes"
+  },
+  {
+    "objectID": "blog/blogposts/blogpost1.html",
+    "href": "blog/blogposts/blogpost1.html",
+    "title": "Blog Template",
+    "section": "",
+    "text": "This is the first post in my blog!\nNote that all blog posts are frozen, i.e., when we render the entire site the computations are not re-run, but rather read from the previously frozen results\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "blog/blogposts/blogpost1.html#subsection-header",
+    "href": "blog/blogposts/blogpost1.html#subsection-header",
+    "title": "Blog Template",
+    "section": "Subsection Header",
+    "text": "Subsection Header\nH2 headers will appear as sub-level navigation items on the right.\n\nSubsubsection Header\nH3 headers will be ignored for the navigation."
+  },
+  {
+    "objectID": "blog/blogposts/test/index.html",
+    "href": "blog/blogposts/test/index.html",
+    "title": "Blog Template",
+    "section": "",
+    "text": "This is the first post in my blog!\nNote that all blog posts are frozen, i.e., when we render the entire site the computations are not re-run, but rather read from the previously frozen results\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "blog/blogposts/test/index.html#subsection-header",
+    "href": "blog/blogposts/test/index.html#subsection-header",
+    "title": "Blog Template",
+    "section": "Subsection Header",
+    "text": "Subsection Header\nH2 headers will appear as sub-level navigation items on the right.\n\nSubsubsection Header\nH3 headers will be ignored for the navigation."
+  }
+]

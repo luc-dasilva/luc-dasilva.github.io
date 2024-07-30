@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+
+// Colors
+$primary: #1A162D;
+$secondary: #FFFFFF;
+$tertiary: #FDEBA4;
+$blue: #38577F;
+$light-purple: #767381;
+$light-yellow: #FDF4D1;
+$light-gray: #767381;
+
+// Base document colors
+
+$navbar-bg: $primary;
+$navbar-fg: $secondary;
+$body-color: #000; 
+$footer-bg: $light-yellow; 
+$link-color: $blue;
+
+
+/*-- scss:rules --*/
+
+@media(min-width: 992px) {
+    div.quarto-about-trestles .about-entity {
+        flex:0 0 22%;
+    }
+}
