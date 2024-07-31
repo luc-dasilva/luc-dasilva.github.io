@@ -1,6 +1,6 @@
 ---
 title: Lucas da Silva
-image: profile.png
+image: pictures/profile.png
 page-layout: full
 title-block-banner: false
 about:
