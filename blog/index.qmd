@@ -4,7 +4,7 @@ listing:
     sort: "date desc"
     sort-ui: false
     filter-ui: false
-    type: default
+    type: grid
     categories: false
 page-layout: full
 ---

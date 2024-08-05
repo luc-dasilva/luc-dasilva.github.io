@@ -1,0 +1,400 @@
+---
+title: "Uma breve introdução ao Tidyverse"
+date: "2024-08-05"
+author: Lucas da Silva
+description: "Um resumo do essencial para iniciar no mundo do Tidyverse."
+image: "img/tidyverse.png"
+toc: true
+code-copy: hover
+monofont: 'Source Code Pro'
+monofontoptions: 
+  - Scale=0.55
+---
+
+O `tidyverse`, uma coleção de pacotes focados em ciência de dados, é um dos principais atrativos da linguagem de programação R. Nesta postagem serão sintetizados os principais aspectos necessários para o início da jornada na ciência de dados com o `tidyverse`.
+
+# O que é o Tidyverse?
+
+A gramática do `tidyverse` segue uma estrutura lógica e comum em todas as suas funções. A principal ideia é que o primeiro parâmetro seja o objeto e então os outros parâmetros venham em seguida. Além disso, um conjunto de verbos são disponibilizados para facilitar o uso das funções.
+
+A filosofia do `tidyverse` e a gramática das funções também é utilizada em diversos outros pacotes, que se tornam compatíveis com a coleção.
+
+Para instalar o `tidyverse` e seus principais pacotes, basta usar a função `install.packages("tidyverse")`, do R base. Para carregar os pacotes, use `library(tidyverse)`.
+
+# Pacotes do Tidyverse
+
+Os principais pacotes do `tidyverse` são os seguintes:
+
+| Pacote    | Descrição                                                    |
+|-----------|--------------------------------------------------------------|
+| ggplot2   | Gramática para criar gráficos                                |
+| purrr     | Programação funcional no R                                   |
+| tibble    | Sistema de tabelas moderno                                   |
+| dplyr     | Gramática para a transformação de dados                      |
+| tidyr     | Conjunto de funções para criar dados tabulares               |
+| stringr   | Funções próprias para lidar com caracteres                   |
+| readr     | Funções para a importação de dados                           |
+| forcats   | Ferramentas para trabalhar com variáveis categóricas         |
+| lubridate | Funções para trabalhar com dados em formato de datas e horas |
+
+Além dos pacotes já mencionados, outros pacotes fazem parte do `tidyverse` e são usados frequentemente para trabalhar ao lado dos principais pacotes. O `readxl`, por exemplo, permite a importação de planilhas em formado Excel (.xls ou .xlsx). Para conhecer todos os pacotes que fazem parte do `tidyverse` podemos utilizar a função `tidyverse_packages()`.
+
+```{r}
+library(tidyverse)
+
+tidyverse_packages()
+```
+
+É muito comum ocorrer conflitos entre funções, ou seja, o mesmo nome de função existe em diversos pacotes. Para evitar conflitos, podemos especificar o pacote na frente da função que queremos usar, separado por dois pontos escritos duas vezes (`nome_pacote::nome_funcao`).
+
+```{r}
+#| eval: false
+dplyr::filter()
+```
+
+Antes de adentrar em cada pacote, analisaremos o estilo de programação de código R.
+
+# Estilo de programação
+
+No R não há um guia universal para o estilo de programação, ou seja, na sintáxe do R não é necessário seguir regras específicas nos *scripts.* De todo modo, é recomendável trabalhar de uma maneira homogênia, uniforme, legível e clara quando se está escrevendo *scripts*. O `Tidyverse` possui seu próprio [guia de estilo de programação](https://style.tidyverse.org/){target="_blank"}.
+
+Resumidamente, as principais recomendações são as seguintes:
+
+-   Evitar usar mais de 80 caracteres por linha para facilitar a leitura do código.
+-   Sempre usar um espaço depois de uma vírgula, mas nunca antes.
+-   Os operadores (+,-,==,\<-,\|\>, etc.) devem ter um espaço antes e depois.
+-   Não há espaço entre o nome de uma função e seu primeiro parêntese, nem entre o último parâmetro e o último parêntese da função.
+-   Evite usar nomes de funções a variáveis comuns (`mean <- 5` vs `mean()`)
+-   Organize o *script* separando as seções com comentários (`# Import data -----`)
+-   Evite acentos ou símbolos especiais em nomes de objetos, arquivos, etc.
+-   Nomes de objetos devem seguir uma estruturação constante: `dia_um`, `dia_dois`
+
+É recomendável usar a indentação corretamente para múltiplos parâmetros de uma função ou funções sequenciadas pelo operador *pipe* (`|>`)
+
+# Operador *Pipe*
+
+Para facilitar trabalhar com gerenciamento, transformação e visualização de dados, o operador *pipe*, na forma de `|>`, é chamado para o resgate. O opereador *pipe* visa combinar várias funções sem a necessidade de assinalar o resultado a um novo objeto. O *pipe* aplica basicamente o *output* de uma função como o primeiro parâmetro da próxima função. Essa forma de combinação permite a junção de diversos passos simultaneamente, para desempenhar tarefas sequenciais. No exemplo abaixo, passamos o vetor `1:5` para a função `mean()` para calcular a média.
+
+```{r}
+#| eval: false
+1:5 |> mean()
+```
+
+# Os pacotes do Tidyverse
+
+Agora iremos destrinchar os principais pacotes que compõem o universo do `tidyverse`.
+
+## Importar e salvar dados
+
+O pacote `readr` facilita ler ou escrever os mais diversos formatos usando funções que começam com `read_*` ou `write_*`. Em comparação ao R base, `readr` é mais rápido, consegue lidar com nomes de colunas problemáticos e datas são convertidas automaticamente. As tabelas importadas são da classe `tibble`, do pacote de mesmo nome, `tibble`, que basicamente é uma versão moderna do `data.frame`. Na mesma linha, é possível usar a função `read_excel()` do pacote `readxl` para importar dados de planilhas de Excel. No exemplo abaixo, importaremos os dados [Palmer Penguins](https://gist.github.com/slopp/ce3b90b9168f2f921784de84fa445651#file-penguins-csv){target="_blank"}, dados de três espécies de pinguim no arquipélago de Palmer, na Antártica.
+
+| Função                         | Descrição                                 |
+|:-----------------------------|:-----------------------------------------|
+| `read_csv()` ou `read_csv2( )` | Importa .CSV (vírgula ou ponto e vírgula) |
+| `read_delim()`                 | Separador geral                           |
+| `read_table()`                 | Separador de espaços                      |
+
+```{r}
+library(tidyverse)
+
+# Assinala o arquivo penguins.csv, que está na pasta "data", ao objeto "penguins"
+penguins <- read_csv("data/penguins.csv")
+# Inspeciona o conteúdo do objeto "penguins"
+penguins
+```
+
+Para mais detalhes, vale a pena consultar o [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/data-import_pt_br.pdf){target="_blank"} do `readr`.
+
+## Trabalhando com caracteres
+
+Para trabalhar com caracteres (*strings*), usamos o pacote `stringr`, com suas funções sempre iniciando com `str_*`, seguido pelo verbo e o primeiro parâmetro. Algumas das funções são:
+
+| Função          | Descrição                         |
+|-----------------|-----------------------------------|
+| `str_replace()` | Substitui padrões                 |
+| `str_c()`       | Combina caracteres                |
+| `str_detect()`  | Detecta padrões                   |
+| `str_extract()` | Extrai padrões                    |
+| `str_sub()`     | Extrai por posição                |
+| `str_length()`  | Retorna o tamanho de uma *string* |
+
+É comum o uso de expressões regulares (*regex*) para detecção de padrões. Abaixo temos alguns exemplos de funções do `stringr` em ação em conjunto com o uso de *regex*.
+
+```{r}
+# Vetor com os nomes dos meses em inglês
+month.name
+```
+
+```{r}
+# substituir 'er' com espaço vazio
+str_replace(month.name, "ber$", "")
+```
+
+```{r}
+# combinar os caracteres
+str_c(month.name, 1:12, sep = "_")
+```
+
+```{r}
+# colapsar combinação
+str_c(month.name, collapse = ", ")
+```
+
+```{r}
+# detectar padrão
+str_detect(month.name, "^A")
+```
+
+```{r}
+# extrair padrão
+str_extract(month.name, "ber$")
+```
+
+```{r}
+# extrair caracteres entre as posições 1 e 2
+str_sub(month.name, 1, 2)
+```
+
+```{r}
+# tamanho da string de cada mês
+str_length(month.name)
+```
+
+Mais detalhes sobre as funções e expressões regulares podem ser encontrados no [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/strings_pt_br.pdf){target="_blank"} do `stringr`.
+
+## Gerenciamento de datas e horas
+
+O pacote `lubridate` é excelente para lidar com datas e horas. Apenas devemos conhecer as seguintes abreviações:
+
+-   `ymd` signfica `y:year` (ano), `m:month` (mês), `d:day` (dia)
+-   `hms` signfica `h:hour` (hora), `m:minutes` (minutos), `s:seconds` (segundos)
+
+```{r}
+# vetor com datas
+datas <- c("2020/12/31", "2012/05/04", "2003/09/24","2017/11/24")
+
+# vetor com datas e horas
+datas_horas <- c("1973-08-11 02:00", "2009-06-13 20:00")
+
+datas <- ymd(datas)
+datas
+```
+
+```{r}
+dmy("13-08-2002")
+ymd("20020813")
+```
+
+```{r}
+# extrair o ano
+year(datas)
+```
+
+```{r}
+# extrair o mês
+month(datas)
+```
+
+```{r}
+# extrair o dia da semana
+wday(datas)
+```
+
+```{r}
+# extrair a hora
+hour(datas_horas)
+```
+
+```{r}
+# adiciona 10 dias
+datas + days(10)
+```
+
+```{r}
+# adiciona 1 mês
+datas + month(1)
+```
+
+Para mais detalhes, veja o [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/lubridate_pt_br.pdf){target="_blank"} do `lubridate`.
+
+## Transformação de tabelas
+
+Os pacotes `dplyr` e `tidyr` oferecem gramática para a transformação de dados, ou seja, um conjunto de verbos úteis para resolver problemas. As funções mais importantes são:
+
+| Função        | Descrição                      |
+|---------------|--------------------------------|
+| `mutate()`    | Adiciona ou modifica variáveis |
+| `select()`    | Seleciona variábeis            |
+| `filter()`    | Aplica filtro                  |
+| `summarise()` | Reduz variáveis                |
+| `rename()`    | Renomeia colunaas              |
+
+### `select()` e `rename()`
+
+Conseguimos selecionar ou remover colunas com a função `select()`, usando o nome ou índice da coluna. Para deletar colunas apenas usamos o ponto de exclamação antes do nome ou índice da coluna. A função `rename()`renomeia colunas da mesma forma, usando o nome ou índice da coluna.
+
+```{r}
+
+# Assinala o resultado da cadeia ao objeto "penguins_2" 
+penguins_2 <- penguins |> 
+    # Seleciona a coluna "rowid".
+    # O ponto de exclamação indica a remoção da coluna "rowid"
+    select(!rowid) |> 
+    # Renomeia a coluna "species" como "penguin_species"
+    rename(penguin_species = species)
+
+# Visualizando o novo objeto
+penguins_2
+
+```
+
+### `filter()`e `sort()`
+
+Para filtrar dados, usamos o verbo `filter()` com operadores lógicos (`>`, `==`, etc.) ou funções retornando em valores lógicos (`str_detect()`, `is.na()`). A função `arrange()` classifica os valores de menor para maior ou classifica múltiplas variáveis.
+
+```{r}
+penguins_2 |>
+    # Filtra linhas que o conteúdo da coluna "island" seja igual a "Dream"
+    filter(island == "Dream") |> 
+    # Classifica os dados pela coluna "year"
+    arrange(year)
+```
+
+### `summarise()`
+
+Como encontramos a média do tamanho dos bicos dos pinguins na ilha de Biscoe, por espécie de pinguim?
+
+Para encontrarmos a resposta, devemos filtrar os dados pela ilha Biscoe e então agrupar por espécies. Quando usamos a função `summarise()`, podemos agrupar os dados para executarmos a redução dos dados.
+
+```{r}
+
+penguins_2 |> 
+    # Filtra linhas que o conteúdo da coluna "island" seja igual a "Biscoe"
+    filter(island == "Biscoe") |> 
+    # Cálculo da média da coluna "bill_length_mm" através da função mean()
+    # O resultado do cálculo será assinalado a nova coluna "bill_length_mm_mean"
+    # O segundo parâmetro (na.rm = TRUE) remove os dados não identificados (NAs)
+    # O cálculo é aplicado ao agrupamento de cada espécie, na coluna "penguin_species"
+    summarise(
+        bill_length_mm_mean = mean(bill_length_mm, na.rm = TRUE),
+        .by = penguin_species
+    ) |> 
+    # Classifica a tabela resultante pelo tamanho do bico
+    arrange(bill_length_mm_mean)
+```
+
+### Tabelas longas ou largas
+
+É muito comum modificar tabelas nos dois formatos: longas ou largas. Tabelas longas são mais comuns para trabalhar dados, porém muitas vezes os dados que se tem em mãos são estruturados em tabelas largas ou em algumas ocasiões tabelas longas são desejadas.
+
+```{r}
+# Tabela larga
+tidyr::table4a
+
+# Tabela larga para tabela longa
+table4a_long <- tidyr::table4a |> 
+    pivot_longer(
+        cols = !country,
+        names_to = "year",
+        values_to = "cases"
+    )
+
+# Tabela longa
+table4a_long
+
+# Tabela longa para tabela larga novamente
+table4a_long |> 
+    pivot_wider(
+        names_from = year,
+        values_from = cases
+    )
+```
+
+De fato, o uso de tabelas longas dá origem ao termo tabelas *tidy*, o modelo de estruturação de dados ideal para data science, e que eventualmente nomeia o `tidyverse`. Uma tabela é considerada *tidy* quando:
+
+1.  Cada variável é uma coluna
+2.  Cada observação é uma linha
+3.  Cada valor é uma célula (e cada célula é apenas um valor)
+
+Outros grupos de funções que valem a pena estudar são: `separate()`, `case_when()`, `complete()` e as funções de junção de tabelas. É possível encontrar essas informações no [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/data-transformation_pt_br.pdf){target="_blank"} do `dplyr` e no [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/tidyr_pt_br.pdf){target="_blank"} do `tidyr`.
+
+## Visualização de dados
+
+`ggplot2` é um sistema moderno de visualização de dados extremamente versátil. Diferente do sistema de gráficos do R base, no `ggplot2` uma gramática diferente é usada. A gramática dos gráficos (gg) consiste na soma de inúmeros e independentes camadas ou objetos combinados usando o `+` para construir o gráfico.
+
+`ggplot2` diferencia entre dados, o que é demonstrado e como é demonstrado.
+
+-   *dados*: os dados a serem utilizados (`data.frame` ou `tibble`).
+-   *estética*: a função `aes()` indica as variáveis que correspondem aos axis x,y,z, ou quando é pretendido aplicar parâmetros gráficos (como cores, tamanhos e formatos) conforme o com o gráfico. É possível incluir `aes()` na função `ggplot()` ou na função correspondente a uma geometria `geom_*`.
+-   *geometria*: objetos `geom_*` indicam qual geometria a ser usada (`geom_point()`, `geom_line()`, `geom_boxplot()`, etc.).
+-   *escalas*: objetos do tipo `scales_*` manipulam axis, definem escala de cores, etc.
+-   *estatísticas*: objetos `stat_*` permitem aplicar transformações estatísticas.
+
+### Gráfico de linha e de disperção
+
+```{r}
+#| warning: false
+# install.packages(ggthemes)
+library(ggthemes)
+
+tidyr::table1 |> 
+    ggplot(aes(year, cases)) +
+    geom_line(aes(color = country), linewidth = 1) +
+    scale_color_colorblind() +
+    scale_x_continuous(breaks = c(1999, 2000)) +
+    labs(
+        title = "Casos de tuberculose",
+        subtitle = "Número de casos de tuberculose no Afeganistão, Brasil e China.",
+        x = "",
+        y = "",
+        color = "País"
+    )
+```
+
+```{r}
+#| warning: false
+penguins |> 
+    ggplot(aes(body_mass_g, flipper_length_mm)) +
+    geom_point(aes(color = species, shape = species)) +
+    geom_smooth(method = "lm") +
+    scale_color_colorblind() +
+    labs(
+        title = "Massa corporal e comprimento da nadadeira",
+        subtitle = "Dimensões para penguins das espécies Adelie, Chinstrap, e Gentoo",
+        x = "Comprimento da nadadeira (mm)",
+        y = "Massa corporal (g)",
+        color = "Espécies",
+        shape = "Espécies"
+    )
+```
+
+### Boxplot
+
+```{r}
+#| warning: false
+
+penguins |> 
+    ggplot(aes(species, body_mass_g)) +
+    geom_boxplot(aes(fill = species)) +
+    theme_minimal()
+```
+
+Há tantas coisas que podemos fazer com o `ggplot2` que merece uma postagem somente dedicada a esse pacote. Independente se é necessário contruir um *box plot*, gráfico de densidade, séries temporais, etc, o `ggplot2` tem uma função para isso. Você também pode checar o [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/data-visualization_pt.pdf){target="_blank"} do `ggplot2`\]
+
+## Aplicar funções em vetores ou listas
+
+O pacote `purrr`, além de ter o melhor nome de pacote de todos os tempos, é recheado de funções avançadas de programação funcional para vetores e listas. O `lapply` do R base corresponde ao `map()` do `purrr`.
+
+```{r}
+
+# lista de dois vetores
+lista_vec <- list(x = 1:10, y = 50:70)
+
+# calcula a média para cada
+map(lista_vec, mean)
+
+# muda o tipo de output do map_* (dbl, chr, lgl, etc.)
+map_dbl(lista_vec, mean)
+```
+
+Para mais detalhes e exemplos podem ser encontrados no [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/purrr_pt_br.pdf){target="_blank"} do `purrr`.
