@@ -3,4 +3,9 @@
 .navbar {
     background-color: #4CAF50; /* Example color code */
 }
+
+.cell-output {
+  background-color: lightgray;
+  border-radius: 4px;
+}
 /*-- scss:rules --*/

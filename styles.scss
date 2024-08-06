@@ -17,11 +17,19 @@ $body-color: #000;
 $footer-bg: $light-yellow; 
 $link-color: $blue;
 
-
 /*-- scss:rules --*/
 
 @media(min-width: 992px) {
     div.quarto-about-trestles .about-entity {
         flex:0 0 22%;
     }
+}
+
+div.quarto-about-trestles .about-entity {
+    padding-top: 1em;
+}
+
+.cell-output {
+  background-color: #F2F2F2;
+  border-radius: 4px;
 }

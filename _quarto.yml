@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs # Location where quarto renders the files
+  output-dir: docs
 
 website:
     title: Lucas da Silva
@@ -10,7 +10,7 @@ website:
       pinned: true
       title: false
       left:
-        - href: index.qmd # Do not need a lp, just about me
+        - href: index.qmd
           text: Sobre mim
         - href: cv/cv.pdf
           text: Currículo
@@ -18,20 +18,20 @@ website:
         - text: Projetos
           menu: 
             - text: Projeto 1
-              href: proj1.qmd
+              href: projects/proj1.qmd
             - text: Projeto 2
-              href: proj2.qmd
+              href: projects/proj2.qmd
         - href: blog/index.qmd
           text: Blog
       right: 
         - icon: linkedin
           href: https://www.linkedin.com
           target: _blank
+        - icon: github
+          href: https://github.com/luc-dasilva
+          target: _blank
         - icon: envelope-fill
           href: mailto:lucasgomes.wdcs@gmail.com
-          target: _blank
-        - icon: link-45deg   # signpost-2-fill
-          href: https://linktr.ee
           target: _blank
         # - icon: translate
         #   href: index_en.qmd
@@ -48,6 +48,8 @@ format:
     mainfont: Source Sans 3
     toc: false
     lang: pt-BR
+    monofont: 'Source Code Pro'
+    code-copy: hover
     # grid: 
     #   sidebar-width: 200px
     #   margin-width: 200px

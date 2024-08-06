@@ -5,8 +5,6 @@ author: Lucas da Silva
 description: "Um resumo do essencial para iniciar no mundo do Tidyverse."
 image: "img/tidyverse.png"
 toc: true
-code-copy: hover
-monofont: 'Source Code Pro'
 monofontoptions: 
   - Scale=0.55
 ---
