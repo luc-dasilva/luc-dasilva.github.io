@@ -14,11 +14,3 @@ Oi! Sou Lucas da Silva, fui intercambista pelo programa [Gira Mundo](https://par
 Durante a graduação consegui me engajar em diversos projetos de pesquisa e em um deles conheci a [linguagem de programação R](https://cran.r-project.org/), as coleções de pacotes [Tidyverse](https://www.tidyverse.org/), [Tidyquant](https://business-science.github.io/tidyquant/) e [Tidymodels](https://www.tidymodels.org/), além dos frameworks [Shiny](https://shiny.posit.co/) e [Quarto](https://quarto.org/). Desde então, venho adquirindo experiência com estas ferramentas e em data literacy.
 
 Fora dos estudos, eu gosto muito de acompanhar esportes, de andar de bicicleta e dos meus gatos.
-
-## Formação
-
--   Universidade Federal da Paraíba \| Graduação em Ciências Contábeis \| Desde 2020
-
--   Escola de Idiomas CCAA \| Curso de Língua Inglesa \| Jul 2019 - Ago 2020
-
--   Walkerton District Community School \| Intercâmbio \| Set 2018 - Fev 2019

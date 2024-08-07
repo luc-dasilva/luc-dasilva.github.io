@@ -1,0 +1,161 @@
+---
+title: "Importação de Planilhas do Excel no R"
+date: "2024-08-07"
+author: Lucas da Silva
+description: "Dados do Excel ao R de maneira fácil e rápida."
+image: "img/readxl.png"
+toc: true
+monofontoptions: 
+  - Scale=0.55
+---
+
+Geralmente trabalhamos com diversas fontes de dados. Uma das formas mais comuns em que os dados são armazenados são os arquivos em formato Excel, com as extensões *.xls* e *.xlsx*. Nesta postagem vamos explorar as funcionalidades do `readxl`, um pacote parte do `tidyverse` que facilita a importação de dados do Excel para o R.
+
+# Instalação
+
+A maneira mais simples e rápida de instalar a última versão do pacote `readxl` diretamente do CRAN é instalar o próprio `tidyverse`.
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+De todo modo, é necessário carregar o pacote `readxl` explicitamente, pois o `readxl` não faz parte do core `tidyverse` (ou seja, não é carregado com `library(tidyverse)`)
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+# Exemplos de arquivos Excel
+
+O `readxl` vem de fábrica com alguns exemplos de aquivo Excel, ambos em .xls ou .xlsx, que podemos usar para praticar o uso do pacote de forma prática. Para poder ver quais arquivos estão disponibilizados, basta usar o `readxl_example()` sem parâmetros.
+
+```{r}
+readxl_example()
+```
+
+Para obter o caminho de um dos exemplos listados, devemos simplesmente usar a função `readxl_example()` com um dos arquivos disponíveis.
+
+```{r}
+readxl_example("datasets.xlsx")
+```
+
+# Importação arquivos de Excel e planilhas
+
+A função `read_excel()` importa arquivos Excel, seja a extensão do arquivo .xls ou .xlsx.
+
+```{r}
+# Obtém o caminho para o arquivo de exemplo "deaths.xlsx"
+# Salva o caminho no objeto "exemplo_xlsx"
+example_xlsx <- readxl_example("datasets.xlsx")
+example_xlsx
+
+# Lê o arquivo
+read_excel(example_xlsx)
+```
+
+Por padrão, o `read_excel()` importa a primeira planilha do arquivo Excel. Para saber quantas planilhas um arquivo de Excel possui, usamos o `excel_sheets()`.
+
+```{r}
+excel_sheets(example_xlsx)
+```
+
+Para o `read_excel()` importar outra planilha é necessário especificar o número ou nome com o parâmetro *sheet* (o segundo parâmetro).
+
+```{r}
+# Por padrão, o read_excel importa a primeira planilha do arquivo Excel
+# Ou seja, neste caso o read_excel importa a planilha chamada "iris" por padrão
+read_excel(example_xlsx)
+
+# Podemos especificar qual planilha queremos importar com o nome ou número da planilha
+# Ou seja, podemos importar a planilha "iris" com seu próprio nome
+read_excel(example_xlsx, sheet = "iris")
+
+# Ou podemos importar a planilha "iris" com o número
+read_excel(example_xlsx, sheet = 1)
+
+# Podemos especificar outra planilha pelo seu nome:
+read_excel(example_xlsx, "mtcars")
+
+# Ou podemos especificar essa mesma planilha pelo seu número:
+read_excel(example_xlsx, sheet = 2)
+```
+
+## Intervalo de células
+
+Exitem diversas formas de sinalizar quais células devem ser lidas. É até possível especificar a planilha em específico, se for fornecido um intervalo no estilo do Excel.
+
+```{r}
+# Número máximo de linhas para importar
+read_excel(example_xlsx, n_max = 3)
+
+# Número de linhas para pular
+read_excel(example_xlsx, skip = 3)
+
+# Intervalo de linhas e colunas para importar
+read_excel(example_xlsx, range = "C1:E4")
+
+# Intervado de linhas para importar
+read_excel(example_xlsx, range = cell_rows(1:4))
+
+# Intervalo de colunas para importar
+read_excel(example_xlsx, range = cell_cols("B:D"))
+
+# Intervalo de linhas e colunas de uma planilha específica
+read_excel(example_xlsx, range = "mtcars!B1:D5")
+```
+
+## Especificação de colunas
+
+Especificação de colunas é o que define que tipo de dado cada coluna do arquivo Excel será ao ser importado. Por padrão, o `read_excel()` analisa as primeiras 1000 observações e faz um chute educado sobre qual tipo de dado cada variável possui. É possível aumentar o número de linhas com o parâmetro **guess_max**.
+
+Para especificar o tipo de dado de colunas, usamos o parâmetro **col_types**. Para definir todas as variáveis como, por exemplo, *strings*, usamos:
+
+```{r}
+read_excel(example_xlsx, col_types = "text")
+```
+
+Para definir cada coluna individualmente, podemos fazer o seguinte:
+
+```{r}
+read_excel(
+    example_xlsx,
+    col_types = c("numeric", "numeric", "guess", "guess", "text")
+)
+```
+
+Os tipos de colunas disponíveis são:
+
+- Skip (pula uma coluna)
+- Guess (chuta um tipo)
+- Logicals (valores lógicos)
+- Numeric (numéricos)
+- Text (texto)
+- Date (datas)
+- List (listas, para múltiplos tipos de dados)
+
+Exemplos:
+
+
+| logical       | numeric   | text  | date      | list  |
+|:-------------:|:---------:|:-----:|:---------:|:-----:|
+| TRUE          | 2         | hello | 1999-01-01| world |
+| FALSE         | 3.14      | world | 2004-02-21| 1     |
+
+# Importação de várias planilhas
+
+Para ler múltiplas planilhas em um arquivo de Excel de uma vez só, podemos fazer um código *quick and dirty* para resolver nosso problema...
+
+```{r}
+excel_sheets(example_xlsx)
+
+dataset_1 <- read_excel(example_xlsx, sheet = 1)
+dataset_2 <- read_excel(example_xlsx, sheet = 2)
+dataset_3 <- read_excel(example_xlsx, sheet = 3)
+dataset_4 <- read_excel(example_xlsx, sheet = 4)
+```
+
+É possível importar cada planilha de um arquivo individualmente, mas não é preciso de muito *brainpower* para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).
+
+Por isso, é recomendável usar outro pacote da coleção `tidyverse`, o `purrr`, que nos dá as ferramentas necessárias para automatizar essa tarefa repetitiva. Para conhecer o `purrr` e suas funcionalidades, basta ficar atento no blog que irei abordar sobre as cartas da manga deste e de outros pacotes.
