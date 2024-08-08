@@ -9,7 +9,7 @@
 <meta name="author" content="Lucas da Silva">
 <meta name="description" content="Dados do Excel ao R de maneira fácil e rápida.">
 
-<title>Lucas da Silva - Importação de Planilhas do Excel no R</title>
+<title>Lucas da Silva - Planilhas do Excel no R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Importação de Planilhas do Excel no R</h1>
+      <h1 class="title">Planilhas do Excel no R</h1>
                   <div>
         <div class="description">
           Dados do Excel ao R de maneira fácil e rápida.
@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Geralmente trabalhamos com diversas fontes de dados. Uma das formas mais comuns em que os dados são armazenados são os arquivos em formato Excel, com as extensões <em>.xls</em> e <em>.xlsx</em>. Nesta postagem vamos explorar as funcionalidades do <code>readxl</code>, um pacote parte do <code>tidyverse</code> que facilita a importação de dados do Excel para o R.</p>
+<p>Geralmente trabalhamos com diversas fontes de dados. Uma das formas mais comuns de armazenamento de dados são os arquivos em formato Excel, com as extensões .xls e .xlsx. Nesta postagem vamos explorar as funcionalidades do <code>readxl</code>, um pacote parte do <code>tidyverse</code> que facilita a importação de dados do Excel para o R.</p>
 <section id="instalação" class="level1">
 <h1>Instalação</h1>
 <p>A maneira mais simples e rápida de instalar a última versão do pacote <code>readxl</code> diretamente do CRAN é instalar o próprio <code>tidyverse</code>.</p>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exemplos-de-arquivos-excel" class="level1">
 <h1>Exemplos de arquivos Excel</h1>
-<p>O <code>readxl</code> vem de fábrica com alguns exemplos de aquivo Excel, ambos em .xls ou .xlsx, que podemos usar para praticar o uso do pacote de forma prática. Para poder ver quais arquivos estão disponibilizados, basta usar o <code>readxl_example()</code> sem parâmetros.</p>
+<p>O <code>readxl</code> vem de fábrica com alguns exemplos de aquivo Excel (ambos em .xls ou .xlsx) que podemos usar para praticar o uso do pacote de forma prática. Para poder ver quais arquivos estão disponibilizados, basta usar o <code>readxl_example()</code> sem parâmetros.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readxl_example</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -559,7 +559,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="importação-de-várias-planilhas" class="level1">
 <h1>Importação de várias planilhas</h1>
-<p>Para ler múltiplas planilhas em um arquivo de Excel de uma vez só, podemos fazer um código <em>quick and dirty</em> para resolver nosso problema…</p>
+<p>Para ler múltiplas planilhas em um arquivo de Excel, podemos fazer um código <em>quick and dirty</em> para resolver nosso problema…</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_sheets</span>(example_xlsx)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -570,8 +570,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>dataset_3 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(example_xlsx, <span class="at">sheet =</span> <span class="dv">3</span>)</span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>dataset_4 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(example_xlsx, <span class="at">sheet =</span> <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>É possível importar cada planilha de um arquivo individualmente, mas não é preciso de muito <em>brainpower</em> para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).</p>
-<p>Por isso, é recomendável usar outro pacote da coleção <code>tidyverse</code>, o <code>purrr</code>, que nos dá as ferramentas necessárias para automatizar essa tarefa repetitiva. Para conhecer o <code>purrr</code> e suas funcionalidades, basta ficar atento no blog que irei abordar sobre as cartas da manga deste e de outros pacotes.</p>
+<p>Neste método apenas é possível importar cada planilha de um arquivo individualmente. Não é preciso de muito <em>brainpower</em> para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).</p>
+<p>Por isso, é recomendável usar outro pacote da coleção <code>tidyverse</code> em combinação como o <code>readxl</code>, o <code>purrr</code>, que nos oferece as ferramentas necessárias para automatizar tarefas repetitivas. Para conhecer o <code>purrr</code> e suas funcionalidades, basta ficar atento no blog que irei abordar sobre este e de outros pacotes.</p>
 
 
 </section>
