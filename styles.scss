@@ -16,6 +16,19 @@ $navbar-fg: $secondary;
 $body-color: #000; 
 $footer-bg: $light-yellow; 
 $link-color: $blue;
+$menu-text: $tertiary;
+$code-color: $primary;
+$code-block-bg: #F2F2F2;
+
+.navbar a, .nav-link {
+  &:hover {
+    color: #FDF4D1;
+  };
+  &:focus,
+  &.active {
+    color: #FDEBA4 !important;
+  }
+}
 
 /*-- scss:rules --*/
 
@@ -27,9 +40,4 @@ $link-color: $blue;
 
 div.quarto-about-trestles .about-entity {
     padding-top: 1em;
-}
-
-.cell-output {
-  background-color: #F2F2F2;
-  border-radius: 4px;
 }

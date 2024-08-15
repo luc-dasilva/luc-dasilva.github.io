@@ -9,7 +9,8 @@
     "listing": "/blog/index.html",
     "items": [
       "/blog/blogposts/importacao-excel/index.html",
-      "/blog/blogposts/introducao-tidyverse/index.html"
+      "/blog/blogposts/introducao-tidyverse/index.html",
+      "/blog/blogposts/introducao-git-github/index.html"
     ]
   }
 ]

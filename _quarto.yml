@@ -15,12 +15,8 @@ website:
         - href: cv/cv.pdf
           text: Currículo
           target: _blank
-        - text: Projetos
-          menu: 
-            - text: Projeto 1
-              href: projects/proj1.qmd
-            - text: Projeto 2
-              href: projects/proj2.qmd
+        # - href: projeto/index.qmd
+        #   text: Projeto
         - href: blog/index.qmd
           text: Blog
       right: 
@@ -48,7 +44,8 @@ format:
     mainfont: Source Sans 3
     toc: false
     lang: pt-BR
-    monofont: 'Source Code Pro'
+    monofont: Source Code Pro
+    monobackgroundcolor: "#F4F4F4"
     code-copy: hover
     # grid: 
     #   sidebar-width: 200px
