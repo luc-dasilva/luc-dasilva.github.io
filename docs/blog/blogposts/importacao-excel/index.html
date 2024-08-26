@@ -109,21 +109,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../../cv/cv.pdf" target="_blank"> 
 <span class="menu-text">Currículo</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projetos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Projetos</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-projetos">    
-        <li>
-    <a class="dropdown-item" href="../../../projects/proj1.qmd">
- <span class="dropdown-text">Projeto 1</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../../projects/proj2.qmd">
- <span class="dropdown-text">Projeto 2</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
@@ -202,6 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#especificação-de-colunas" id="toc-especificação-de-colunas" class="nav-link" data-scroll-target="#especificação-de-colunas">Especificação de colunas</a></li>
   </ul></li>
   <li><a href="#importação-de-várias-planilhas" id="toc-importação-de-várias-planilhas" class="nav-link" data-scroll-target="#importação-de-várias-planilhas">Importação de várias planilhas</a></li>
+  <li><a href="#exportação-de-arquivos-excel" id="toc-exportação-de-arquivos-excel" class="nav-link" data-scroll-target="#exportação-de-arquivos-excel">Exportação de arquivos Excel</a></li>
   </ul>
 </nav>
     </div>
@@ -572,6 +558,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Neste método apenas é possível importar cada planilha de um arquivo individualmente. Não é preciso de muito <em>brainpower</em> para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).</p>
 <p>Por isso, é recomendável usar outro pacote da coleção <code>tidyverse</code> em combinação como o <code>readxl</code>, o <code>purrr</code>, que nos oferece as ferramentas necessárias para automatizar tarefas repetitivas. Para conhecer o <code>purrr</code> e suas funcionalidades, basta ficar atento no blog que irei abordar sobre este e de outros pacotes.</p>
+</section>
+<section id="exportação-de-arquivos-excel" class="level1">
+<h1>Exportação de arquivos Excel</h1>
+<p>Vamos criar um pequeno <em>data frame</em> que podemos exportar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">frutas =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"banana"</span>, <span class="st">"maçã"</span>, <span class="st">"laranja"</span>)),</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantidade =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>frutas</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  frutas  quantidade
+  &lt;fct&gt;        &lt;dbl&gt;
+1 banana           8
+2 maçã             4
+3 laranja          5</code></pre>
+</div>
+</div>
+<p>Você pode exportar os dados como um arquivo Excel usando o comando <code>write_xlsx()</code>, do pacote <code>writexl</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(frutas, <span class="at">path =</span> <span class="st">"diretorio/arquivo.xlsx"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>De toda forma, é sempre recomendável salvar os dados em .rds, pois os tipos dos dados salvos podem ser perdidos quando importamos os dados novamente de um arquivo .xlsx ou .csv. Assim, arquivos .rds são um pouco mais confiáveis em guardar dados.</p>
 
 
 </section>

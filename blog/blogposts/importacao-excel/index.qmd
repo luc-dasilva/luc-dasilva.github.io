@@ -158,3 +158,27 @@ dataset_4 <- read_excel(example_xlsx, sheet = 4)
 Neste método apenas é possível importar cada planilha de um arquivo individualmente. Não é preciso de muito *brainpower* para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).
 
 Por isso, é recomendável usar outro pacote da coleção `tidyverse` em combinação como o `readxl`, o `purrr`, que nos oferece as ferramentas necessárias para automatizar tarefas repetitivas. Para conhecer o `purrr` e suas funcionalidades, basta ficar atento no blog que irei abordar sobre este e de outros pacotes.
+
+# Exportação de arquivos Excel
+
+Vamos criar um pequeno *data frame* que podemos exportar.
+
+```{r}
+frutas <- tibble(
+    frutas = factor(c("banana", "maçã", "laranja")),
+    quantidade = c(8, 4, 5)
+)
+
+frutas
+```
+
+Você pode exportar os dados como um arquivo Excel usando o comando `write_xlsx()`, do pacote `writexl`.
+
+```{r}
+#| eval: false
+library(writexl)
+
+write_xlsx(frutas, path = "diretorio/arquivo.xlsx")
+```
+
+De toda forma, é sempre recomendável salvar os dados em .rds, pois os tipos dos dados salvos podem ser perdidos quando importamos os dados novamente de um arquivo .xlsx ou .csv. Assim, arquivos .rds são um pouco mais confiáveis em guardar dados.

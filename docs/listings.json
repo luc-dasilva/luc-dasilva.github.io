@@ -8,9 +8,9 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/blogposts/introducao-r/index.html",
       "/blog/blogposts/importacao-excel/index.html",
-      "/blog/blogposts/introducao-tidyverse/index.html",
-      "/blog/blogposts/introducao-git-github/index.html"
+      "/blog/blogposts/introducao-tidyverse/index.html"
     ]
   }
 ]

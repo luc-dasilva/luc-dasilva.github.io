@@ -46,7 +46,7 @@
     "href": "blog/index.html",
     "title": "Lucas da Silva",
     "section": "",
-    "text": "Planilhas do Excel no R\n\n\nDados do Excel ao R de maneira fácil e rápida.\n\n\n\nLucas da Silva\n\n\n7 de ago. de 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUma breve introdução ao Tidyverse\n\n\nUm resumo do essencial para iniciar no mundo do Tidyverse.\n\n\n\nLucas da Silva\n\n\n5 de ago. de 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUma breve introdução ao Tidyverse\n\n\nUm resumo do essencial para iniciar no mundo do Tidyverse.\n\n\n\nLucas da Silva\n\n\n5 de ago. de 2024\n\n\n\n\n\n\n\n\nSem itens correspondentes"
+    "text": "Iniciando no R: instalação do R e Rstudio\n\n\nSetup do ambiente para ciência de dados.\n\n\n\nLucas da Silva\n\n\n26 de ago. de 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlanilhas do Excel no R\n\n\nDados do Excel ao R de maneira fácil e rápida.\n\n\n\nLucas da Silva\n\n\n7 de ago. de 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUma breve introdução ao Tidyverse\n\n\nUm resumo do essencial para iniciar no mundo do Tidyverse.\n\n\n\nLucas da Silva\n\n\n5 de ago. de 2024\n\n\n\n\n\n\n\n\nSem itens correspondentes"
   },
   {
     "objectID": "blog/blogposts/blogpost1.html",
@@ -208,5 +208,68 @@
     "title": "Planilhas do Excel no R",
     "section": "Especificação de colunas",
     "text": "Especificação de colunas\nEspecificação de colunas é o que define que tipo de dado cada coluna do arquivo Excel será ao ser importado. Por padrão, o read_excel() analisa as primeiras 1000 observações e faz um chute educado sobre qual tipo de dado cada variável possui. É possível aumentar o número de linhas com o parâmetro guess_max.\nPara especificar o tipo de dado de colunas, usamos o parâmetro col_types. Para definir todas as variáveis como, por exemplo, strings, usamos:\n\nread_excel(example_xlsx, col_types = \"text\")\n\n# A tibble: 150 × 5\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n   &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;  \n 1 5.1          3.5         1.4          0.2         setosa \n 2 4.9          3           1.4          0.2         setosa \n 3 4.7          3.2         1.3          0.2         setosa \n 4 4.6          3.1         1.5          0.2         setosa \n 5 5            3.6         1.4          0.2         setosa \n 6 5.4          3.9         1.7          0.4         setosa \n 7 4.6          3.4         1.4          0.3         setosa \n 8 5            3.4         1.5          0.2         setosa \n 9 4.4          2.9         1.4          0.2         setosa \n10 4.9          3.1         1.5          0.1         setosa \n# ℹ 140 more rows\n\n\nPara definir cada coluna individualmente, podemos fazer o seguinte:\n\nread_excel(\n    example_xlsx,\n    col_types = c(\"numeric\", \"numeric\", \"guess\", \"guess\", \"text\")\n)\n\n# A tibble: 150 × 5\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  \n 1          5.1         3.5          1.4         0.2 setosa \n 2          4.9         3            1.4         0.2 setosa \n 3          4.7         3.2          1.3         0.2 setosa \n 4          4.6         3.1          1.5         0.2 setosa \n 5          5           3.6          1.4         0.2 setosa \n 6          5.4         3.9          1.7         0.4 setosa \n 7          4.6         3.4          1.4         0.3 setosa \n 8          5           3.4          1.5         0.2 setosa \n 9          4.4         2.9          1.4         0.2 setosa \n10          4.9         3.1          1.5         0.1 setosa \n# ℹ 140 more rows\n\n\nOs tipos de colunas disponíveis são:\n\nSkip (pula uma coluna)\nGuess (chuta um tipo)\nLogicals (valores lógicos)\nNumeric (numéricos)\nText (texto)\nDate (datas)\nList (listas, para múltiplos tipos de dados)\n\nExemplos:\n\n\n\nlogical\nnumeric\ntext\ndate\nlist\n\n\n\n\nTRUE\n2\nhello\n1999-01-01\nworld\n\n\nFALSE\n3.14\nworld\n2004-02-21\n1"
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html",
+    "href": "blog/blogposts/introducao-git-github/index.html",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "",
+    "text": "R é uma ferramenta que busca auxiliar cientistas analizarem dados e que possui inúmeras excelentes funções built-in para a produção de gráficos e de modelos estatísticos. Consequentemente, muitos usuários do R usam a ferramenta como um software, aprendendo apenas quais funções necessárias para atingir seus objetivos e ignorando todo o resto.\nAprender apenas as funções necessárias do R para determinada tafera, como ciência de dados, é compreensível. De todo modo, aprender a programar e como a linguagem de programação R funciona deve estar nos planos de todo cientista de dados. Saber programar fará você um analista mais flexível e irá aprimorar sua excelência em data science em todos os aspectos, entender os fundamentos do R faz todo o processo de aprendizagem mais simples.\nPrimeiramente iremos aprender como baixar e instalar o R na sua máquina, baixar e instalar o RStudio e conhecer o seu layout de trabalho."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html#instalando-o-r-e-rstudio",
+    "href": "blog/blogposts/introducao-git-github/index.html#instalando-o-r-e-rstudio",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "Instalando o R e RStudio",
+    "text": "Instalando o R e RStudio\nPara começar, você deve ter sua própria cópia do R. Para nossa sorte, o R é totalmente gratuito e fácil de baixar.\nR é gerenciado por um time de desenvolvedores que fazem a linguagem de programação disponível no CRAN. O CRAN oferece opções de download para o Windows, Mac e Linux.\nWindows: Para instalar o R no Windows, selecione o link de download para Windows, no CRAN. Tenha certeza de escolher a versão “base” do R. Você vai baixar um instalador de programa. Execute o instalador. O instalador irá instalar o R no seu computador e adicionar um atalho na sua área de trabalho.\nMac: Para instalar o R no Mac, selecione o link de download para Mac. Clique no pacote da versão mais recente do R. Um instalador irá guiar o processo de instalação, onde os padrões são sensatos para a maioria dos usuários.\nLinux: O R já vem pré-instalado em diversas distribuições Linux, mas você vai querer a versão mais recente do R se a sua estiver desatualizada. O CRAN oferece arquivos para as principais distros pelo link de download para Linux. O processo de instalação varia para cada distro. O CRAN demonstra o processo em sua documentação."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html#usando-r",
+    "href": "blog/blogposts/introducao-git-github/index.html#usando-r",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "Usando R",
+    "text": "Usando R\nO R não é um programa que você simplesmente dá dois clicks para começar a usar, como o Microsoft Word ou Google Chrome. R é uma linguagem de programação, como Python, C, Javascript ou Rust. A maneira de usar o R é escrever comandos na linguagem R e pedir para seu computador interpretá-los. Antigamente, as pessoas executavam o código em R diretamente na linha de comando. Hoje em dia quase todo mundo usa um aplicativo para escrever código em R chamado RStudio e eu recomendo que você faça o mesmo.\n\n\n\nA linguagem de programação R no terminal."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html#a-interface-do-r",
+    "href": "blog/blogposts/introducao-git-github/index.html#a-interface-do-r",
+    "title": "Uma introdução ao R",
+    "section": "A interface do R",
+    "text": "A interface do R\nAntes de você entrar em contato com o seu computador, primeiro você deverá aprender a como falar com ele. É nessa parte que o R e o RStudio entram em cena. RStudio é a forma de como se comunicar com o seu computador. R é o idioma que você conversa com ele.\nPara darmos início, abra o RStudio como qualquer outro programa"
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html#rstudio",
+    "href": "blog/blogposts/introducao-git-github/index.html#rstudio",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "RStudio",
+    "text": "RStudio\nAgora sim, Rstudio é um programa como o Microsoft Word ou Google Chrome, exceto que ao invés de te ajudar a escrever em português ou navegar na internet, o RStudio te ajuda a em escrever em R e a criar scripts. Existem outros aplicativos para auxiliar o código em R, mas recomendo o RStudio pois ele faz escrever código em R (e em outras linguagens de programação, como Python) muito mais simples.\nVocê pode baixar o RStudio de graça, apenas seguir os passos no site da Posit. Uma vez instalado o RStudio, você pode abrir como um programa qualquer.\n\n\n\nPara baixar a última versão do Rstudio, apenas clique no link do arquivo de acordo com o sistema operacional de sua máquina.\n\n\nQuando você abre o RStudio, uma janela aparece com três painés. O maior painel é uma janela do console (onde o código em R é executado e onde os resultados são observados). O painel do console é exatamente o que você veria se usasse o R em linha de comando. Todo o resto é único do RStudio. Em outros painéis estão um editor de texto, uma janela para gráficos, um gerenciador de arquivos e muito mais. Para o painel do editor de texto (também chamado source) aparecer no layout do RStudio, basta criar um script do R (Arquivo &gt; Novo Arquivo &gt; R Scripts ou pelo atalho Ctrl + Shift + N)."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html#a-ui-do-r",
+    "href": "blog/blogposts/introducao-git-github/index.html#a-ui-do-r",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "A UI do R",
+    "text": "A UI do R\nAntes de você entrar em contato com o seu computador, primeiro você deverá aprender a como falar com ele. É nessa parte que o R e o RStudio entram em cena. RStudio é a forma de como se comunicar com o seu computador. R é o idioma que você conversa com ele.\nPara darmos início, abra o RStudio como outro programa qualquer. Quando você abre o RStudio, uma janela deve aparecer na sua tela como essa janela abaixo.\n\n\n\nLayout padrão do RStudio. A seta azul é onde está localizada a linha de comando.\n\n\nSeu computador recebe seus comandos quando você escreve código em R no final do painel do console. Não esqueça de pressionar o botão de Enter para que o comando seja executado. O console aparece no painel da esquerda, mas você pode mudar o layout dos painés se preferir, em Arquivo &gt; Preferências.\nA interface do RStudio é simples. Você escreve seu código em R na última linha do painel do Console no RStudio e pressiona Enter para executar. O código que você escreve é chamado de comando, pois você está dando uma ordem ao computador para fazer algo para você. A linha em que você escreve o comando é chamada de linha de comando.\nQuando você digita um comando na linha de comando e pressiona Enter, seu computador executa o comando e mostra os resultados. Por exemplo, se você digitar 1 + 1 e pressionar Enter, o RStudio vai mostrar o seguinte:\n\n1 + 1\n\n[1] 2\n\n\nEssa é sua primeira mensagem na linguagem de programação R. Para iniciar a falar em R com o seu computador, fique atento aos próximos posts no blog."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-git-github/index.html#a-ui-do-rstudio",
+    "href": "blog/blogposts/introducao-git-github/index.html#a-ui-do-rstudio",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "A UI do Rstudio",
+    "text": "A UI do Rstudio\nAntes de você entrar em contato com o seu computador, primeiro você deverá aprender a como falar com ele. É nessa parte que o R e o RStudio entram em cena. RStudio é a forma de como se comunicar com o seu computador. R é o idioma que você conversa com ele.\nPara darmos início, abra o RStudio como outro programa qualquer."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-r/index.html",
+    "href": "blog/blogposts/introducao-r/index.html",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "",
+    "text": "R é uma ferramenta que busca auxiliar cientistas analizarem dados e que possui inúmeras excelentes funções built-in para a produção de gráficos e de modelos estatísticos. Consequentemente, muitos usuários do R usam a ferramenta como um software, aprendendo apenas quais funções necessárias para atingir seus objetivos e ignorando todo o resto.\nAprender apenas as funções necessárias do R para determinada tafera, como ciência de dados, é compreensível. De todo modo, aprender a programar e como a linguagem de programação R funciona deve estar nos planos de todo cientista de dados. Saber programar fará você um analista mais flexível e irá aprimorar sua excelência em data science em todos os aspectos, entender os fundamentos do R faz todo o processo de aprendizagem mais simples.\nPrimeiramente iremos aprender como baixar e instalar o R na sua máquina, baixar e instalar o RStudio e conhecer o seu layout de trabalho."
+  },
+  {
+    "objectID": "blog/blogposts/introducao-r/index.html#a-ui-do-r",
+    "href": "blog/blogposts/introducao-r/index.html#a-ui-do-r",
+    "title": "Iniciando no R: instalação do R e Rstudio",
+    "section": "A UI do R",
+    "text": "A UI do R\nAntes de você entrar em contato com o seu computador, primeiro você deverá aprender a como falar com ele. É nessa parte que o R e o RStudio entram em cena. RStudio é a forma de como se comunicar com o seu computador. R é o idioma que você conversa com ele.\nPara darmos início, abra o RStudio como outro programa qualquer. Quando você abre o RStudio, uma janela deve aparecer na sua tela como essa janela abaixo.\n\n\n\nLayout padrão do RStudio. A seta azul é onde está localizada a linha de comando.\n\n\nSeu computador recebe seus comandos quando você escreve código em R no final do painel do console. Não esqueça de pressionar o botão de Enter para que o comando seja executado. O console aparece no painel da esquerda, mas você pode mudar o layout dos painés se preferir, em Arquivo &gt; Preferências.\nA interface do RStudio é simples. Você escreve seu código em R na última linha do painel do Console no RStudio e pressiona Enter para executar. O código que você escreve é chamado de comando, pois você está dando uma ordem ao computador para fazer algo para você. A linha em que você escreve o comando é chamada de linha de comando.\nQuando você digita um comando na linha de comando e pressiona Enter, seu computador executa o comando e mostra os resultados. Por exemplo, se você digitar 1 + 1 e pressionar Enter, o RStudio vai mostrar o seguinte:\n\n1 + 1\n\n[1] 2\n\n\nEssa é sua primeira mensagem na linguagem de programação R. Para iniciar a falar em R com o seu computador, fique atento aos próximos posts no blog."
   }
 ]
