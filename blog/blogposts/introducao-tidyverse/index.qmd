@@ -19,9 +19,13 @@ A filosofia do `tidyverse` e a gramática das funções também é utilizada em 
 
 Para instalar o `tidyverse` e seus principais pacotes, basta usar a função `install.packages("tidyverse")`, do R base. Para carregar os pacotes, use `library(tidyverse)`.
 
-# Pacotes do Tidyverse
+```{r}
+library(tidyverse)
+```
 
-Os principais pacotes do `tidyverse` são os seguintes:
+# Principais pacotes do Tidyverse
+
+Os principais pacotes do `tidyverse`, conhecidos como *core tidyverse*, são os seguintes:
 
 | Pacote    | Descrição                                                    |
 |-----------|--------------------------------------------------------------|
@@ -38,16 +42,17 @@ Os principais pacotes do `tidyverse` são os seguintes:
 Além dos pacotes já mencionados, outros pacotes fazem parte do `tidyverse` e são usados frequentemente para trabalhar ao lado dos principais pacotes. O `readxl`, por exemplo, permite a importação de planilhas em formado Excel (.xls ou .xlsx). Para conhecer todos os pacotes que fazem parte do `tidyverse` podemos utilizar a função `tidyverse_packages()`.
 
 ```{r}
-library(tidyverse)
-
 tidyverse_packages()
 ```
 
-É muito comum ocorrer conflitos entre funções, ou seja, o mesmo nome de função existe em diversos pacotes. Para evitar conflitos, podemos especificar o pacote na frente da função que queremos usar, separado por dois pontos escritos duas vezes (`nome_pacote::nome_funcao`).
+É muito comum ocorrer conflitos entre funções, ou seja, o mesmo nome de uma função existe em diversos pacotes. Para evitar conflitos, podemos especificar o pacote na frente da função que queremos usar, separado por dois pontos escritos duas vezes (`nome_pacote::nome_funcao`).
 
 ```{r}
 #| eval: false
 dplyr::filter()
+
+# ou, caso quiser usar a função de mesmo nome do pacote stats
+stats::filter()
 ```
 
 Antes de adentrar em cada pacote, analisaremos o estilo de programação de código R.
@@ -82,20 +87,21 @@ Para facilitar trabalhar com gerenciamento, transformação e visualização de 
 
 Agora iremos destrinchar os principais pacotes que compõem o universo do `tidyverse`.
 
-## Importar e salvar dados
+## Importar e exportar dados
 
-O pacote `readr` facilita ler ou escrever os mais diversos formatos usando funções que começam com `read_*` ou `write_*`. Em comparação ao R base, `readr` é mais rápido, consegue lidar com nomes de colunas problemáticos e datas são convertidas automaticamente. As tabelas importadas são da classe `tibble`, do pacote de mesmo nome, `tibble`, que basicamente é uma versão moderna do `data.frame`. Na mesma linha, é possível usar a função `read_excel()` do pacote `readxl` para importar dados de planilhas de Excel. No exemplo abaixo, importaremos os dados [Palmer Penguins](https://gist.github.com/slopp/ce3b90b9168f2f921784de84fa445651#file-penguins-csv){target="_blank"}, dados de três espécies de pinguim no arquipélago de Palmer, na Antártica.
+O pacote `readr` facilita ler ou escrever os mais diversos formatos usando funções que começam com `read_*` ou `write_*`. Em comparação ao R base, `readr` é mais rápido, consegue lidar com nomes de colunas problemáticos e datas são convertidas automaticamente. As tabelas importadas são da classe `tibble`, do pacote de mesmo nome, `tibble`, que basicamente é uma versão moderna do `data.frame`. Na mesma linha, é possível usar a função `read_excel()` do pacote `readxl` para importar dados de planilhas de Excel. No exemplo abaixo, importaremos o dataset [Palmer Penguins](https://gist.github.com/slopp/ce3b90b9168f2f921784de84fa445651#file-penguins-csv){target="_blank"}, que contém dados de três espécies de pinguim no arquipélago de Palmer, na Antártica.
 
 | Função                         | Descrição                                 |
-|:-----------------------------|:-----------------------------------------|
-| `read_csv()` ou `read_csv2( )` | Importa .CSV (vírgula ou ponto e vírgula) |
+|:-------------------------------|:------------------------------------------|
+| `read_csv()`                   | Importa arquivos .csv (separados por ,)   |
+| `read_csv2( )`                 | Importa arquivos .csv (separados por ;)   |
 | `read_delim()`                 | Separador geral                           |
 | `read_table()`                 | Separador de espaços                      |
 
 ```{r}
 library(tidyverse)
 
-# Assinala o arquivo penguins.csv, que está na pasta "data", ao objeto "penguins"
+# Importa o arquivo penguins.csv, que está na pasta "data", ao objeto "penguins"
 penguins <- read_csv("data/penguins.csv")
 # Inspeciona o conteúdo do objeto "penguins"
 penguins

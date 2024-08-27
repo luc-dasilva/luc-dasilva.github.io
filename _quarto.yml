@@ -5,7 +5,7 @@ project:
 website:
     title: Lucas da Silva
     search: false  
-    favicon: images/favicon.png
+    favicon: img/favicon.png
     navbar:
       pinned: true
       title: false
@@ -15,6 +15,8 @@ website:
         - href: cv/cv.pdf
           text: Currículo
           target: _blank
+        - href: contact/index.qmd
+          text: Contato
         # - href: projeto/index.qmd
         #   text: Projeto
         - href: blog/index.qmd
