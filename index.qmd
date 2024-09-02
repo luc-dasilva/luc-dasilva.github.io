@@ -6,11 +6,28 @@ title-block-banner: false
 about:
   template: trestles
   image-shape: round
-  image-width: 10rem
+  image-width: 12rem
+  links: 
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/
+      target: _blank
+    - icon: envelope-fill
+      text: Email
+      href: mailto:lucasgomes.wdcs@gmail.com
+      target: _blank
+    - icon: github
+      text: Github
+      href: https://github.com/luc-dasilva
+      target: _blank
+    - icon: whatsapp
+      text: Whatsapp
+      href: https://wa.me/5583987901308
+      target: _blank
 ---
 
-Oi! Sou Lucas da Silva, fui intercambista pelo programa [Gira Mundo](https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo){target="_blank"} em 2018. Após retornar ao Brasil consegui uma bolsa de estudos na escola de idiomas [CCAA](https://www.ccaa.com.br/){target="_blank"}, onde conclui o curso de língua inglesa em 2020. Fui professor de língua inglesa em 2021. Atualmente sou graduando em Ciências Contábeis pela [Universidade Federal da Paraíba](https://www.ufpb.br/){target="_blank"}.
+Oi! Sou Lucas da Silva, fui intercambista pelo programa [Gira Mundo](https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo){.external target="_blank"} em 2018. Após retornar ao Brasil consegui uma bolsa de estudos na escola de idiomas [CCAA](https://www.ccaa.com.br/){.external target="_blank"}, onde conclui o curso de língua inglesa em 2020. Fui professor de língua inglesa em 2021. Atualmente sou graduando em Ciências Contábeis pela [Universidade Federal da Paraíba](https://www.ufpb.br/){.external target="_blank"}.
 
-Durante a graduação consegui me engajar em diversos projetos de pesquisa e em um deles conheci a [linguagem de programação R](https://cran.r-project.org/){target="_blank"}, as coleções de pacotes [Tidyverse](https://www.tidyverse.org/){target="_blank"}, [Tidyquant](https://business-science.github.io/tidyquant/){target="_blank"} e [Tidymodels](https://www.tidymodels.org/){target="_blank"}, além dos frameworks [Shiny](https://shiny.posit.co/){target="_blank"} e [Quarto](https://quarto.org/){target="_blank"}. Desde então, venho adquirindo experiência com estas ferramentas e em data literacy.
+Durante a graduação consegui participar em diversos projetos de pesquisa e em um deles conheci a [linguagem de programação R](https://cran.r-project.org/){.external target="_blank"}, as coleções de pacotes [Tidyverse](https://www.tidyverse.org/){.external target="_blank"}, [Tidyquant](https://business-science.github.io/tidyquant/){.external target="_blank"} e [Tidymodels](https://www.tidymodels.org/){.external target="_blank"}, além dos frameworks [Shiny](https://shiny.posit.co/){.external target="_blank"} e [Quarto](https://quarto.org/){.external target="_blank"}. Desde então, venho adquirindo experiência com estas ferramentas e em data literacy.
 
 Fora dos estudos, eu gosto muito de acompanhar esportes, de andar de bicicleta e dos meus gatos.
