@@ -1,0 +1,56 @@
+/*-- scss:defaults --*/
+
+// Colors
+$primary: #2A2A2A;
+$secondary: #1E1E1E;
+$tertiary: #FDEBA4;
+
+$blue: #38577F;
+$white: #FFFFFF;
+$black: #000000;
+
+$light-purple: #767381;
+$light-yellow: #FDF4D1;
+$light-gray: #767381;
+
+// Base document colors
+
+// Navbar
+$navbar-bg: $primary;
+$navbar-fg: $white;
+$menu-text: $tertiary;
+
+// Body and Footer
+$body-bg: $secondary;
+$body-color: $white;
+$footer-bg: $light-yellow; 
+
+// Code
+$code-color: $primary;
+$code-block-bg: #3A3A3A;
+
+// Other
+$link-color: $tertiary;
+
+
+.navbar a, .nav-link {
+  &:hover {
+    color: #FDF4D1;
+  };
+  &:focus,
+  &.active {
+    color: #FDEBA4 !important;
+  }
+}
+
+/*-- scss:rules --*/
+
+@media(min-width: 992px) {
+    div.quarto-about-trestles .about-entity {
+        flex:0 0 22%;
+    }
+}
+
+div.quarto-about-trestles .about-entity {
+    padding-top: 1em;
+}
