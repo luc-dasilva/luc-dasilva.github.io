@@ -40,8 +40,8 @@ website:
 format:
   html:
     theme:
-      light: styles.scss
-      dark: styles-dark.scss
+      light: theming/styles.scss
+      dark: theming/styles-dark.scss
     title-block-banner: true
     mainfont: Source Sans 3
     toc: false

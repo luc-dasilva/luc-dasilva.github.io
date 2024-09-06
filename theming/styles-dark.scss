@@ -2,31 +2,42 @@
 
 // Colors
 $primary: #1A162D;
-$secondary: #FFFFFF;
-$tertiary: #FDEBA4;
-$blue: #38577F;
-$light-purple: #767381;
-$light-yellow: #FDF4D1;
-$light-gray: #767381;
+$secondary: #1C1C1C;
+$tertiary: #C4A85B;
+
+$black: #000000;
+$blue: #8FB0E6;
+$gray: #EDEDED;
+
+$light-yellow: #EDE2B9;
+$light-gray: #2B2B2B;
 
 // Base document colors
 
+// Navbar
 $navbar-bg: $primary;
-$navbar-fg: $secondary;
-$body-color: #000; 
-$footer-bg: $light-yellow; 
-$link-color: $blue;
+$navbar-fg: $gray;
 $menu-text: $tertiary;
+
+// Body and Footer
+$body-bg: $secondary;
+$body-color: $gray;
+$footer-bg: $light-yellow; 
+
+// Code Blocks
 $code-color: $primary;
-$code-block-bg: #F2F2F2;
+$code-block-bg: $light-gray;
+
+// Other
+$link-color: $blue;
 
 .navbar a, .nav-link {
   &:hover {
-    color: #FDF4D1;
+    color: $light-yellow;
   };
   &:focus,
   &.active {
-    color: #FDEBA4 !important;
+    color: $tertiary !important;
   }
 }
 

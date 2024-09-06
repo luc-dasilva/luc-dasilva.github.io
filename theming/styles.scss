@@ -1,45 +1,42 @@
 /*-- scss:defaults --*/
 
 // Colors
-$primary: #2A2A2A;
-$secondary: #1E1E1E;
+$primary: #1A162D;
+$secondary: #FAFAFA; // FAAAAR FAFAFAFAFA FAAAAR, BETTER
 $tertiary: #FDEBA4;
 
-$blue: #38577F;
-$white: #FFFFFF;
 $black: #000000;
+$blue: #38577F;
 
-$light-purple: #767381;
 $light-yellow: #FDF4D1;
-$light-gray: #767381;
+$light-gray: #F2F2F2;
 
 // Base document colors
 
 // Navbar
 $navbar-bg: $primary;
-$navbar-fg: $white;
+$navbar-fg: $secondary;
 $menu-text: $tertiary;
 
 // Body and Footer
+$body-color: $black; 
 $body-bg: $secondary;
-$body-color: $white;
 $footer-bg: $light-yellow; 
 
-// Code
+// Code Blocks
 $code-color: $primary;
-$code-block-bg: #3A3A3A;
+$code-block-bg: $light-gray;
 
-// Other
-$link-color: $tertiary;
-
+// Misc
+$link-color: $blue;
 
 .navbar a, .nav-link {
   &:hover {
-    color: #FDF4D1;
+    color: $light-yellow;
   };
   &:focus,
   &.active {
-    color: #FDEBA4 !important;
+    color: $tertiary !important;
   }
 }
 
