@@ -1,9 +1,9 @@
 /*-- scss:defaults --*/
 
 // Colors
-$primary: #1A162D;
+$primary: #3C394D;
 $secondary: #1C1C1C;
-$tertiary: #C4A85B;
+$tertiary: #FDEBA4;
 
 $black: #000000;
 $blue: #8FB0E6;
@@ -43,12 +43,91 @@ $link-color: $blue;
 
 /*-- scss:rules --*/
 
-@media(min-width: 992px) {
+/*  About Me ---------------------------------------------------------------*/
+
+/* Changes social media text and boxes */
+@media (min-width: 992px) {
+    div.quarto-about-trestles .about-entity .about-link {
+      color: #EDEDED;
+    }
+  }
+
+/* Resizes about page photo container */
+  @media(min-width: 992px) {
     div.quarto-about-trestles .about-entity {
         flex:0 0 22%;
     }
 }
 
+/* A bit more padding */
 div.quarto-about-trestles .about-entity {
     padding-top: 1em;
+}
+
+/* Darker division line */
+@media (min-width: 992px) {
+    div.quarto-about-trestles .about-contents {
+      border-left-color: #4B4B4B;
+    }
+ }
+/*  Blog ------------------------------------------------------------------*/
+
+.card {
+  border-color: #2B2B2B;
+}
+
+.listing-author {
+  color: #8E8E8E;
+}
+
+.listing-date {
+  color: #8E8E8E;
+}
+
+/* Blog post --------------------------------------------------------------*/
+
+.cell-output pre {
+  background-color: #2B2B2B;
+}
+
+.cell-output code {
+  color: #EDEDED;
+}
+
+p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
+    background-color: #2B2B2B;
+    color: #EDEDED;
+    padding: .2em;
+}
+
+.table {
+  border-top-color: #2B2B2B;
+  border-bottom-color: #2B2B2B;
+}
+
+.table > thead {
+  border-bottom-color: #4B4B4B
+}
+
+.sidebar nav[role=doc-toc]>ul a {
+  border-left-color: #4B4B4B;
+}
+
+h2, .h2 {
+  border-bottom-color: #2B2B2B;
+}
+
+code {
+ background-color: #2B2B2B; 
+ color: #EDEDED;
+}
+
+.tab-content {
+  border-color: #2B2B2B;
+}
+
+.nav-tabs {
+    --bs-nav-tabs-border-color: #2B2B2B;
+    --bs-nav-tabs-link-hover-border-color: #4B4B4B;
+    --bs-nav-tabs-link-active-border-color: #4B4B4B;
 }

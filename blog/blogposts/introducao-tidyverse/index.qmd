@@ -334,41 +334,86 @@ Outros grupos de funções que valem a pena estudar são: `separate()`, `case_wh
 -   *escalas*: objetos do tipo `scales_*` manipulam axis, definem escala de cores, etc.
 -   *estatísticas*: objetos `stat_*` permitem aplicar transformações estatísticas.
 
-### Gráfico de linha e de disperção
+::: {.panel-tabset .nav-pills}
+
+### Gráfico de linha
 
 ```{r}
 #| warning: false
-# install.packages(ggthemes)
-library(ggthemes)
+#| code-fold: true
 
-tidyr::table1 |> 
-    ggplot(aes(year, cases)) +
-    geom_line(aes(color = country), linewidth = 1) +
-    scale_color_colorblind() +
-    scale_x_continuous(breaks = c(1999, 2000)) +
-    labs(
-        title = "Casos de tuberculose",
-        subtitle = "Número de casos de tuberculose no Afeganistão, Brasil e China.",
-        x = "",
-        y = "",
-        color = "País"
+library(tidyverse)
+library(ggthemes)
+library(gapminder)
+
+gapmminder_clean <- gapminder |> 
+  summarise(
+    mean_lifeexp = mean(lifeExp),
+    .by = c(continent, year)
+  ) |> 
+  mutate(
+    continent = case_when(
+    continent == "Africa"   ~ "África",
+    continent == "Americas" ~ "Américas",
+    continent == "Asia"     ~ "Ásia",
+    continent == "Europe"   ~ "Europa",
+    TRUE ~ "Oceania"
     )
+  )
+
+gapmminder_clean |> 
+  ggplot(aes(year, mean_lifeexp)) +
+  geom_line(aes(color = continent), linewidth = 1) +
+  scale_color_colorblind() +
+  labs(
+    title =    "Expectativa de vida por continente",
+    subtitle = "Expectativa média de vida ao longo dos anos, por continente",
+    x =        element_blank(),
+    y =        "Expectativa de vida média",
+    caption =  "Fonte: Pacote R Gapminder"
+  ) +
+  theme(
+    plot.title =          element_text(face = "bold"),
+    plot.title.position = "plot",
+    legend.position =     "top",
+    legend.title =        element_blank(),
+    legend.key =          element_rect(color = NA, fill = NA),
+    panel.grid.minor =    element_blank()
+  )
+
+
 ```
 
+### Gráfico de disperção
+
 ```{r}
 #| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggthemes)
+library(palmerpenguins)
+
 penguins |> 
     ggplot(aes(body_mass_g, flipper_length_mm)) +
     geom_point(aes(color = species, shape = species)) +
     geom_smooth(method = "lm") +
     scale_color_colorblind() +
     labs(
-        title = "Massa corporal e comprimento da nadadeira",
-        subtitle = "Dimensões para penguins das espécies Adelie, Chinstrap, e Gentoo",
-        x = "Comprimento da nadadeira (mm)",
-        y = "Massa corporal (g)",
-        color = "Espécies",
-        shape = "Espécies"
+        title =    "Massa corporal e comprimento da nadadeira",
+        subtitle = "Dimensões para pinguins das espécies Adelie, Chinstrap e Gentoo",
+        caption =  "Fonte: Pacote R Palmerpenguins",
+        x =        "Comprimento da nadadeira (mm)",
+        y =        "Massa corporal (g)",
+        color =    "Espécies",
+        shape =    "Espécies"
+    ) +
+    theme(
+      plot.title =            element_text(face = "bold"),
+      plot.title.position =   "plot",
+      plot.caption.position = "plot",
+      legend.key =            element_rect(colour = NA, fill = NA),
+      panel.grid.minor =      element_blank()
     )
 ```
 
@@ -376,14 +421,36 @@ penguins |>
 
 ```{r}
 #| warning: false
+#| code-fold: true
+
+library(tidyverse)
+library(ggthemes)
+library(palmerpenguins)
 
 penguins |> 
     ggplot(aes(species, body_mass_g)) +
     geom_boxplot(aes(fill = species)) +
-    theme_minimal()
+    scale_fill_colorblind() +
+    labs(
+        title =    "Massa corporal de espécies de pinguim",
+        subtitle = "Dimensões para pinguins das espécies Adelie, Chinstrap e Gentoo",
+        caption =  "Fonte: Pacote R Palmerpenguins",
+        x =        element_blank(),
+        y =        "Massa corporal (g)",
+        fill =     "Espécies"
+    ) +
+    theme(
+        plot.title =            element_text(face = "bold"),
+        plot.title.position =   "plot",
+        plot.caption.position = "plot",
+        legend.key =            element_rect(colour = NA, fill = NA),
+        panel.grid.minor =      element_blank()
+    )
 ```
 
-Há tantas coisas que podemos fazer com o `ggplot2` que merece uma postagem somente dedicada a esse pacote. Independente se é necessário contruir um *box plot*, gráfico de densidade, séries temporais, etc, o `ggplot2` tem uma função para isso. Você também pode checar o [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/data-visualization_pt.pdf){target="_blank"} do `ggplot2`\]
+::: 
+
+Há tantas coisas que podemos fazer com o `ggplot2` que merece uma postagem somente dedicada a esse pacote. Independente se é necessário contruir um *box plot*, gráfico de densidade, séries temporais, etc, o `ggplot2` tem uma função para isso. Você também pode checar o [cheat-sheet](https://rstudio.github.io/cheatsheets/translations/portuguese/data-visualization_pt.pdf){target="_blank"} do `ggplot2`.
 
 ## Aplicar funções em vetores ou listas
 
