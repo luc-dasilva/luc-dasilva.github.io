@@ -61,5 +61,4 @@ Quando você digita um comando na linha de comando e pressiona Enter, seu comput
 1 + 1
 ```
 
-
 Essa é sua primeira mensagem na linguagem de programação R. Para iniciar a falar em R com o seu computador, fique atento aos próximos posts no blog.
