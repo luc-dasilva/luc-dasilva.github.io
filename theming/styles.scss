@@ -51,3 +51,7 @@ $link-color: $blue;
 div.quarto-about-trestles .about-entity {
     padding-top: 1em;
 }
+
+.navbar-nav.navbar-nav-scroll.ms-auto {
+    flex-direction: row;
+}

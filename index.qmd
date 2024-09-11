@@ -17,7 +17,7 @@ about:
       href: mailto:lucasgomes.wdcs@gmail.com
       target: _blank
     - icon: github
-      text: Github
+      text: GitHub
       href: https://github.com/luc-dasilva
       target: _blank
     - icon: whatsapp

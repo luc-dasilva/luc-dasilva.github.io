@@ -43,6 +43,10 @@ $link-color: $blue;
 
 /*-- scss:rules --*/
 
+.navbar-nav.navbar-nav-scroll.ms-auto {
+    flex-direction: row;
+}
+
 /*  About Me ---------------------------------------------------------------*/
 
 /* Changes social media text and boxes */
