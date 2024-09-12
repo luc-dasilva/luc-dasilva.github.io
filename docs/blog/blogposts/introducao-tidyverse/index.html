@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.551">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Lucas da Silva">
 <meta name="description" content="Um resumo do essencial para iniciar no mundo do Tidyverse.">
-
 <title>Lucas da Silva - Uma breve introdução ao Tidyverse</title>
 <style>
 code{white-space: pre-wrap;}
@@ -58,7 +55,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <link href="../../../img/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
@@ -72,8 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
     "search-matching-documents-text": "documentos correspondentes",
@@ -88,22 +83,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Procurar"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Sobre mim</span></a>
   </li>  
@@ -116,8 +106,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com" target="_blank"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
@@ -133,16 +123,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Uma breve introdução ao Tidyverse</h1>
                   <div>
@@ -178,75 +164,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Nesta página</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#o-que-é-o-tidyverse" id="toc-o-que-é-o-tidyverse" class="nav-link active" data-scroll-target="#o-que-é-o-tidyverse">O que é o Tidyverse?</a></li>
+<li><a href="#o-que-%C3%A9-o-tidyverse" id="toc-o-que-é-o-tidyverse" class="nav-link active" data-scroll-target="#o-que-%C3%A9-o-tidyverse">O que é o Tidyverse?</a></li>
   <li><a href="#principais-pacotes-do-tidyverse" id="toc-principais-pacotes-do-tidyverse" class="nav-link" data-scroll-target="#principais-pacotes-do-tidyverse">Principais pacotes do Tidyverse</a></li>
-  <li><a href="#estilo-de-programação" id="toc-estilo-de-programação" class="nav-link" data-scroll-target="#estilo-de-programação">Estilo de programação</a></li>
+  <li><a href="#estilo-de-programa%C3%A7%C3%A3o" id="toc-estilo-de-programação" class="nav-link" data-scroll-target="#estilo-de-programa%C3%A7%C3%A3o">Estilo de programação</a></li>
   <li><a href="#operador-pipe" id="toc-operador-pipe" class="nav-link" data-scroll-target="#operador-pipe">Operador <em>Pipe</em></a></li>
-  <li><a href="#os-pacotes-do-tidyverse" id="toc-os-pacotes-do-tidyverse" class="nav-link" data-scroll-target="#os-pacotes-do-tidyverse">Os pacotes do Tidyverse</a>
+  <li>
+<a href="#os-pacotes-do-tidyverse" id="toc-os-pacotes-do-tidyverse" class="nav-link" data-scroll-target="#os-pacotes-do-tidyverse">Os pacotes do Tidyverse</a>
   <ul class="collapse">
-  <li><a href="#importar-e-exportar-dados" id="toc-importar-e-exportar-dados" class="nav-link" data-scroll-target="#importar-e-exportar-dados">Importar e exportar dados</a></li>
+<li><a href="#importa%C3%A7%C3%A3o-e-exporta%C3%A7%C3%A3o-dados" id="toc-importação-e-exportação-dados" class="nav-link" data-scroll-target="#importa%C3%A7%C3%A3o-e-exporta%C3%A7%C3%A3o-dados">Importação e exportação dados</a></li>
   <li><a href="#trabalhando-com-caracteres" id="toc-trabalhando-com-caracteres" class="nav-link" data-scroll-target="#trabalhando-com-caracteres">Trabalhando com caracteres</a></li>
   <li><a href="#gerenciamento-de-datas-e-horas" id="toc-gerenciamento-de-datas-e-horas" class="nav-link" data-scroll-target="#gerenciamento-de-datas-e-horas">Gerenciamento de datas e horas</a></li>
-  <li><a href="#transformação-de-tabelas" id="toc-transformação-de-tabelas" class="nav-link" data-scroll-target="#transformação-de-tabelas">Transformação de tabelas</a>
+  <li>
+<a href="#transforma%C3%A7%C3%A3o-de-tabelas" id="toc-transformação-de-tabelas" class="nav-link" data-scroll-target="#transforma%C3%A7%C3%A3o-de-tabelas">Transformação de tabelas</a>
   <ul class="collapse">
-  <li><a href="#select-e-rename" id="toc-select-e-rename" class="nav-link" data-scroll-target="#select-e-rename"><code>select()</code> e <code>rename()</code></a></li>
+<li><a href="#select-e-rename" id="toc-select-e-rename" class="nav-link" data-scroll-target="#select-e-rename"><code>select()</code> e <code>rename()</code></a></li>
   <li><a href="#filtere-sort" id="toc-filtere-sort" class="nav-link" data-scroll-target="#filtere-sort"><code>filter()</code>e <code>sort()</code></a></li>
   <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><code>summarise()</code></a></li>
   <li><a href="#tabelas-longas-ou-largas" id="toc-tabelas-longas-ou-largas" class="nav-link" data-scroll-target="#tabelas-longas-ou-largas">Tabelas longas ou largas</a></li>
-  </ul></li>
-  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados">Visualização de dados</a></li>
-  <li><a href="#aplicar-funções-em-vetores-ou-listas" id="toc-aplicar-funções-em-vetores-ou-listas" class="nav-link" data-scroll-target="#aplicar-funções-em-vetores-ou-listas">Aplicar funções em vetores ou listas</a></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  <li><a href="#visualiza%C3%A7%C3%A3o-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualiza%C3%A7%C3%A3o-de-dados">Visualização de dados</a></li>
+  <li><a href="#aplicar-fun%C3%A7%C3%B5es-em-vetores-ou-listas" id="toc-aplicar-funções-em-vetores-ou-listas" class="nav-link" data-scroll-target="#aplicar-fun%C3%A7%C3%B5es-em-vetores-ou-listas">Aplicar funções em vetores ou listas</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
-
-
-<p>O <code>tidyverse</code>, uma coleção de pacotes focados em ciência de dados, é um dos principais atrativos da linguagem de programação R. Nesta postagem serão sintetizados os principais aspectos necessários para o início da jornada na ciência de dados com o <code>tidyverse</code>.</p>
-<section id="o-que-é-o-tidyverse" class="level1">
-<h1>O que é o Tidyverse?</h1>
-<p>A gramática do <code>tidyverse</code> segue uma estrutura lógica e comum em todas as suas funções. A principal ideia é que o primeiro parâmetro seja o objeto e então os outros parâmetros venham em seguida. Além disso, um conjunto de verbos são disponibilizados para facilitar o uso das funções.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>O <code>tidyverse</code>, uma coleção de pacotes focados em ciência de dados, é um dos principais atrativos da linguagem de programação R. Nesta postagem serão sintetizados os principais aspectos necessários para o início da jornada na ciência de dados com o <code>tidyverse</code>.</p>
+<section id="o-que-é-o-tidyverse" class="level1"><h1>O que é o Tidyverse?</h1>
+<p>A gramática do <code>tidyverse</code> segue uma estrutura lógica e comum em todas as suas funções. A principal ideia é que o primeiro parâmetro seja um objeto e os outros parâmetros venham em seguida. Além disso, um conjunto de verbos são disponibilizados para facilitar o uso das funções.</p>
 <p>A filosofia do <code>tidyverse</code> e a gramática das funções também é utilizada em diversos outros pacotes, que se tornam compatíveis com a coleção.</p>
-<p>Para instalar o <code>tidyverse</code> e seus principais pacotes, basta usar a função <code>install.packages("tidyverse")</code>, do R base. Para carregar os pacotes, use <code>library(tidyverse)</code>.</p>
+<p>Para instalar o <code>tidyverse</code> e seus principais pacotes, basta usar a função <code>install.packages("tidyverse")</code>, do R base. Para carregar os pacotes, use <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; ── Attaching core tidyverse packages ───────────────────── tidyverse 2.0.0 ──</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.1.4     ✔ readr     2.1.5</span></span>
+<span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.1</span></span>
+<span><span class="co">#&gt; ✔ ggplot2   3.5.1     ✔ tibble    3.2.1</span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.3     ✔ tidyr     1.3.1</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.2     </span></span>
+<span><span class="co">#&gt; ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──</span></span>
+<span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
+<span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
+<span><span class="co">#&gt; ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="principais-pacotes-do-tidyverse" class="level1">
-<h1>Principais pacotes do Tidyverse</h1>
-<p>Os principais pacotes do <code>tidyverse</code>, conhecidos como <em>core tidyverse</em>, são os seguintes:</p>
+</section><section id="principais-pacotes-do-tidyverse" class="level1"><h1>Principais pacotes do Tidyverse</h1>
+<p>Os principais pacotes do <code>tidyverse</code>, conhecidos como os pacotes <em>core tidyverse</em>, são os seguintes:</p>
 <table class="table">
 <colgroup>
 <col style="width: 15%">
 <col style="width: 84%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Pacote</th>
 <th>Descrição</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>ggplot2</td>
@@ -286,465 +261,375 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>Além dos pacotes já mencionados, outros pacotes fazem parte do <code>tidyverse</code> e são usados frequentemente para trabalhar ao lado dos principais pacotes. O <code>readxl</code>, por exemplo, permite a importação de planilhas em formado Excel (.xls ou .xlsx). Para conhecer todos os pacotes que fazem parte do <code>tidyverse</code> podemos utilizar a função <code>tidyverse_packages()</code>.</p>
+<p>Além dos pacotes já mencionados, outros pacotes fazem parte do <code>tidyverse</code> e são usados frequentemente para trabalhar ao lado dos principais pacotes. O <code>readxl</code>, por exemplo, permite a importação de planilhas em formado Excel (.xls ou .xlsx). Para conhecer todos os pacotes que fazem parte do <code>tidyverse</code> podemos utilizar a função <code><a href="https://tidyverse.tidyverse.org/reference/tidyverse_packages.html">tidyverse_packages()</a></code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidyverse_packages</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "broom"         "conflicted"    "cli"           "dbplyr"       
- [5] "dplyr"         "dtplyr"        "forcats"       "ggplot2"      
- [9] "googledrive"   "googlesheets4" "haven"         "hms"          
-[13] "httr"          "jsonlite"      "lubridate"     "magrittr"     
-[17] "modelr"        "pillar"        "purrr"         "ragg"         
-[21] "readr"         "readxl"        "reprex"        "rlang"        
-[25] "rstudioapi"    "rvest"         "stringr"       "tibble"       
-[29] "tidyr"         "xml2"          "tidyverse"    </code></pre>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyverse.tidyverse.org/reference/tidyverse_packages.html">tidyverse_packages</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "broom"         "conflicted"    "cli"           "dbplyr"       </span></span>
+<span><span class="co">#&gt;  [5] "dplyr"         "dtplyr"        "forcats"       "ggplot2"      </span></span>
+<span><span class="co">#&gt;  [9] "googledrive"   "googlesheets4" "haven"         "hms"          </span></span>
+<span><span class="co">#&gt; [13] "httr"          "jsonlite"      "lubridate"     "magrittr"     </span></span>
+<span><span class="co">#&gt; [17] "modelr"        "pillar"        "purrr"         "ragg"         </span></span>
+<span><span class="co">#&gt; [21] "readr"         "readxl"        "reprex"        "rlang"        </span></span>
+<span><span class="co">#&gt; [25] "rstudioapi"    "rvest"         "stringr"       "tibble"       </span></span>
+<span><span class="co">#&gt; [29] "tidyr"         "xml2"          "tidyverse"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>É muito comum ocorrer conflitos entre funções, ou seja, o mesmo nome de uma função existe em diversos pacotes. Para evitar conflitos, podemos especificar o pacote na frente da função que queremos usar, separado por dois pontos escritos duas vezes (<code>nome_pacote::nome_funcao</code>).</p>
+<p>É muito comum ocorrer conflitos entre funções, ou seja, diferentes funções com o mesmo nome existem em diversos pacotes. Para evitar conflitos, podemos especificar o pacote na frente da função que queremos usar, separado por dois pontos escritos duas vezes (<code>nome_pacote::nome_funcao</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">filter</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ou, caso quiser usar a função de mesmo nome do pacote stats</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">filter</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># ou, caso quiser usar a função de mesmo nome do pacote stats</span></span>
+<span><span class="fu">stats</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Antes de adentrar em cada pacote, analisaremos o estilo de programação de código R.</p>
-</section>
-<section id="estilo-de-programação" class="level1">
-<h1>Estilo de programação</h1>
-<p>No R não há um guia universal para o estilo de programação, ou seja, na sintáxe do R não é necessário seguir regras específicas nos <em>scripts.</em> De todo modo, é recomendável trabalhar de uma maneira homogênia, uniforme, legível e clara quando se está escrevendo <em>scripts</em>. O <code>Tidyverse</code> possui seu próprio <a href="https://style.tidyverse.org/" target="_blank">guia de estilo de programação</a>.</p>
+</section><section id="estilo-de-programação" class="level1"><h1>Estilo de programação</h1>
+<p>No R não há um guia universal para o estilo de programação, ou seja, na sintáxe do R não é necessário seguir regras específicas nos <em>scripts.</em> De todo modo, é recomendável trabalhar de uma maneira homogênia, uniforme, legível e clara quando escrevemos <em>scripts</em>. O <code>Tidyverse</code> possui seu próprio <a href="https://style.tidyverse.org/" target="_blank">guia de estilo de programação</a>.</p>
 <p>Resumidamente, as principais recomendações são as seguintes:</p>
 <ul>
 <li>Evitar usar mais de 80 caracteres por linha para facilitar a leitura do código.</li>
 <li>Sempre usar um espaço depois de uma vírgula, mas nunca antes.</li>
 <li>Os operadores (+,-,==,&lt;-,|&gt;, etc.) devem ter um espaço antes e depois.</li>
 <li>Não há espaço entre o nome de uma função e seu primeiro parêntese, nem entre o último parâmetro e o último parêntese da função.</li>
-<li>Evite usar nomes de funções a variáveis comuns (<code>mean &lt;- 5</code> vs <code>mean()</code>)</li>
+<li>Evite usar nomes de funções a variáveis comuns (<code>mean &lt;- 5</code> vs <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>)</li>
 <li>Organize o <em>script</em> separando as seções com comentários (<code># Import data -----</code>)</li>
 <li>Evite acentos ou símbolos especiais em nomes de objetos, arquivos, etc.</li>
-<li>Nomes de objetos devem seguir uma estruturação constante: <code>dia_um</code>, <code>dia_dois</code></li>
+<li>Nomes de objetos devem seguir uma estruturação constante: <code>dia_um</code>, <code>dia_dois</code>
+</li>
 </ul>
 <p>É recomendável usar a indentação corretamente para múltiplos parâmetros de uma função ou funções sequenciadas pelo operador <em>pipe</em> (<code>|&gt;</code>)</p>
-</section>
-<section id="operador-pipe" class="level1">
-<h1>Operador <em>Pipe</em></h1>
-<p>Para facilitar trabalhar com gerenciamento, transformação e visualização de dados, o operador <em>pipe</em>, na forma de <code>|&gt;</code>, é chamado para o resgate. O opereador <em>pipe</em> visa combinar várias funções sem a necessidade de assinalar o resultado a um novo objeto. O <em>pipe</em> aplica basicamente o <em>output</em> de uma função como o primeiro parâmetro da próxima função. Essa forma de combinação permite a junção de diversos passos simultaneamente, para desempenhar tarefas sequenciais. No exemplo abaixo, passamos o vetor <code>1:5</code> para a função <code>mean()</code> para calcular a média.</p>
+</section><section id="operador-pipe" class="level1"><h1>Operador <em>Pipe</em>
+</h1>
+<p>Para facilitar trabalhar com gerenciamento, transformação e visualização de dados, o operador <em>pipe</em>, na forma de <code>|&gt;</code>, é chamado para o resgate. O opereador <em>pipe</em> visa combinar várias funções sem a necessidade de assinalar o resultado a um novo objeto. O <em>pipe</em> aplica basicamente o <em>output</em> de uma função como o primeiro parâmetro da próxima função. Essa forma de combinação permite a junção de diversos passos simultaneamente, para desempenhar tarefas sequenciais. No exemplo abaixo, passamos o vetor <code>1:5</code> para a função <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> para calcular a média por intermédio do <em>pipe</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">|&gt;</span> <span class="fu">mean</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="os-pacotes-do-tidyverse" class="level1">
-<h1>Os pacotes do Tidyverse</h1>
+</section><section id="os-pacotes-do-tidyverse" class="level1"><h1>Os pacotes do Tidyverse</h1>
 <p>Agora iremos destrinchar os principais pacotes que compõem o universo do <code>tidyverse</code>.</p>
-<section id="importar-e-exportar-dados" class="level2">
-<h2 class="anchored" data-anchor-id="importar-e-exportar-dados">Importar e exportar dados</h2>
+<section id="importação-e-exportação-dados" class="level2"><h2 class="anchored" data-anchor-id="importação-e-exportação-dados">Importação e exportação dados</h2>
 <p>O pacote <code>readr</code> facilita ler ou escrever os mais diversos formatos usando funções que começam com <code>read_*</code> ou <code>write_*</code>. Em comparação ao R base, <code>readr</code> é mais rápido, consegue lidar com nomes de colunas problemáticos e datas são convertidas automaticamente. As tabelas importadas são da classe <code>tibble</code>, do pacote de mesmo nome, <code>tibble</code>, que basicamente é uma versão moderna do <code>data.frame</code>. Na mesma linha, é possível usar a função <code>read_excel()</code> do pacote <code>readxl</code> para importar dados de planilhas de Excel. No exemplo abaixo, importaremos o dataset <a href="https://gist.github.com/slopp/ce3b90b9168f2f921784de84fa445651#file-penguins-csv" target="_blank">Palmer Penguins</a>, que contém dados de três espécies de pinguim no arquipélago de Palmer, na Antártica.</p>
 <table class="table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">Função</th>
 <th style="text-align: left;">Descrição</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>read_csv()</code></td>
+<td style="text-align: left;"><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code></td>
 <td style="text-align: left;">Importa arquivos .csv (separados por ,)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>read_csv2( )</code></td>
+<td style="text-align: left;"><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv2()</a></code></td>
 <td style="text-align: left;">Importa arquivos .csv (separados por ;)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>read_delim()</code></td>
+<td style="text-align: left;"><code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_delim()</a></code></td>
 <td style="text-align: left;">Separador geral</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>read_table()</code></td>
+<td style="text-align: left;"><code><a href="https://readr.tidyverse.org/reference/read_table.html">read_table()</a></code></td>
 <td style="text-align: left;">Separador de espaços</td>
 </tr>
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa o arquivo penguins.csv, que está na pasta "data", ao objeto "penguins"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/penguins.csv"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 344 Columns: 9
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): species, island, sex
-dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspeciona o conteúdo do objeto "penguins"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>penguins</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 344 × 9
-   rowid species island    bill_length_mm bill_depth_mm flipper_length_mm
-   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
- 1     1 Adelie  Torgersen           39.1          18.7               181
- 2     2 Adelie  Torgersen           39.5          17.4               186
- 3     3 Adelie  Torgersen           40.3          18                 195
- 4     4 Adelie  Torgersen           NA            NA                  NA
- 5     5 Adelie  Torgersen           36.7          19.3               193
- 6     6 Adelie  Torgersen           39.3          20.6               190
- 7     7 Adelie  Torgersen           38.9          17.8               181
- 8     8 Adelie  Torgersen           39.2          19.6               195
- 9     9 Adelie  Torgersen           34.1          18.1               193
-10    10 Adelie  Torgersen           42            20.2               190
-# ℹ 334 more rows
-# ℹ 3 more variables: body_mass_g &lt;dbl&gt;, sex &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
-</div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># read_csv() importa o arquivo penguins.csv, que está na pasta "data".</span></span>
+<span><span class="co"># Assinalamos o conteúdo do arquivo .csv ao objeto chamado "penguins"</span></span>
+<span><span class="va">penguins</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"data/penguins.csv"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 344 Columns: 9</span></span>
+<span><span class="co">#&gt; ── Column specification ─────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt; Delimiter: ","</span></span>
+<span><span class="co">#&gt; chr (3): species, island, sex</span></span>
+<span><span class="co">#&gt; dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_ma...</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
+<span><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span>
+<span></span>
+<span><span class="co"># Ao visualizar o conteúdo do objeto "penguins" temos um tibble com dados,</span></span>
+<span><span class="co"># pronto para trabalhar</span></span>
+<span><span class="va">penguins</span></span>
+<span><span class="co">#&gt; # A tibble: 344 × 9</span></span>
+<span><span class="co">#&gt;   rowid species island    bill_length_mm bill_depth_mm flipper_length_mm</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1     1 Adelie  Torgersen           39.1          18.7               181</span></span>
+<span><span class="co">#&gt; 2     2 Adelie  Torgersen           39.5          17.4               186</span></span>
+<span><span class="co">#&gt; 3     3 Adelie  Torgersen           40.3          18                 195</span></span>
+<span><span class="co">#&gt; 4     4 Adelie  Torgersen           NA            NA                  NA</span></span>
+<span><span class="co">#&gt; 5     5 Adelie  Torgersen           36.7          19.3               193</span></span>
+<span><span class="co">#&gt; 6     6 Adelie  Torgersen           39.3          20.6               190</span></span>
+<span><span class="co">#&gt; # ℹ 338 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 3 more variables: body_mass_g &lt;dbl&gt;, sex &lt;chr&gt;, year &lt;dbl&gt;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para mais detalhes, vale a pena consultar o <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/data-import_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>readr</code>.</p>
-</section>
-<section id="trabalhando-com-caracteres" class="level2">
-<h2 class="anchored" data-anchor-id="trabalhando-com-caracteres">Trabalhando com caracteres</h2>
+</section><section id="trabalhando-com-caracteres" class="level2"><h2 class="anchored" data-anchor-id="trabalhando-com-caracteres">Trabalhando com caracteres</h2>
 <p>Para trabalhar com caracteres (<em>strings</em>), usamos o pacote <code>stringr</code>, com suas funções sempre iniciando com <code>str_*</code>, seguido pelo verbo e o primeiro parâmetro. Algumas das funções são:</p>
 <table class="table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Função</th>
 <th>Descrição</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td><code>str_replace()</code></td>
+<td><code><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace()</a></code></td>
 <td>Substitui padrões</td>
 </tr>
 <tr class="even">
-<td><code>str_c()</code></td>
+<td><code><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c()</a></code></td>
 <td>Combina caracteres</td>
 </tr>
 <tr class="odd">
-<td><code>str_detect()</code></td>
+<td><code><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a></code></td>
 <td>Detecta padrões</td>
 </tr>
 <tr class="even">
-<td><code>str_extract()</code></td>
+<td><code><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract()</a></code></td>
 <td>Extrai padrões</td>
 </tr>
 <tr class="odd">
-<td><code>str_sub()</code></td>
+<td><code><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub()</a></code></td>
 <td>Extrai por posição</td>
 </tr>
 <tr class="even">
-<td><code>str_length()</code></td>
-<td>Retorna o tamanho de uma <em>string</em></td>
+<td><code><a href="https://stringr.tidyverse.org/reference/str_length.html">str_length()</a></code></td>
+<td>Retorna o tamanho de uma <em>string</em>
+</td>
 </tr>
 </tbody>
 </table>
 <p>É comum o uso de expressões regulares (<em>regex</em>) para detecção de padrões. Abaixo temos alguns exemplos de funções do <code>stringr</code> em ação em conjunto com o uso de <em>regex</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor com os nomes dos meses em inglês</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>month.name</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "January"   "February"  "March"     "April"     "May"       "June"     
- [7] "July"      "August"    "September" "October"   "November"  "December" </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># substituir 'er' com espaço vazio</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_replace</span>(month.name, <span class="st">"ber$"</span>, <span class="st">""</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "January"  "February" "March"    "April"    "May"      "June"    
- [7] "July"     "August"   "Septem"   "Octo"     "Novem"    "Decem"   </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combinar os caracteres</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(month.name, <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">sep =</span> <span class="st">"_"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "January_1"   "February_2"  "March_3"     "April_4"     "May_5"      
- [6] "June_6"      "July_7"      "August_8"    "September_9" "October_10" 
-[11] "November_11" "December_12"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colapsar combinação</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(month.name, <span class="at">collapse =</span> <span class="st">", "</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "January, February, March, April, May, June, July, August, September, October, November, December"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># detectar padrão</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_detect</span>(month.name, <span class="st">"^A"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extrair padrão</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_extract</span>(month.name, <span class="st">"ber$"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] NA    NA    NA    NA    NA    NA    NA    NA    "ber" "ber" "ber" "ber"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extrair caracteres entre as posições 1 e 2</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(month.name, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "Ja" "Fe" "Ma" "Ap" "Ma" "Ju" "Ju" "Au" "Se" "Oc" "No" "De"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tamanho da string de cada mês</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_length</span>(month.name)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 7 8 5 5 3 4 4 6 9 7 8 8</code></pre>
-</div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Vetor com os nomes dos meses em inglês</span></span>
+<span><span class="va">month.name</span></span>
+<span><span class="co">#&gt;  [1] "January"   "February"  "March"     "April"     "May"       "June"     </span></span>
+<span><span class="co">#&gt;  [7] "July"      "August"    "September" "October"   "November"  "December"</span></span>
+<span></span>
+<span><span class="co"># substituir 'ber' com espaço vazio</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_replace.html">str_replace</a></span><span class="op">(</span><span class="va">month.name</span>, pattern <span class="op">=</span> <span class="st">"ber$"</span>, <span class="st">""</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "January"  "February" "March"    "April"    "May"      "June"    </span></span>
+<span><span class="co">#&gt;  [7] "July"     "August"   "Septem"   "Octo"     "Novem"    "Decem"</span></span>
+<span></span>
+<span><span class="co"># combinar os caracteres</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="va">month.name</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">12</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "January_1"   "February_2"  "March_3"     "April_4"     "May_5"      </span></span>
+<span><span class="co">#&gt;  [6] "June_6"      "July_7"      "August_8"    "September_9" "October_10" </span></span>
+<span><span class="co">#&gt; [11] "November_11" "December_12"</span></span>
+<span></span>
+<span><span class="co"># colapsar combinação</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_c.html">str_c</a></span><span class="op">(</span><span class="va">month.name</span>, collapse <span class="op">=</span> <span class="st">", "</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "January, February, March, April, May, June, July, August, September, October, November, December"</span></span>
+<span></span>
+<span><span class="co"># detectar padrão</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect</a></span><span class="op">(</span><span class="va">month.name</span>, pattern <span class="op">=</span> <span class="st">"^A"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></span>
+<span></span>
+<span><span class="co"># extrair padrão</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract</a></span><span class="op">(</span><span class="va">month.name</span>, pattern <span class="op">=</span> <span class="st">"ber$"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] NA    NA    NA    NA    NA    NA    NA    NA    "ber" "ber" "ber" "ber"</span></span>
+<span></span>
+<span><span class="co"># extrair caracteres entre as posições 1 e 2</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_sub.html">str_sub</a></span><span class="op">(</span><span class="va">month.name</span>, start <span class="op">=</span> <span class="fl">1</span>, end <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "Ja" "Fe" "Ma" "Ap" "Ma" "Ju" "Ju" "Au" "Se" "Oc" "No" "De"</span></span>
+<span></span>
+<span><span class="co"># tamanho da string de cada mês</span></span>
+<span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_length.html">str_length</a></span><span class="op">(</span><span class="va">month.name</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] 7 8 5 5 3 4 4 6 9 7 8 8</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Mais detalhes sobre as funções e expressões regulares podem ser encontrados no <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/strings_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>stringr</code>.</p>
-</section>
-<section id="gerenciamento-de-datas-e-horas" class="level2">
-<h2 class="anchored" data-anchor-id="gerenciamento-de-datas-e-horas">Gerenciamento de datas e horas</h2>
+</section><section id="gerenciamento-de-datas-e-horas" class="level2"><h2 class="anchored" data-anchor-id="gerenciamento-de-datas-e-horas">Gerenciamento de datas e horas</h2>
 <p>O pacote <code>lubridate</code> é excelente para lidar com datas e horas. Apenas devemos conhecer as seguintes abreviações:</p>
 <ul>
-<li><code>ymd</code> signfica <code>y:year</code> (ano), <code>m:month</code> (mês), <code>d:day</code> (dia)</li>
-<li><code>hms</code> signfica <code>h:hour</code> (hora), <code>m:minutes</code> (minutos), <code>s:seconds</code> (segundos)</li>
+<li>
+<code>ymd</code> signfica <code>y:year</code> (ano), <code>m:month</code> (mês), <code>d:day</code> (dia)</li>
+<li>
+<code>hms</code> signfica <code>h:hour</code> (hora), <code>m:minutes</code> (minutos), <code>s:seconds</code> (segundos)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vetor com datas</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>datas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2020/12/31"</span>, <span class="st">"2012/05/04"</span>, <span class="st">"2003/09/24"</span>,<span class="st">"2017/11/24"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># vetor com datas e horas</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>datas_horas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1973-08-11 02:00"</span>, <span class="st">"2009-06-13 20:00"</span>)</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>datas <span class="ot">&lt;-</span> <span class="fu">ymd</span>(datas)</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>datas</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2020-12-31" "2012-05-04" "2003-09-24" "2017-11-24"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dmy</span>(<span class="st">"13-08-2002"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2002-08-13"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd</span>(<span class="st">"20020813"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2002-08-13"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extrair o ano</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span>(datas)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2020 2012 2003 2017</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extrair o mês</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(datas)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12  5  9 11</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extrair o dia da semana</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(datas)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5 6 4 6</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extrair a hora</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hour</span>(datas_horas)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  2 20</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adiciona 10 dias</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>datas <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2021-01-10" "2012-05-14" "2003-10-04" "2017-12-04"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adiciona 1 mês</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>datas <span class="sc">+</span> <span class="fu">month</span>(<span class="dv">1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2021-01-01" "2012-05-05" "2003-09-25" "2017-11-25"</code></pre>
-</div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># vetor com datas</span></span>
+<span><span class="va">datas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2020/12/31"</span>, <span class="st">"2012/05/04"</span>, <span class="st">"2003/09/24"</span>,<span class="st">"2017/11/24"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># vetor com datas e horas</span></span>
+<span><span class="va">datas_horas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"1973-08-11 02:00"</span>, <span class="st">"2009-06-13 20:00"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">datas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="va">datas</span><span class="op">)</span></span>
+<span><span class="va">datas</span></span>
+<span><span class="co">#&gt; [1] "2020-12-31" "2012-05-04" "2003-09-24" "2017-11-24"</span></span>
+<span></span>
+<span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">dmy</a></span><span class="op">(</span><span class="st">"13-08-2002"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2002-08-13"</span></span>
+<span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/ymd.html">ymd</a></span><span class="op">(</span><span class="st">"20020813"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2002-08-13"</span></span>
+<span></span>
+<span><span class="co"># extrair o ano</span></span>
+<span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/year.html">year</a></span><span class="op">(</span><span class="va">datas</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2020 2012 2003 2017</span></span>
+<span></span>
+<span><span class="co"># extrair o mês</span></span>
+<span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/month.html">month</a></span><span class="op">(</span><span class="va">datas</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 12  5  9 11</span></span>
+<span></span>
+<span><span class="co"># extrair o dia da semana</span></span>
+<span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html">wday</a></span><span class="op">(</span><span class="va">datas</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 5 6 4 6</span></span>
+<span></span>
+<span><span class="co"># extrair a hora</span></span>
+<span><span class="fu"><a href="https://lubridate.tidyverse.org/reference/hour.html">hour</a></span><span class="op">(</span><span class="va">datas_horas</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]  2 20</span></span>
+<span></span>
+<span><span class="co"># adiciona 10 dias</span></span>
+<span><span class="va">datas</span> <span class="op">+</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/period.html">days</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2021-01-10" "2012-05-14" "2003-10-04" "2017-12-04"</span></span>
+<span></span>
+<span><span class="co"># adiciona 1 mês</span></span>
+<span><span class="va">datas</span> <span class="op">+</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/month.html">month</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2021-01-01" "2012-05-05" "2003-09-25" "2017-11-25"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para mais detalhes, veja o <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/lubridate_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>lubridate</code>.</p>
-</section>
-<section id="transformação-de-tabelas" class="level2">
-<h2 class="anchored" data-anchor-id="transformação-de-tabelas">Transformação de tabelas</h2>
+</section><section id="transformação-de-tabelas" class="level2"><h2 class="anchored" data-anchor-id="transformação-de-tabelas">Transformação de tabelas</h2>
 <p>Os pacotes <code>dplyr</code> e <code>tidyr</code> oferecem gramática para a transformação de dados, ou seja, um conjunto de verbos úteis para resolver problemas. As funções mais importantes são:</p>
 <table class="table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Função</th>
 <th>Descrição</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td><code>mutate()</code></td>
+<td><code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code></td>
 <td>Adiciona ou modifica variáveis</td>
 </tr>
 <tr class="even">
-<td><code>select()</code></td>
+<td><code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code></td>
 <td>Seleciona variábeis</td>
 </tr>
 <tr class="odd">
-<td><code>filter()</code></td>
+<td><code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code></td>
 <td>Aplica filtro</td>
 </tr>
 <tr class="even">
-<td><code>summarise()</code></td>
+<td><code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code></td>
 <td>Reduz variáveis</td>
 </tr>
 <tr class="odd">
-<td><code>rename()</code></td>
+<td><code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code></td>
 <td>Renomeia colunaas</td>
 </tr>
 </tbody>
 </table>
-<section id="select-e-rename" class="level3">
-<h3 class="anchored" data-anchor-id="select-e-rename"><code>select()</code> e <code>rename()</code></h3>
-<p>Conseguimos selecionar ou remover colunas com a função <code>select()</code>, usando o nome ou índice da coluna. Para deletar colunas apenas usamos o ponto de exclamação antes do nome ou índice da coluna. A função <code>rename()</code>renomeia colunas da mesma forma, usando o nome ou índice da coluna.</p>
+<section id="select-e-rename" class="level3"><h3 class="anchored" data-anchor-id="select-e-rename">
+<code>select()</code> e <code>rename()</code>
+</h3>
+<p>Conseguimos selecionar ou remover colunas com a função <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code>, usando o nome ou índice da coluna. Para deletar colunas apenas usamos o ponto de exclamação antes do nome ou índice da coluna. A função <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code>renomeia colunas da mesma forma, usando o nome ou índice da coluna.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assinala o resultado da cadeia ao objeto "penguins_2" </span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>penguins_2 <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Seleciona a coluna "rowid".</span></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># O ponto de exclamação indica a remoção da coluna "rowid"</span></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">!</span>rowid) <span class="sc">|&gt;</span> </span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Renomeia a coluna "species" como "penguin_species"</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">penguin_species =</span> species)</span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando o novo objeto</span></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>penguins_2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 344 × 8
-   penguin_species island    bill_length_mm bill_depth_mm flipper_length_mm
-   &lt;chr&gt;           &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
- 1 Adelie          Torgersen           39.1          18.7               181
- 2 Adelie          Torgersen           39.5          17.4               186
- 3 Adelie          Torgersen           40.3          18                 195
- 4 Adelie          Torgersen           NA            NA                  NA
- 5 Adelie          Torgersen           36.7          19.3               193
- 6 Adelie          Torgersen           39.3          20.6               190
- 7 Adelie          Torgersen           38.9          17.8               181
- 8 Adelie          Torgersen           39.2          19.6               195
- 9 Adelie          Torgersen           34.1          18.1               193
-10 Adelie          Torgersen           42            20.2               190
-# ℹ 334 more rows
-# ℹ 3 more variables: body_mass_g &lt;dbl&gt;, sex &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Assinala o resultado da cadeia ao objeto "penguins_2" </span></span>
+<span><span class="va">penguins_2</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co"># Seleciona a coluna "rowid".</span></span>
+<span>    <span class="co"># O ponto de exclamação indica a remoção da coluna "rowid"</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">!</span><span class="va">rowid</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co"># Renomeia a coluna "species" como "penguin_species"</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>penguin_species <span class="op">=</span> <span class="va">species</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Visualizando o novo objeto</span></span>
+<span><span class="va">penguins_2</span></span>
+<span><span class="co">#&gt; # A tibble: 344 × 8</span></span>
+<span><span class="co">#&gt;   penguin_species island    bill_length_mm bill_depth_mm flipper_length_mm</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;           &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Adelie          Torgersen           39.1          18.7               181</span></span>
+<span><span class="co">#&gt; 2 Adelie          Torgersen           39.5          17.4               186</span></span>
+<span><span class="co">#&gt; 3 Adelie          Torgersen           40.3          18                 195</span></span>
+<span><span class="co">#&gt; 4 Adelie          Torgersen           NA            NA                  NA</span></span>
+<span><span class="co">#&gt; 5 Adelie          Torgersen           36.7          19.3               193</span></span>
+<span><span class="co">#&gt; 6 Adelie          Torgersen           39.3          20.6               190</span></span>
+<span><span class="co">#&gt; # ℹ 338 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 3 more variables: body_mass_g &lt;dbl&gt;, sex &lt;chr&gt;, year &lt;dbl&gt;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="filtere-sort" class="level3">
-<h3 class="anchored" data-anchor-id="filtere-sort"><code>filter()</code>e <code>sort()</code></h3>
-<p>Para filtrar dados, usamos o verbo <code>filter()</code> com operadores lógicos (<code>&gt;</code>, <code>==</code>, etc.) ou funções retornando em valores lógicos (<code>str_detect()</code>, <code>is.na()</code>). A função <code>arrange()</code> classifica os valores de menor para maior ou classifica múltiplas variáveis.</p>
+</section><section id="filtere-sort" class="level3"><h3 class="anchored" data-anchor-id="filtere-sort">
+<code>filter()</code>e <code>sort()</code>
+</h3>
+<p>Para filtrar dados, usamos o verbo <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> com operadores lógicos (<code>&gt;</code>, <code>==</code>, etc.) ou funções retornando em valores lógicos (<code><a href="https://stringr.tidyverse.org/reference/str_detect.html">str_detect()</a></code>, <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code>). A função <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> classifica os valores de menor para maior ou classifica múltiplas variáveis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>penguins_2 <span class="sc">|&gt;</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filtra linhas que o conteúdo da coluna "island" seja igual a "Dream"</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">"Dream"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classifica os dados pela coluna "year"</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(year)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 124 × 8
-   penguin_species island bill_length_mm bill_depth_mm flipper_length_mm
-   &lt;chr&gt;           &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
- 1 Adelie          Dream            39.5          16.7               178
- 2 Adelie          Dream            37.2          18.1               178
- 3 Adelie          Dream            39.5          17.8               188
- 4 Adelie          Dream            40.9          18.9               184
- 5 Adelie          Dream            36.4          17                 195
- 6 Adelie          Dream            39.2          21.1               196
- 7 Adelie          Dream            38.8          20                 190
- 8 Adelie          Dream            42.2          18.5               180
- 9 Adelie          Dream            37.6          19.3               181
-10 Adelie          Dream            39.8          19.1               184
-# ℹ 114 more rows
-# ℹ 3 more variables: body_mass_g &lt;dbl&gt;, sex &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins_2</span> <span class="op">|&gt;</span></span>
+<span>    <span class="co"># Filtra linhas que o conteúdo da coluna "island" seja igual a "Dream"</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">island</span> <span class="op">==</span> <span class="st">"Dream"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co"># Classifica os dados pela coluna "year"</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 124 × 8</span></span>
+<span><span class="co">#&gt;   penguin_species island bill_length_mm bill_depth_mm flipper_length_mm</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;           &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Adelie          Dream            39.5          16.7               178</span></span>
+<span><span class="co">#&gt; 2 Adelie          Dream            37.2          18.1               178</span></span>
+<span><span class="co">#&gt; 3 Adelie          Dream            39.5          17.8               188</span></span>
+<span><span class="co">#&gt; 4 Adelie          Dream            40.9          18.9               184</span></span>
+<span><span class="co">#&gt; 5 Adelie          Dream            36.4          17                 195</span></span>
+<span><span class="co">#&gt; 6 Adelie          Dream            39.2          21.1               196</span></span>
+<span><span class="co">#&gt; # ℹ 118 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 3 more variables: body_mass_g &lt;dbl&gt;, sex &lt;chr&gt;, year &lt;dbl&gt;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="summarise" class="level3">
-<h3 class="anchored" data-anchor-id="summarise"><code>summarise()</code></h3>
+</section><section id="summarise" class="level3"><h3 class="anchored" data-anchor-id="summarise"><code>summarise()</code></h3>
 <p>Como encontramos a média do tamanho dos bicos dos pinguins na ilha de Biscoe, por espécie de pinguim?</p>
-<p>Para encontrarmos a resposta, devemos filtrar os dados pela ilha Biscoe e então agrupar por espécies. Quando usamos a função <code>summarise()</code>, podemos agrupar os dados para executarmos a redução dos dados.</p>
+<p>Para encontrarmos a resposta, devemos filtrar os dados pela ilha Biscoe e então agrupar por espécies. Quando usamos a função <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code>, podemos agrupar os dados para executarmos a redução dos dados.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>penguins_2 <span class="sc">|&gt;</span> </span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filtra linhas que o conteúdo da coluna "island" seja igual a "Biscoe"</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(island <span class="sc">==</span> <span class="st">"Biscoe"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cálculo da média da coluna "bill_length_mm" através da função mean()</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># O resultado do cálculo será assinalado a nova coluna "bill_length_mm_mean"</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># O segundo parâmetro (na.rm = TRUE) remove os dados não identificados (NAs)</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># O cálculo é aplicado ao agrupamento de cada espécie, na coluna "penguin_species"</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">bill_length_mm_mean =</span> <span class="fu">mean</span>(bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">.by =</span> penguin_species</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> </span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classifica a tabela resultante pelo tamanho do bico</span></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(bill_length_mm_mean)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-  penguin_species bill_length_mm_mean
-  &lt;chr&gt;                         &lt;dbl&gt;
-1 Adelie                         39.0
-2 Gentoo                         47.5</code></pre>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins_2</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co"># Filtra linhas em que o conteúdo da coluna "island" seja igual a "Biscoe"</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">island</span> <span class="op">==</span> <span class="st">"Biscoe"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co"># Cálculo da média da coluna "bill_length_mm" através da função mean()</span></span>
+<span>    <span class="co"># O resultado do cálculo será assinalado a nova coluna "bill_length_mm_mean"</span></span>
+<span>    <span class="co"># O segundo parâmetro (na.rm = TRUE) remove os dados não identificados (NAs)</span></span>
+<span>    <span class="co"># O cálculo é aplicado ao agrupamento de cada espécie, na coluna "penguin_species"</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>        bill_length_mm_mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">bill_length_mm</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>        .by <span class="op">=</span> <span class="va">penguin_species</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co"># Classifica a tabela resultante pelo tamanho do bico</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">bill_length_mm_mean</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 2 × 2</span></span>
+<span><span class="co">#&gt;   penguin_species bill_length_mm_mean</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;                         &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Adelie                         39.0</span></span>
+<span><span class="co">#&gt; 2 Gentoo                         47.5</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section id="tabelas-longas-ou-largas" class="level3">
-<h3 class="anchored" data-anchor-id="tabelas-longas-ou-largas">Tabelas longas ou largas</h3>
+</section><section id="tabelas-longas-ou-largas" class="level3"><h3 class="anchored" data-anchor-id="tabelas-longas-ou-largas">Tabelas longas ou largas</h3>
 <p>É muito comum modificar tabelas nos dois formatos: longas ou largas. Tabelas longas são mais comuns para trabalhar dados, porém muitas vezes os dados que se tem em mãos são estruturados em tabelas largas ou em algumas ocasiões tabelas longas são desejadas.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela larga</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>tidyr<span class="sc">::</span>table4a</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  country     `1999` `2000`
-  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
-1 Afghanistan    745   2666
-2 Brazil       37737  80488
-3 China       212258 213766</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela larga para tabela longa</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>table4a_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span>table4a <span class="sc">|&gt;</span> </span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">cols =</span> <span class="sc">!</span>country,</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_to =</span> <span class="st">"cases"</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela longa</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>table4a_long</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  country     year   cases
-  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;
-1 Afghanistan 1999     745
-2 Afghanistan 2000    2666
-3 Brazil      1999   37737
-4 Brazil      2000   80488
-5 China       1999  212258
-6 China       2000  213766</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabela longa para tabela larga novamente</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>table4a_long <span class="sc">|&gt;</span> </span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_from =</span> year,</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_from =</span> cases</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  country     `1999` `2000`
-  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;
-1 Afghanistan    745   2666
-2 Brazil       37737  80488
-3 China       212258 213766</code></pre>
-</div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Tabela larga</span></span>
+<span><span class="fu">tidyr</span><span class="fu">::</span><span class="va"><a href="https://tidyr.tidyverse.org/reference/table1.html">table4a</a></span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 3</span></span>
+<span><span class="co">#&gt;   country     `1999` `2000`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Afghanistan    745   2666</span></span>
+<span><span class="co">#&gt; 2 Brazil       37737  80488</span></span>
+<span><span class="co">#&gt; 3 China       212258 213766</span></span>
+<span></span>
+<span><span class="co"># Tabela larga para tabela longa</span></span>
+<span><span class="va">table4a_long</span> <span class="op">&lt;-</span> <span class="fu">tidyr</span><span class="fu">::</span><span class="va"><a href="https://tidyr.tidyverse.org/reference/table1.html">table4a</a></span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span></span>
+<span>        cols <span class="op">=</span> <span class="op">!</span><span class="va">country</span>,</span>
+<span>        names_to <span class="op">=</span> <span class="st">"year"</span>,</span>
+<span>        values_to <span class="op">=</span> <span class="st">"cases"</span></span>
+<span>    <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Tabela longa</span></span>
+<span><span class="va">table4a_long</span></span>
+<span><span class="co">#&gt; # A tibble: 6 × 3</span></span>
+<span><span class="co">#&gt;   country     year   cases</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Afghanistan 1999     745</span></span>
+<span><span class="co">#&gt; 2 Afghanistan 2000    2666</span></span>
+<span><span class="co">#&gt; 3 Brazil      1999   37737</span></span>
+<span><span class="co">#&gt; 4 Brazil      2000   80488</span></span>
+<span><span class="co">#&gt; 5 China       1999  212258</span></span>
+<span><span class="co">#&gt; 6 China       2000  213766</span></span>
+<span></span>
+<span><span class="co"># Tabela longa para tabela larga novamente</span></span>
+<span><span class="va">table4a_long</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span></span>
+<span>        names_from <span class="op">=</span> <span class="va">year</span>,</span>
+<span>        values_from <span class="op">=</span> <span class="va">cases</span></span>
+<span>    <span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 3</span></span>
+<span><span class="co">#&gt;   country     `1999` `2000`</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 Afghanistan    745   2666</span></span>
+<span><span class="co">#&gt; 2 Brazil       37737  80488</span></span>
+<span><span class="co">#&gt; 3 China       212258 213766</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>De fato, o uso de tabelas longas dá origem ao termo tabelas <em>tidy</em>, o modelo de estruturação de dados ideal para data science, e que eventualmente nomeia o <code>tidyverse</code>. Uma tabela é considerada <em>tidy</em> quando:</p>
 <ol type="1">
@@ -752,70 +637,72 @@ dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_...
 <li>Cada observação é uma linha</li>
 <li>Cada valor é uma célula (e cada célula é apenas um valor)</li>
 </ol>
-<p>Outros grupos de funções que valem a pena estudar são: <code>separate()</code>, <code>case_when()</code>, <code>complete()</code> e as funções de junção de tabelas. É possível encontrar essas informações no <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/data-transformation_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>dplyr</code> e no <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/tidyr_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>tidyr</code>.</p>
-</section>
-</section>
-<section id="visualização-de-dados" class="level2">
-<h2 class="anchored" data-anchor-id="visualização-de-dados">Visualização de dados</h2>
+<p>Outros grupos de funções que valem a pena estudar são: <code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>, <code><a href="https://tidyr.tidyverse.org/reference/complete.html">complete()</a></code> e as funções de junção de tabelas. É possível encontrar essas informações no <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/data-transformation_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>dplyr</code> e no <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/tidyr_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>tidyr</code>.</p>
+</section></section><section id="visualização-de-dados" class="level2"><h2 class="anchored" data-anchor-id="visualização-de-dados">Visualização de dados</h2>
 <p><code>ggplot2</code> é um sistema moderno de visualização de dados extremamente versátil. Diferente do sistema de gráficos do R base, no <code>ggplot2</code> uma gramática diferente é usada. A gramática dos gráficos (gg) consiste na soma de inúmeros e independentes camadas ou objetos combinados usando o <code>+</code> para construir o gráfico.</p>
 <p><code>ggplot2</code> diferencia entre dados, o que é demonstrado e como é demonstrado.</p>
 <ul>
-<li><em>dados</em>: os dados a serem utilizados (<code>data.frame</code> ou <code>tibble</code>).</li>
-<li><em>estética</em>: a função <code>aes()</code> indica as variáveis que correspondem aos axis x,y,z, ou quando é pretendido aplicar parâmetros gráficos (como cores, tamanhos e formatos) conforme o com o gráfico. É possível incluir <code>aes()</code> na função <code>ggplot()</code> ou na função correspondente a uma geometria <code>geom_*</code>.</li>
-<li><em>geometria</em>: objetos <code>geom_*</code> indicam qual geometria a ser usada (<code>geom_point()</code>, <code>geom_line()</code>, <code>geom_boxplot()</code>, etc.).</li>
-<li><em>escalas</em>: objetos do tipo <code>scales_*</code> manipulam axis, definem escala de cores, etc.</li>
-<li><em>estatísticas</em>: objetos <code>stat_*</code> permitem aplicar transformações estatísticas.</li>
+<li>
+<em>dados</em>: os dados a serem utilizados (<code>data.frame</code> ou <code>tibble</code>).</li>
+<li>
+<em>estética</em>: a função <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> indica as variáveis que correspondem aos axis x,y,z, ou quando é pretendido aplicar parâmetros gráficos (como cores, tamanhos e formatos) conforme o com o gráfico. É possível incluir <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> na função <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> ou na função correspondente a uma geometria <code>geom_*</code>.</li>
+<li>
+<em>geometria</em>: objetos <code>geom_*</code> indicam qual geometria a ser usada (<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code>, etc.).</li>
+<li>
+<em>escalas</em>: objetos do tipo <code>scales_*</code> manipulam axis, definem escala de cores, etc.</li>
+<li>
+<em>estatísticas</em>: objetos <code>stat_*</code> permitem aplicar transformações estatísticas.</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Gráfico de linha</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Gráfico de disperção</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Boxplot</a></li></ul>
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Gráfico de linha</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Gráfico de disperção</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Boxplot</a></li>
+</ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details class="code-fold">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>gapmminder_clean <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_lifeexp =</span> <span class="fu">mean</span>(lifeExp),</span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.by =</span> <span class="fu">c</span>(continent, year)</span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">continent =</span> <span class="fu">case_when</span>(</span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>    continent <span class="sc">==</span> <span class="st">"Africa"</span>   <span class="sc">~</span> <span class="st">"África"</span>,</span>
-<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>    continent <span class="sc">==</span> <span class="st">"Americas"</span> <span class="sc">~</span> <span class="st">"Américas"</span>,</span>
-<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>    continent <span class="sc">==</span> <span class="st">"Asia"</span>     <span class="sc">~</span> <span class="st">"Ásia"</span>,</span>
-<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>    continent <span class="sc">==</span> <span class="st">"Europe"</span>   <span class="sc">~</span> <span class="st">"Europa"</span>,</span>
-<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Oceania"</span></span>
-<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>gapmminder_clean <span class="sc">|&gt;</span> </span>
-<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, mean_lifeexp)) <span class="sc">+</span></span>
-<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> continent), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span>    <span class="st">"Expectativa de vida por continente"</span>,</span>
-<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Expectativa média de vida ao longo dos anos, por continente"</span>,</span>
-<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span>        <span class="fu">element_blank</span>(),</span>
-<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span>        <span class="st">"Expectativa de vida média"</span>,</span>
-<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span>  <span class="st">"Fonte: Pacote R Gapminder"</span></span>
-<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb57-31"><a href="#cb57-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb57-32"><a href="#cb57-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span>          <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb57-33"><a href="#cb57-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb57-34"><a href="#cb57-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span>     <span class="st">"top"</span>,</span>
-<span id="cb57-35"><a href="#cb57-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span>        <span class="fu">element_blank</span>(),</span>
-<span id="cb57-36"><a href="#cb57-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.key =</span>          <span class="fu">element_rect</span>(<span class="at">color =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>),</span>
-<span id="cb57-37"><a href="#cb57-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span>    <span class="fu">element_blank</span>()</span>
-<span id="cb57-38"><a href="#cb57-38" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Código</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gapmminder_clean</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    mean_lifeexp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">lifeExp</span><span class="op">)</span>,</span>
+<span>    .by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">continent</span>, <span class="va">year</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    continent <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span></span>
+<span>    <span class="va">continent</span> <span class="op">==</span> <span class="st">"Africa"</span>   <span class="op">~</span> <span class="st">"África"</span>,</span>
+<span>    <span class="va">continent</span> <span class="op">==</span> <span class="st">"Americas"</span> <span class="op">~</span> <span class="st">"Américas"</span>,</span>
+<span>    <span class="va">continent</span> <span class="op">==</span> <span class="st">"Asia"</span>     <span class="op">~</span> <span class="st">"Ásia"</span>,</span>
+<span>    <span class="va">continent</span> <span class="op">==</span> <span class="st">"Europe"</span>   <span class="op">~</span> <span class="st">"Europa"</span>,</span>
+<span>    <span class="cn">TRUE</span> <span class="op">~</span> <span class="st">"Oceania"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">gapmminder_clean</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">mean_lifeexp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span>, linewidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="http://jrnold.github.io/ggthemes/reference/colorblind.html">scale_color_colorblind</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span>    <span class="st">"Expectativa de vida por continente"</span>,</span>
+<span>    subtitle <span class="op">=</span> <span class="st">"Expectativa média de vida ao longo dos anos, por continente"</span>,</span>
+<span>    x <span class="op">=</span>        <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    y <span class="op">=</span>        <span class="st">"Expectativa de vida média"</span>,</span>
+<span>    caption <span class="op">=</span>  <span class="st">"Fonte: Pacote R Gapminder"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    plot.title <span class="op">=</span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>    plot.title.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>    legend.position <span class="op">=</span>     <span class="st">"top"</span>,</span>
+<span>    legend.title <span class="op">=</span>        <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    legend.key <span class="op">=</span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span><span class="op">(</span>color <span class="op">=</span> <span class="cn">NA</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>    panel.grid.minor <span class="op">=</span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -823,38 +710,34 @@ dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_...
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details class="code-fold">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(body_mass_g, flipper_length_mm)) <span class="sc">+</span></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span>    <span class="st">"Massa corporal e comprimento da nadadeira"</span>,</span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"Dimensões para pinguins das espécies Adelie, Chinstrap e Gentoo"</span>,</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span>  <span class="st">"Fonte: Pacote R Palmerpenguins"</span>,</span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span>        <span class="st">"Comprimento da nadadeira (mm)"</span>,</span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span>        <span class="st">"Massa corporal (g)"</span>,</span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span>    <span class="st">"Espécies"</span>,</span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">shape =</span>    <span class="st">"Espécies"</span></span>
-<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span>            <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title.position =</span>   <span class="st">"plot"</span>,</span>
-<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.key =</span>            <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>),</span>
-<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span>      <span class="fu">element_blank</span>()</span>
-<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Código</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">body_mass_g</span>, <span class="va">flipper_length_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>color <span class="op">=</span> <span class="va">species</span>, shape <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="http://jrnold.github.io/ggthemes/reference/colorblind.html">scale_color_colorblind</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>        title <span class="op">=</span>    <span class="st">"Massa corporal e comprimento da nadadeira"</span>,</span>
+<span>        subtitle <span class="op">=</span> <span class="st">"Dimensões para pinguins das espécies Adelie, Chinstrap e Gentoo"</span>,</span>
+<span>        caption <span class="op">=</span>  <span class="st">"Fonte: Pacote R Palmerpenguins"</span>,</span>
+<span>        x <span class="op">=</span>        <span class="st">"Comprimento da nadadeira (mm)"</span>,</span>
+<span>        y <span class="op">=</span>        <span class="st">"Massa corporal (g)"</span>,</span>
+<span>        color <span class="op">=</span>    <span class="st">"Espécies"</span>,</span>
+<span>        shape <span class="op">=</span>    <span class="st">"Espécies"</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>      plot.title <span class="op">=</span>            <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>      plot.title.position <span class="op">=</span>   <span class="st">"plot"</span>,</span>
+<span>      plot.caption.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>      legend.key <span class="op">=</span>            <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="cn">NA</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>      panel.grid.minor <span class="op">=</span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -862,36 +745,32 @@ dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_...
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<details class="code-fold">
-<summary>Código</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(species, body_mass_g)) <span class="sc">+</span></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_colorblind</span>() <span class="sc">+</span></span>
-<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span>    <span class="st">"Massa corporal de espécies de pinguim"</span>,</span>
-<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">"Dimensões para pinguins das espécies Adelie, Chinstrap e Gentoo"</span>,</span>
-<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span>  <span class="st">"Fonte: Pacote R Palmerpenguins"</span>,</span>
-<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span>        <span class="fu">element_blank</span>(),</span>
-<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span>        <span class="st">"Massa corporal (g)"</span>,</span>
-<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill =</span>     <span class="st">"Espécies"</span></span>
-<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span>            <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span>   <span class="st">"plot"</span>,</span>
-<span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb59-21"><a href="#cb59-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key =</span>            <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">fill =</span> <span class="cn">NA</span>),</span>
-<span id="cb59-22"><a href="#cb59-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span>      <span class="fu">element_blank</span>()</span>
-<span id="cb59-23"><a href="#cb59-23" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Código</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="http://jrnold.github.io/ggthemes/reference/colorblind.html">scale_fill_colorblind</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>        title <span class="op">=</span>    <span class="st">"Massa corporal de espécies de pinguim"</span>,</span>
+<span>        subtitle <span class="op">=</span> <span class="st">"Dimensões para pinguins das espécies Adelie, Chinstrap e Gentoo"</span>,</span>
+<span>        caption <span class="op">=</span>  <span class="st">"Fonte: Pacote R Palmerpenguins"</span>,</span>
+<span>        x <span class="op">=</span>        <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>        y <span class="op">=</span>        <span class="st">"Massa corporal (g)"</span>,</span>
+<span>        fill <span class="op">=</span>     <span class="st">"Espécies"</span></span>
+<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>        plot.title <span class="op">=</span>            <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>        plot.title.position <span class="op">=</span>   <span class="st">"plot"</span>,</span>
+<span>        plot.caption.position <span class="op">=</span> <span class="st">"plot"</span>,</span>
+<span>        legend.key <span class="op">=</span>            <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_rect</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="cn">NA</span>, fill <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>        panel.grid.minor <span class="op">=</span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -900,38 +779,29 @@ dbl (6): rowid, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_...
 </div>
 </div>
 <p>Há tantas coisas que podemos fazer com o <code>ggplot2</code> que merece uma postagem somente dedicada a esse pacote. Independente se é necessário contruir um <em>box plot</em>, gráfico de densidade, séries temporais, etc, o <code>ggplot2</code> tem uma função para isso. Você também pode checar o <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/data-visualization_pt.pdf" target="_blank">cheat-sheet</a> do <code>ggplot2</code>.</p>
-</section>
-<section id="aplicar-funções-em-vetores-ou-listas" class="level2">
-<h2 class="anchored" data-anchor-id="aplicar-funções-em-vetores-ou-listas">Aplicar funções em vetores ou listas</h2>
-<p>O pacote <code>purrr</code>, além de ter o melhor nome de pacote de todos os tempos, é recheado de funções avançadas de programação funcional para vetores e listas. O <code>lapply</code> do R base corresponde ao <code>map()</code> do <code>purrr</code>.</p>
+</section><section id="aplicar-funções-em-vetores-ou-listas" class="level2"><h2 class="anchored" data-anchor-id="aplicar-funções-em-vetores-ou-listas">Aplicar funções em vetores ou listas</h2>
+<p>O pacote <code>purrr</code>, além de ter o melhor nome de pacote de todos os tempos, é recheado de funções avançadas de programação funcional para vetores e listas. O <code>lapply</code> do R base corresponde ao <code><a href="https://purrr.tidyverse.org/reference/map.html">map()</a></code> do <code>purrr</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lista de dois vetores</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>lista_vec <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">y =</span> <span class="dv">50</span><span class="sc">:</span><span class="dv">70</span>)</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="co"># calcula a média para cada</span></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(lista_vec, mean)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$x
-[1] 5.5
-
-$y
-[1] 60</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># muda o tipo de output do map_* (dbl, chr, lgl, etc.)</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(lista_vec, mean)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   x    y 
- 5.5 60.0 </code></pre>
-</div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># lista de dois vetores</span></span>
+<span><span class="va">lista_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, y <span class="op">=</span> <span class="fl">50</span><span class="op">:</span><span class="fl">70</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># calcula a média para cada</span></span>
+<span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">lista_vec</span>, <span class="va">mean</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $x</span></span>
+<span><span class="co">#&gt; [1] 5.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $y</span></span>
+<span><span class="co">#&gt; [1] 60</span></span>
+<span></span>
+<span><span class="co"># muda o tipo de output do map_* (dbl, chr, lgl, etc.)</span></span>
+<span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_dbl</a></span><span class="op">(</span><span class="va">lista_vec</span>, <span class="va">mean</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    x    y </span></span>
+<span><span class="co">#&gt;  5.5 60.0</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para mais detalhes e exemplos podem ser encontrados no <a href="https://rstudio.github.io/cheatsheets/translations/portuguese/purrr_pt_br.pdf" target="_blank">cheat-sheet</a> do <code>purrr</code>.</p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1485,7 +1355,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 

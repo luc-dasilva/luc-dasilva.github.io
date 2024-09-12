@@ -2,7 +2,7 @@
 
 // Colors
 $primary: #1A162D;
-$secondary: #FAFAFA; // FAAAAR FAFAFAFAFA FAAAAR, BETTER
+$secondary: #FAFAFA; // FAAAAR FAFAFAFAFA FAAAAR BETTER
 $tertiary: #FDEBA4;
 
 $black: #000000;
@@ -42,16 +42,50 @@ $link-color: $blue;
 
 /*-- scss:rules --*/
 
+/* Navbar social media buttons tweak */
+.navbar-nav.navbar-nav-scroll.ms-auto {
+    flex-direction: row;
+}
+
+/*  About Me ---------------------------------------------------------------*/
+
+/* Resizes about page photo container */
 @media(min-width: 992px) {
     div.quarto-about-trestles .about-entity {
         flex:0 0 22%;
     }
 }
 
+/* A bit more padding */
 div.quarto-about-trestles .about-entity {
     padding-top: 1em;
 }
 
-.navbar-nav.navbar-nav-scroll.ms-auto {
-    flex-direction: row;
+/* Blog post --------------------------------------------------------------*/
+
+/* Tabset navpills customization */
+.tab-content {
+  border-color: #dee2e6;
+}
+
+.nav-tabs {
+    --bs-nav-tabs-border-color: #dee2e6;
+    --bs-nav-tabs-link-hover-border-color: #dee2e6;
+    --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #FAFAFA;
+}
+
+.nav-pills {
+    --bs-nav-pills-link-active-bg: #FAFAFA;
+    --bs-nav-pills-border-radius: 0.0rem;
+}
+
+.navbar a:focus, .navbar a.active, .nav-link:focus, .nav-link.active {
+    color: #728DB8 !important;
+}
+
+/* Back to top color and shadow tweak */
+#quarto-back-to-top {
+ box-shadow:  0 .2rem .5rem #dee2e6, 0 0 .05rem #2B2B2B;
+ background-color: $light-yellow;
+ color: #2B2B2B;
 }

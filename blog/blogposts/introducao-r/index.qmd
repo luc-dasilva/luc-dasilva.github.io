@@ -9,6 +9,35 @@ monofontoptions:
   - Scale=0.55
 ---
 
+```{r}
+set.seed(1014)
+
+knitr::opts_chunk$set(
+    comment = "#>",
+    collapse = TRUE,
+    # cache = TRUE,
+    fig.retina = 2,
+    fig.width = 6,
+    fig.asp = 2/3,
+    fig.show = "hold"
+)
+
+options(
+    dplyr.print_min = 6,
+    dplyr.print_max = 6,
+    pillar.max_footer_lines = 2,
+    pillar.min_chars = 15,
+    stringr.view_n = 6,
+    # Temporarily deactivate cli output for quarto
+    cli.num_colors = 0,
+    cli.hyperlink = FALSE,
+    pillar.bold = TRUE,
+    width = 77 # 80 - 3 for #> comment
+)
+
+ggplot2::theme_set(ggplot2::theme_gray(12))
+```
+
 R é uma ferramenta que busca auxiliar cientistas analizarem dados e que possui inúmeras excelentes funções *built-in* para a produção de gráficos e de modelos estatísticos. Consequentemente, muitos usuários do R usam a ferramenta como um *software*, aprendendo apenas quais funções necessárias para atingir seus objetivos e ignorando todo o resto.
 
 Aprender apenas as funções necessárias do R para determinada tafera, como ciência de dados, é compreensível. De todo modo, aprender a programar e como a linguagem de programação R funciona deve estar nos planos de todo cientista de dados. Saber programar fará você um analista mais flexível e irá aprimorar sua excelência em data science em todos os aspectos, entender os fundamentos do R faz todo o processo de aprendizagem mais simples.

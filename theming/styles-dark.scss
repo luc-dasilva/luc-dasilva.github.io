@@ -43,6 +43,7 @@ $link-color: $blue;
 
 /*-- scss:rules --*/
 
+/* Navbar social media buttons tweak */
 .navbar-nav.navbar-nav-scroll.ms-auto {
     flex-direction: row;
 }
@@ -52,7 +53,7 @@ $link-color: $blue;
 /* Changes social media text and boxes */
 @media (min-width: 992px) {
     div.quarto-about-trestles .about-entity .about-link {
-      color: #EDEDED;
+      color: #8E8E8E;
     }
   }
 
@@ -71,7 +72,7 @@ div.quarto-about-trestles .about-entity {
 /* Darker division line */
 @media (min-width: 992px) {
     div.quarto-about-trestles .about-contents {
-      border-left-color: #4B4B4B;
+      border-left-color: #2B2B2B;
     }
  }
 /*  Blog ------------------------------------------------------------------*/
@@ -90,20 +91,31 @@ div.quarto-about-trestles .about-entity {
 
 /* Blog post --------------------------------------------------------------*/
 
-.cell-output pre {
-  background-color: #2B2B2B;
+/* Code chunk comment color and style */
+code span.co {
+  color: #8E8E8E;
+  font-style: normal;
 }
 
-.cell-output code {
-  color: #EDEDED;
+/* Code chunk color tweak */
+pre > code.sourceCode > span {
+    color: #aca8c3;
 }
 
+/* Code on header color and background color */
+code {
+ background-color: #2B2B2B; 
+ color: #EDEDED;
+}
+
+/* Inline code color, background color, and padding */
 p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
     background-color: #2B2B2B;
     color: #EDEDED;
     padding: .2em;
 }
 
+/* Table customization */
 .table {
   border-top-color: #2B2B2B;
   border-bottom-color: #2B2B2B;
@@ -113,19 +125,17 @@ p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode) {
   border-bottom-color: #4B4B4B
 }
 
+/* Sidebar line color */
 .sidebar nav[role=doc-toc]>ul a {
-  border-left-color: #4B4B4B;
+  border-left-color: #2B2B2B;
 }
 
+/* Header line color */
 h2, .h2 {
   border-bottom-color: #2B2B2B;
 }
 
-code {
- background-color: #2B2B2B; 
- color: #EDEDED;
-}
-
+/* Tabset navpills customization */
 .tab-content {
   border-color: #2B2B2B;
 }
@@ -133,5 +143,20 @@ code {
 .nav-tabs {
     --bs-nav-tabs-border-color: #2B2B2B;
     --bs-nav-tabs-link-hover-border-color: #4B4B4B;
-    --bs-nav-tabs-link-active-border-color: #4B4B4B;
+    --bs-nav-tabs-link-active-border-color: #2B2B2B #2B2B2B #1C1C1C;
+}
+
+.nav-pills {
+    --bs-nav-pills-link-active-bg: #1C1C1C;
+    --bs-nav-pills-border-radius: 0.0rem;
+}
+
+.navbar a:focus, .navbar a.active, .nav-link:focus, .nav-link.active {
+    color: #728DB8 !important;
+}
+
+/* Back to top color and shadow tweak */
+#quarto-back-to-top {
+ box-shadow:  0 .2rem .5rem #4B4B4B, 0 0 .05rem #2B2B2B;
+ color: #8E8E8E;
 }

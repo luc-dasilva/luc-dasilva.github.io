@@ -6,6 +6,7 @@ website:
     title: Lucas da Silva
     search: false  
     favicon: img/favicon.png
+    back-to-top-navigation: true
     navbar:
       pinned: true
       title: false
@@ -43,6 +44,7 @@ format:
       light: theming/styles.scss
       dark: theming/styles-dark.scss
     title-block-banner: true
+    code-link: true
     mainfont: Source Sans 3
     toc: false
     lang: pt-BR
