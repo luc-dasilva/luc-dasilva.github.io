@@ -79,13 +79,14 @@ div.quarto-about-trestles .about-entity {
     --bs-nav-pills-border-radius: 0.0rem;
 }
 
-.navbar a:focus, .navbar a.active, .nav-link:focus, .nav-link.active {
-    color: #728DB8 !important;
-}
-
 /* Back to top color and shadow tweak */
 #quarto-back-to-top {
  box-shadow:  0 .2rem .5rem #dee2e6, 0 0 .05rem #2B2B2B;
  background-color: $light-yellow;
  color: #2B2B2B;
+}
+
+
+.nav-link.active {
+    color: #728DB8 !important;
 }

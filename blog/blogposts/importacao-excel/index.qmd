@@ -10,6 +10,8 @@ monofontoptions:
 ---
 
 ```{r}
+#| echo: false
+
 set.seed(1014)
 
 knitr::opts_chunk$set(
