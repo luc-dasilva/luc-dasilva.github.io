@@ -6,7 +6,7 @@ website:
     title: Lucas da Silva
     search: false  
     favicon: img/favicon.png
-    back-to-top-navigation: true
+    back-to-top-navigation: false
     navbar:
       pinned: true
       title: false
