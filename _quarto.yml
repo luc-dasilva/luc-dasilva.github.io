@@ -45,10 +45,10 @@ format:
       dark: theming/styles-dark.scss
     title-block-banner: true
     code-link: true
-    mainfont: Source Sans 3
+    mainfont:  "Lato, Open Sans, sans-serif"
+    monofont: Source Code Pro, consolas, monospace
     toc: false
     lang: pt-BR
-    monofont: Source Code Pro
     monobackgroundcolor: "#F4F4F4"
     code-copy: hover
     # grid: 
