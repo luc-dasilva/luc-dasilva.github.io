@@ -160,3 +160,20 @@ h2, .h2 {
 .nav-link.active {
     color: #728DB8 !important;
 }
+
+.quarto-grid-item .card-title {
+  margin-bottom: .1em;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+div.card-text.listing-description {
+  font-size: .825em;
+  font-weight: normal;
+  color: lightslategray;
+}
+
+.quarto-grid-item .card-text-small {
+  font-size: .7em;
+  color: lightslategray;
+}
