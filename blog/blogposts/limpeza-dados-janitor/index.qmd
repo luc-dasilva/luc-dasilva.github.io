@@ -1,0 +1,164 @@
+---
+title: "Limpando dados com {janitor}"
+date: "2024-11-12"
+author: Lucas da Silva
+description: "Ferramentas poderosas para facilitar a hora da faxina."
+image: "img/janitor_cleaning.png"
+toc: true
+monofontoptions: 
+  - Scale=0.55
+---
+
+```{r}
+#| echo: false
+set.seed(1014)
+
+knitr::opts_chunk$set(
+    comment = "#>",
+    collapse = TRUE,
+    # cache = TRUE,
+    fig.retina = 2,
+    fig.width = 6,
+    fig.asp = 2/3,
+    fig.show = "hold"
+)
+
+options(
+    dplyr.print_min = 6,
+    dplyr.print_max = 6,
+    pillar.max_footer_lines = 2,
+    pillar.min_chars = 15,
+    stringr.view_n = 6,
+    # Temporarily deactivate cli output for quarto
+    cli.num_colors = 0,
+    cli.hyperlink = FALSE,
+    pillar.bold = TRUE,
+    width = 77 # 80 - 3 for #> comment
+)
+
+ggplot2::theme_set(
+  ggplot2::theme_gray(12) +
+  ggplot2::theme(
+    plot.background = ggplot2::element_rect(
+      fill = "#F4F6F9",
+      color = "#F4F6F9"
+    ),
+    legend.background = ggplot2::element_rect(fill = "#F4F6F9")
+  )
+)
+```
+
+O pacote `{janitor}` possui um grande número de funções feitas para faciliar nosso trabalho de limpeza de dados. Vamos explorar algumas das funcionalidades mais úteis deste pacote.
+
+# Conhecendo o {janitor}
+
+O `{janitor}` possui diversas funções com o objetivo de nos ajudar a limpar dados de maneira mais rápida e direta, poupando neurônios para as partes mais divertidas da análise de dados.
+
+`{janitor}`, apesar de não ser considerado parte do universo do `{tidyverse}`, é considerado um pacote *tidyverse-oriented*, funcionando como uma luva em *pipe chains* (`|>`) e com os pacotes `{readr}` e `{readxl}`.
+
+Não há mistério para instalar o `{janitor}`, basta apenas uma linha de código:
+
+```{r}
+#| eval: false
+install.packages("janitor")
+```
+
+Para carregar o pacote em conjunto com todas as suas funções, também é necessário apenas uma linha de código:
+
+```{r}
+library(janitor)
+```
+
+Também iremos usar os pacotes do `{tidyverse}` e o `{readxl}`:
+
+```{r}
+library(readxl)
+library(tidyverse)
+```
+
+# Usando as ferramentas em nossa disposição
+
+Agora que estamos preparados para a ação, vamos importar uma planilha de Excel com o pacote `{readxl}`. Para mais detalhes sobre o `{readxl}`, recomendo o [blogpost sobre o readxl](https://luc-dasilva.github.io/blog/blogposts/importacao-excel/){target="_blank"}.
+
+![A planilha é uma lista fictícia de professores de uma escola. A planilha pode ser baixada [aqui](https://github.com/sfirke/janitor/blob/main/dirty_data.xlsx){target="_blank"}.](img/dirty_data.png)
+
+Ao observar a planilha, é possível notar alguns problemas:
+
+- Um header na primeira linha, acima da tabela de fato, o que é inútil para nós
+- Nomes de colunas de gosto questionável
+- Colunas e linhas contendo formatação do excel, mas vazias
+- Existe uma coluna que contém apenas "YES", ou seja, não possui nenhuma informação e deverá ser removida
+- Datas em diferentes formatos, mas em uma única coluna
+
+## Pulando linhas e limpando nomes
+
+Ao importar esta planilha, logo percebemos que os nomes das colunas ficam um caos:
+
+```{r}
+dirty_data <- read_excel("data/dirty_data.xlsx")
+dirty_data
+```
+
+Isso se deve devido a primeira linha do arquivo excel possuir um título (header). Podemos resolver isto apenas pulando a primeira linha com o parâmetro `skip` do `read_excel()`:
+
+```{r}
+#| warning: false 
+dirty_data <- read_excel("data/dirty_data.xlsx", skip = 1)
+dirty_data
+```
+
+Desta forma temos melhores nomes para as variáveis, mas eles ainda não são ideais para trabalhar. Para lidar com isso, podemos usufruir de um pouco da mágica do `{janitor}` com a função `clean_names()`:
+
+```{r}
+#| warning: false 
+dirty_data <- read_excel("data/dirty_data.xlsx", skip = 1)
+
+dirty_data |> 
+  clean_names()
+```
+
+Ótimo! nosso data.frame está tomando forma com apenas um parâmetro e uma função. Porém, se lembrarmos bem, ainda há colunas vazias, linhas vazias e colunas com valores constantes.
+
+## Removendo observações vazias, variáveis vazias e valores constantes
+
+Para lidar com observações ou variáveis vazias, o `{janitor}` nos dá a função `remove_empty()`:
+
+```{r}
+#| warning: false 
+dirty_data <- read_excel("data/dirty_data.xlsx", skip = 1)
+
+dirty_data |> 
+  clean_names() |> 
+  remove_empty()
+```
+
+Note que a tibble deixou de ter 13 observações e 11 variáveis para 12 observações e 10 variáveis. 
+
+Já a coluna "Active" na nossa planilha possui apenas um valor constante, "YES", efetivamente não possuindo nenhuma informação relevante para nós. Para estes casos, janitor oferece `remove_constant()`:
+
+```{r}
+#| warning: false 
+dirty_data <- read_excel("data/dirty_data.xlsx", skip = 1)
+
+dirty_data |> 
+  clean_names() |> 
+  remove_empty() |> 
+  remove_constant()
+```
+
+## Tratando datas
+
+Para lidar com problemas de formatação de datas do Excel, podemos usar a função `excel_numeric_to_date()` para a coluna "hire_date"
+
+```{r}
+#| warning: false 
+dirty_data <- read_excel("data/dirty_data.xlsx", skip = 1)
+
+dirty_data |> 
+  clean_names() |> 
+  remove_empty() |> 
+  remove_constant() |> 
+  mutate(hire_date = excel_numeric_to_date(hire_date))
+```
+
+Agora sim! Se notarmos a coluna "hire_date", podemos ver que as datas estão todas lá, em formato <*date*> que podemos trabalhar. E desta forma, temos uma tibble que está pronta para o processamento dos dados com qualquer fim!

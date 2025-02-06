@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Lucas da Silva">
-<meta name="description" content="Setup do ambiente para ciência de dados.">
-<title>Lucas da Silva - Iniciando no R: instalação do R e Rstudio</title>
+<meta name="description" content="Garantindo a reprodutibilidade do seu código de maneira simples.">
+<title>Lucas da Silva - Gerenciando dependências com {renv}</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,10 +131,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Iniciando no R: instalação do R e Rstudio</h1>
+      <h1 class="title">Gerenciando dependências com {renv}</h1>
                   <div>
         <div class="description">
-          Setup do ambiente para ciência de dados.
+          Garantindo a reprodutibilidade do seu código de maneira simples.
         </div>
       </div>
                 </div>
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Data de Publicação</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">26 de agosto de 2024</p>
+        <p class="date">19 de setembro de 2024</p>
       </div>
     </div>
     
@@ -168,68 +168,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Nesta página</h2>
    
   <ul>
-<li><a href="#instalando-o-r" id="toc-instalando-o-r" class="nav-link active" data-scroll-target="#instalando-o-r">Instalando o R</a></li>
-  <li>
-<a href="#instalando-o-rstudio" id="toc-instalando-o-rstudio" class="nav-link" data-scroll-target="#instalando-o-rstudio">Instalando o RStudio</a>
+<li>
+<a href="#o-que-%C3%A9-o-renv" id="toc-o-que-é-o-renv" class="nav-link active" data-scroll-target="#o-que-%C3%A9-o-renv">O que é o renv?</a>
   <ul class="collapse">
-<li><a href="#explorando-a-interface-do-rstudio" id="toc-explorando-a-interface-do-rstudio" class="nav-link" data-scroll-target="#explorando-a-interface-do-rstudio">Explorando a Interface do RStudio</a></li>
-  <li><a href="#primeiros-passos-no-r" id="toc-primeiros-passos-no-r" class="nav-link" data-scroll-target="#primeiros-passos-no-r">Primeiros Passos no R</a></li>
+<li><a href="#principais-fun%C3%A7%C3%B5es-do-renv" id="toc-principais-funções-do-renv" class="nav-link" data-scroll-target="#principais-fun%C3%A7%C3%B5es-do-renv">Principais funções do renv</a></li>
   </ul>
 </li>
+  <li>
+<a href="#instalando-e-inicializando-o-renv" id="toc-instalando-e-inicializando-o-renv" class="nav-link" data-scroll-target="#instalando-e-inicializando-o-renv">Instalando e inicializando o renv</a>
+  <ul class="collapse">
+<li><a href="#instalando-pacotes-dentro-do-renv" id="toc-instalando-pacotes-dentro-do-renv" class="nav-link" data-scroll-target="#instalando-pacotes-dentro-do-renv">Instalando pacotes dentro do renv</a></li>
+  <li><a href="#criando-um-snapshot" id="toc-criando-um-snapshot" class="nav-link" data-scroll-target="#criando-um-snapshot">Criando um snapshot</a></li>
+  <li><a href="#restaurando-pacotes" id="toc-restaurando-pacotes" class="nav-link" data-scroll-target="#restaurando-pacotes">Restaurando pacotes</a></li>
+  <li><a href="#verificando-o-status-do-ambiente" id="toc-verificando-o-status-do-ambiente" class="nav-link" data-scroll-target="#verificando-o-status-do-ambiente">Verificando o status do ambiente</a></li>
+  </ul>
+</li>
+  <li><a href="#conclus%C3%A3o" id="toc-conclusão" class="nav-link" data-scroll-target="#conclus%C3%A3o">Conclusão</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>R é uma ferramenta que busca auxiliar cientistas analizarem dados e que possui inúmeras excelentes funções <em>built-in</em> para a produção de gráficos e de modelos estatísticos. Consequentemente, muitos usuários do R usam a ferramenta como um <em>software</em>, aprendendo apenas quais funções necessárias para atingir seus objetivos e ignorando todo o resto.</p>
-<p>Aprender apenas as funções necessárias do R para determinada tafera, como ciência de dados, é compreensível. De todo modo, aprender a programar e como a linguagem de programação R funciona deve estar nos planos de todo cientista de dados. Saber programar fará você um analista mais flexível e irá aprimorar sua excelência em data science em todos os aspectos, entender os fundamentos do R faz todo o processo de aprendizagem mais simples.</p>
-<p>Portanto, abordaremos a instalação do R e do RStudio, exploraremos a interface do RStudio e daremos os primeiros passos na linguagem R.</p>
-<section id="instalando-o-r" class="level2"><h2 class="anchored" data-anchor-id="instalando-o-r">Instalando o R</h2>
-<p>Para começar, você deve ter sua própria cópia do R. Felizmente, o R é totalmente gratuito e fácil de baixar. O R é gerenciado por um time de desenvolvedores que disponibilizam a linguagem no <a href="https://cran.r-project.org/">CRAN</a>. O CRAN oferece opções de download para Windows, Mac e Linux.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Se você já passou pela frustração de tentar rodar um código R antigo e descobrir que ele não funciona mais devido a mudanças nas versões dos pacotes, você não está sozinho. Esse é um problema comum, e é exatamente para isso que o pacote <a href="https://rstudio.github.io/renv/">renv</a> foi criado.</p>
+<section id="o-que-é-o-renv" class="level1"><h1>O que é o renv?</h1>
+<p>O <a href="https://rstudio.github.io/renv/">renv</a> permite documentar e restaurar versões de pacotes de forma simples, garantindo a reprodutibilidade do seu código. Desta forma, facilita o gerenciamento de ambientes no R, permitindo que cada projeto tenha suas próprias versões específicas de pacotes. Isso evita conflitos e problemas causados por atualizações inesperadas.</p>
+<p>Com o <a href="https://rstudio.github.io/renv/">renv</a>, você pode:</p>
 <ul>
-<li><p><strong>Windows</strong>: No site do CRAN, selecione o link de download para Windows e escolha a versão “base” do R. Baixe o instalador e execute-o. O instalador adicionará um atalho do R na sua área de trabalho.</p></li>
-<li><p><strong>Mac</strong>: No site do CRAN, selecione o link de download para Mac e clique no pacote da versão mais recente do R. Um instalador guiará o processo de instalação.</p></li>
-<li><p><strong>Linux</strong>: O R já vem pré-instalado em diversas distribuições Linux. Caso precise da versão mais recente, o CRAN oferece arquivos para as principais distribuições. O processo de instalação varia conforme a distribuição; consulte a documentação do CRAN para instruções detalhadas.</p></li>
+<li>Criar um ambiente isolado para cada projeto.</li>
+<li>Instalar pacotes específicos para esse ambiente.</li>
+<li>Salvar um snapshot do estado atual dos pacotes.</li>
+<li>Restaurar os pacotes a qualquer momento.</li>
+<li>Compartilhar ambientes de desenvolvimento de maneira segura.</li>
 </ul>
-<p>O R <strong>não é um programa que você simplesmente dá dois <em>clicks</em></strong> para começar a usar, como o Microsoft Word ou Google Chrome. R é uma linguagem de programação, como Python, C, Javascript ou Rust. A maneira de usar o R é escrever comandos na linguagem R e pedir para seu computador interpretá-los. Antigamente, as pessoas executavam o código em R diretamente na linha de comando. Hoje em dia quase todo mundo usa um aplicativo para escrever código em R chamado RStudio e eu recomendo que você faça o mesmo.</p>
-</section><section id="instalando-o-rstudio" class="level2"><h2 class="anchored" data-anchor-id="instalando-o-rstudio">Instalando o RStudio</h2>
-<p>Agora sim, o Rstudio <em>é um programa</em> como o Microsoft Word ou Google Chrome, exceto que ao invés de te ajudar a escrever em português ou navegar na internet, o RStudio te ajuda a em escrever em R e a criar <em>scripts</em>. Existem outros aplicativos para auxiliar o código em R, mas recomendo o RStudio pois ele faz escrever código em R (e em outras linguagens de programação, como Python) muito mais simples.</p>
-<p>Para instalá-lo, visite o site da <a href="https://posit.co/">Posit</a> e baixe a versão correspondente ao seu sistema operacional. Após a instalação, abra o RStudio como qualquer outro programa.</p>
-<section id="explorando-a-interface-do-rstudio" class="level3"><h3 class="anchored" data-anchor-id="explorando-a-interface-do-rstudio">Explorando a Interface do RStudio</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="img/ui.png" class="img-fluid figure-img"></p>
-<figcaption>Layout padrão do RStudio. A seta azul é onde está localizada a linha de comando.</figcaption></figure>
-</div>
-<p>Antes de você entrar em contato com o seu computador, primeiro você deverá aprender a como falar com ele. É nessa parte que o R e o RStudio entram em cena. RStudio é a forma de como se comunicar com o seu computador. R é o idioma que você conversa com ele.</p>
-<p>Ao abrir o RStudio, você verá uma janela com três painéis principais:</p>
-<ol type="1">
-<li><p><strong>Console</strong>: Localizado geralmente na parte inferior esquerda, é onde você digita e executa comandos em R. O painel do console é exatamente o que você veria se usasse o R em linha de comando. Todo o resto é único do RStudio.</p></li>
-<li><p><strong>Ambiente/Histórico</strong>: No canto superior direito, exibe as variáveis ativas e o histórico de comandos utilizados.</p></li>
-<li><p><strong>Arquivos/Plots/Packages/Help</strong>: Na parte inferior direita, permite navegar pelos arquivos do projeto, visualizar gráficos gerados, gerenciar pacotes instalados e acessar a documentação de ajuda.</p></li>
-</ol>
-<p>Para adicionar um quarto painel com o editor de scripts, vá em <code>Arquivo &gt; Novo Arquivo &gt; R Script</code> ou utilize o atalho <code>Ctrl + Shift + N</code>. Isso permitirá que você escreva, edite e salve seus códigos para reutilização futura.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="img/rstudio-panes.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Layout do Rstudio com quatro painéis.</figcaption></figure>
-</div>
-</section><section id="primeiros-passos-no-r" class="level3"><h3 class="anchored" data-anchor-id="primeiros-passos-no-r">Primeiros Passos no R</h3>
-<p>A interface do RStudio é simples. Você escreve seu código em R na última linha do painel do Console no RStudio e pressiona Enter para executar. O código que você escreve é chamado de comando, pois você está dando uma ordem ao computador para fazer algo para você. A linha em que você escreve o comando é chamada de linha de comando.</p>
-<p>Quando você digita um comando na linha de comando e pressiona Enter, seu computador executa o comando e mostra os resultados. Por exemplo, se você digitar <code>1 + 1</code> e pressionar Enter, o RStudio vai mostrar o seguinte:</p>
+<section id="principais-funções-do-renv" class="level2"><h2 class="anchored" data-anchor-id="principais-funções-do-renv">Principais funções do renv</h2>
+<p>Tudo isso pode soar complicado, mas no fim das contas, tudo que devemos saber são meras quatro funções:</p>
+<table class="table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<thead><tr class="header">
+<th>Função</th>
+<th>Descrição</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code><a href="https://rstudio.github.io/renv/reference/init.html">renv::init()</a></code></td>
+<td>Inicializa o ambiente renv</td>
+</tr>
+<tr class="even">
+<td><code><a href="https://rstudio.github.io/renv/reference/install.html">renv::install()</a></code></td>
+<td>Instala os pacotes no ambiente renv</td>
+</tr>
+<tr class="odd">
+<td><code><a href="https://rstudio.github.io/renv/reference/snapshot.html">renv::snapshot()</a></code></td>
+<td>Documenta as versões dos pacotes</td>
+</tr>
+<tr class="even">
+<td><code><a href="https://rstudio.github.io/renv/reference/restore.html">renv::restore()</a></code></td>
+<td>Restora versões dos pacotes</td>
+</tr>
+</tbody>
+</table></section></section><section id="instalando-e-inicializando-o-renv" class="level1"><h1>Instalando e inicializando o renv</h1>
+<p>Para começar a usar o <a href="https://rstudio.github.io/renv/">renv</a>, instale o pacote e inicialize o ambiente no seu projeto:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span></span>
-<span><span class="co">#&gt; [1] 2</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"renv"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/renv/">renv</a></span><span class="op">)</span></span>
+<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/init.html">init</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Para criar um objeto (variável) que armazene um valor, utilize o operador <code>&lt;-</code>:</p>
+<p>Isso cria um ambiente <a href="https://rstudio.github.io/renv/">renv</a> no diretório do seu projeto e gera um arquivo de bloqueio (<em>renv.lock</em>), onde ficam registradas as versões dos pacotes utilizados.</p>
+<section id="instalando-pacotes-dentro-do-renv" class="level2"><h2 class="anchored" data-anchor-id="instalando-pacotes-dentro-do-renv">Instalando pacotes dentro do renv</h2>
+<p>Ao trabalhar com um projeto gerenciado pelo <a href="https://rstudio.github.io/renv/">renv</a>, você deve instalar os pacotes usando a função <code><a href="https://rstudio.github.io/renv/reference/install.html">renv::install()</a></code>, em vez de <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">minha_variavel</span> <span class="op">&lt;-</span> <span class="fl">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/install.html">install</a></span><span class="op">(</span><span class="st">"lubridate"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lubridate.tidyverse.org">lubridate</a></span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Agora, <code>minha_variavel</code> contém o valor 10. Você pode usar esse objeto em operações futuras:</p>
+<p>Isso garante que o pacote <a href="https://lubridate.tidyverse.org">lubridate</a> seja instalado apenas no ambiente do projeto, sem interferir nos pacotes globais do R.</p>
+</section><section id="criando-um-snapshot" class="level2"><h2 class="anchored" data-anchor-id="criando-um-snapshot">Criando um snapshot</h2>
+<p>Sempre que adicionar ou atualizar pacotes, é importante capturar um <strong>snapshot</strong> do estado atual do ambiente, garantindo que todas as dependências estejam documentadas no arquivo <em>renv.lock</em>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">minha_variavel</span> <span class="op">*</span> <span class="fl">2</span></span>
-<span><span class="co">#&gt; [1] 20</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/snapshot.html">snapshot</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>À medida que avança, você explorará funções mais complexas e pacotes adicionais que expandem as capacidades do R. Uma coleção essencial de pacotes para ciência de dados é o <code>tidyverse</code>, que inclui ferramentas para manipulação de dados, visualização e muito mais. Para conhecer mais sobre o universo do tidyverse, <a href="https://luc-dasilva.github.io/blog/blogposts/introducao-tidyverse/">clique neste blogpost</a>.</p>
+<p>Se você compartilhar esse arquivo com colegas ou versioná-lo no Git, qualquer pessoa poderá restaurar as mesmas versões dos pacotes.</p>
+</section><section id="restaurando-pacotes" class="level2"><h2 class="anchored" data-anchor-id="restaurando-pacotes">Restaurando pacotes</h2>
+<p>Se precisar recuperar as versões exatas dos pacotes de um projeto, basta rodar:</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/restore.html">restore</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Isso reinstala todas as dependências conforme especificadas no arquivo <em>renv.lock</em>, garantindo a reprodutibilidade do seu código.</p>
+</section><section id="verificando-o-status-do-ambiente" class="level2"><h2 class="anchored" data-anchor-id="verificando-o-status-do-ambiente">Verificando o status do ambiente</h2>
+<p>Para conferir se o ambiente está sincronizado e identificar pacotes não documentados, use:</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/status.html">status</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Se houver pacotes instalados que ainda não foram registrados no snapshot, essa função ajudará a identificá-los.</p>
+</section></section><section id="conclusão" class="level1"><h1>Conclusão</h1>
+<p>O <a href="https://rstudio.github.io/renv/">renv</a> é uma ferramenta essencial para quem trabalha com R, especialmente em projetos de longo prazo ou colaborativos. Ele garante que seu código permaneça funcional independentemente das atualizações dos pacotes, trazendo maior segurança e previsibilidade ao desenvolvimento.</p>
+<p>Para aprender mais sobre as funcionalidades do <a href="https://rstudio.github.io/renv/">renv</a>, consulte a <a href="https://rstudio.github.io/renv/reference/index.html" target="_blank">documentação oficial</a> e este <a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank">artigo explicativo</a>.</p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

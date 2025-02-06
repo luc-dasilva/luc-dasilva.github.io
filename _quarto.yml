@@ -13,16 +13,17 @@ website:
       left:
         - href: index.qmd
           text: Sobre mim
-        - href: cv/cv.pdf
+        - href: cv/cv_lucas.pdf
           text: Currículo
           target: _blank
-        # - href: projeto/index.qmd
-        #   text: Projeto
+        - href: https://luc-dasilva.shinyapps.io/indb3/
+          text: IndB3
+          target: _blank
         - href: blog/index.qmd
           text: Blog
       right: 
         - icon: linkedin
-          href: https://www.linkedin.com
+          href: https://www.linkedin.com/in/luc-dasilva/
           target: _blank
         - icon: github
           href: https://github.com/luc-dasilva
@@ -30,30 +31,18 @@ website:
         - icon: envelope-fill
           href: mailto:lucasgomes.wdcs@gmail.com
           target: _blank
-        # - icon: translate
-        #   href: index_en.qmd
-    # page-footer:
-    #   background: light
-    #   left: Lucas da Silva, 2024.
-    #   right: Este website é feito com [Quarto.](https://quarto.org/){target=_blank}
-
 
 format:
   html:
-    theme:
-      light: theming/styles.scss
-      dark: theming/styles-dark.scss
+    theme: theming/styles.scss
     title-block-banner: true
     code-link: true
     mainfont:  "Lato, Open Sans, sans-serif"
-    monofont: Source Code Pro, consolas, monospace
+    monofont: "Source Code Pro, Consolas, monospace"
     toc: false
     lang: pt-BR
-    monobackgroundcolor: "#F4F4F4"
+    monobackgroundcolor: "#EDEFF1"
     code-copy: hover
-    # grid: 
-    #   sidebar-width: 200px
-    #   margin-width: 200px
 
-editor: visual
+editor: source
 

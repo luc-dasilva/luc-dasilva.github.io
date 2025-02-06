@@ -1,0 +1,138 @@
+---
+title: "Gerenciando dependências com {renv}"
+date: "2024-09-19"
+author: Lucas da Silva
+description: "Garantindo a reprodutibilidade do seu código de maneira simples."
+image: "img/renv.png"
+toc: true
+monofontoptions: 
+  - Scale=0.55
+---
+
+```{r}
+#| echo: false
+set.seed(1014)
+
+knitr::opts_chunk$set(
+    comment = "#>",
+    collapse = TRUE,
+    # cache = TRUE,
+    fig.retina = 2,
+    fig.width = 6,
+    fig.asp = 2/3,
+    fig.show = "hold"
+)
+
+options(
+    dplyr.print_min = 6,
+    dplyr.print_max = 6,
+    pillar.max_footer_lines = 2,
+    pillar.min_chars = 15,
+    stringr.view_n = 6,
+    # Temporarily deactivate cli output for quarto
+    cli.num_colors = 0,
+    cli.hyperlink = FALSE,
+    pillar.bold = TRUE,
+    width = 77 # 80 - 3 for #> comment
+)
+
+ggplot2::theme_set(
+  ggplot2::theme_gray(12) +
+  ggplot2::theme(
+    plot.background = ggplot2::element_rect(
+      fill = "#F4F6F9",
+      color = "#F4F6F9"
+    ),
+    legend.background = ggplot2::element_rect(fill = "#F4F6F9")
+  )
+)
+```
+
+Se você já passou pela frustração de tentar rodar um código R antigo e descobrir que ele não funciona mais devido a mudanças nas versões dos pacotes, você não está sozinho. Esse é um problema comum, e é exatamente para isso que o pacote `{renv}` foi criado.
+
+# O que é o renv?
+
+O `{renv}` permite documentar e restaurar versões de pacotes de forma simples, garantindo a reprodutibilidade do seu código. Desta forma, facilita o gerenciamento de ambientes no R, permitindo que cada projeto tenha suas próprias versões específicas de pacotes. Isso evita conflitos e problemas causados por atualizações inesperadas.
+
+Com o `{renv}`, você pode:
+
+-   Criar um ambiente isolado para cada projeto.
+-   Instalar pacotes específicos para esse ambiente.
+-   Salvar um snapshot do estado atual dos pacotes.
+-   Restaurar os pacotes a qualquer momento.
+-   Compartilhar ambientes de desenvolvimento de maneira segura.
+
+## Principais funções do renv
+
+Tudo isso pode soar complicado, mas no fim das contas, tudo que devemos saber são meras quatro funções:
+
+| Função           | Descrição                                             |
+|------------------|-------------------------------------------------------|
+|`renv::init()`    | Inicializa o ambiente renv                            |
+|`renv::install()` | Instala os pacotes no ambiente renv                   |
+|`renv::snapshot()`| Documenta as versões dos pacotes                      |
+|`renv::restore()` | Restora versões dos pacotes                           |
+
+# Instalando e inicializando o renv
+
+Para começar a usar o `{renv}`, instale o pacote e inicialize o ambiente no seu projeto:
+
+```{r} 
+#| eval: false
+install.packages("renv")
+library(renv)
+renv::init()
+```
+
+Isso cria um ambiente `{renv}` no diretório do seu projeto e gera um arquivo de bloqueio (*renv.lock*), onde ficam registradas as versões dos pacotes utilizados.
+
+## Instalando pacotes dentro do renv
+
+Ao trabalhar com um projeto gerenciado pelo `{renv}`, você deve instalar os pacotes usando a função `renv::install()`, em vez de `install.packages()`:
+
+```{r} 
+#| eval: false
+renv::install("lubridate")
+library(lubridate)
+```
+
+Isso garante que o pacote `{lubridate}` seja instalado apenas no ambiente do projeto, sem interferir nos pacotes globais do R.
+
+## Criando um snapshot
+
+Sempre que adicionar ou atualizar pacotes, é importante capturar um **snapshot** do estado atual do ambiente, garantindo que todas as dependências estejam documentadas no arquivo *renv.lock*:
+
+```{r} 
+#| eval: false
+renv::snapshot()
+```
+
+Se você compartilhar esse arquivo com colegas ou versioná-lo no Git, qualquer pessoa poderá restaurar as mesmas versões dos pacotes.
+
+## Restaurando pacotes
+
+Se precisar recuperar as versões exatas dos pacotes de um projeto, basta rodar:
+
+```{r} 
+#| eval: false
+renv::restore()
+```
+
+Isso reinstala todas as dependências conforme especificadas no arquivo *renv.lock*, garantindo a reprodutibilidade do seu código.
+
+## Verificando o status do ambiente
+
+Para conferir se o ambiente está sincronizado e identificar pacotes não documentados, use:
+
+```{r} 
+#| eval: false
+renv::status()
+```
+
+Se houver pacotes instalados que ainda não foram registrados no snapshot, essa função ajudará a identificá-los.
+
+# Conclusão
+
+O `{renv}` é uma ferramenta essencial para quem trabalha com R, especialmente em projetos de longo prazo ou colaborativos. Ele garante que seu código permaneça funcional independentemente das atualizações dos pacotes, trazendo maior segurança e previsibilidade ao desenvolvimento.
+
+Para aprender mais sobre as funcionalidades do `{renv}`, consulte a [documentação oficial](https://rstudio.github.io/renv/reference/index.html){target="_blank"} e este [artigo explicativo](https://rstudio.github.io/renv/articles/renv.html){target="_blank"}.

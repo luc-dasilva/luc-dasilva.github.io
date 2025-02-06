@@ -36,7 +36,16 @@ options(
     width = 77 # 80 - 3 for #> comment
 )
 
-ggplot2::theme_set(ggplot2::theme_gray(12))
+ggplot2::theme_set(
+  ggplot2::theme_gray(12) +
+  ggplot2::theme(
+    plot.background = ggplot2::element_rect(
+      fill = "#F4F6F9",
+      color = "#F4F6F9"
+    ),
+    legend.background = ggplot2::element_rect(fill = "#F4F6F9")
+  )
+)
 ```
 
 O `tidyverse`, uma coleção de pacotes focados em ciência de dados, é um dos principais atrativos da linguagem de programação R. Nesta postagem serão sintetizados os principais aspectos necessários para o início da jornada na ciência de dados com o `tidyverse`.
@@ -338,7 +347,7 @@ Outros grupos de funções que valem a pena estudar são: `separate()`, `case_wh
 -   *estatísticas*: objetos `stat_*` permitem aplicar transformações estatísticas.
 
 ::: {.panel-tabset .nav-pills}
-### Gráfico de linha
+### Lineplot
 
 ```{r}
 #| warning: false
@@ -386,7 +395,7 @@ gapmminder_clean |>
 
 ```
 
-### Gráfico de disperção
+### Scatterplot
 
 ```{r}
 #| warning: false

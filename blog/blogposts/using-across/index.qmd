@@ -1,0 +1,276 @@
+---
+title: "Transformando dados com across( )"
+date: "2024-10-08"
+author: Lucas da Silva
+description: "Fazendo mais com menos."
+image: "img/dplyr_across.png"
+toc: true
+monofontoptions: 
+  - Scale=0.55
+---
+
+
+```{r}
+#| echo: false
+set.seed(1014)
+
+knitr::opts_chunk$set(
+    comment = "#>",
+    collapse = TRUE,
+    # cache = TRUE,
+    fig.retina = 2,
+    fig.width = 6,
+    fig.asp = 2/3,
+    fig.show = "hold"
+)
+
+options(
+    dplyr.print_min = 6,
+    dplyr.print_max = 6,
+    pillar.max_footer_lines = 2,
+    pillar.min_chars = 15,
+    stringr.view_n = 6,
+    # Temporarily deactivate cli output for quarto
+    cli.num_colors = 0,
+    cli.hyperlink = FALSE,
+    pillar.bold = TRUE,
+    width = 77 # 80 - 3 for #> comment
+)
+
+ggplot2::theme_set(ggplot2::theme_gray(12))
+```
+
+Dentre as inúmeras ferramentas disponíveis no `{tidyverse}`, a função `across()` pode ser um recurso de grande utilidade para simplificar transformações aplicadas em múltiplas variáveis.
+
+# Usando across( )
+
+Quando estamos inicando na ciência de dados em R e conhecendo a sintaxe do `{tidyverse}`, é muito comum escrevermos códigos parecidos como estes:
+
+```{r}
+#| echo: false
+#| output: false
+library(tidyverse)
+```
+
+```{r}
+library(tidyverse)
+
+penguins <- palmerpenguins::penguins
+
+penguins |> 
+    summarise(
+        mean_bill_length = mean(bill_length_mm, na.rm = TRUE),
+        mean_bill_depth = mean(bill_depth_mm, na.rm = TRUE),
+        mean_flipper_length = mean(flipper_length_mm, na.rm = TRUE),
+        mean_body_mass = mean(body_mass_g, na.rm = TRUE)
+    )
+```
+
+Neste caso, estamos computando a mesma função `mean()` em diversas colunas. Porém, há uma maneira mais eficiente de fazer esta mesma operação usando a função `across()`, onde apenas devemos selecionar as variáveis nas quais desejamos trabalhar no parâmetro `.cols` e a função desejada no parâmetro `.fns` que, neste caso, é a função de média, `mean()`.
+
+```{r}
+penguins |> 
+    summarise(
+        across(
+            .cols = c(
+                bill_length_mm, bill_depth_mm,
+                flipper_length_mm, body_mass_g
+            ),
+            .fns = \(.x) mean(.x, na.rm = TRUE)
+        )
+    )
+```
+
+Note que a função de média é aplicada em cada variável através da função anônima `\(.x) mean(.x, na.rm = TRUE)`, onde `\()` equivale a `function()` e o `.x` corresponde as colunas listadas em `.cols` que serão utilizadas para calcular suas médias com `mean()`.
+
+`across()` também nos permite aplicar diversas funções ao mesmo tempo para as variáveis escolhidas em `.cols`. Para aplicar mais de uma função em `across()`, apenas é necessário inserir as funções num vetor, como vemos abaixo, calculamos a variâcia das variáveis em conjunto com suas médias no parâmetro `.fns`:
+
+```{r}
+penguins |> 
+    summarise(
+        across(
+            .cols = c(
+                bill_length_mm, bill_depth_mm,
+                flipper_length_mm, body_mass_g
+            ),
+            .fns = c(
+                mean = \(.x) mean(.x, na.rm = TRUE),
+                var = \(.x) mean(.x, na.rm = TRUE)
+            )
+        )
+    )
+```
+
+Obverse o output do código, onde cada variável resultou em duas variáveis, uma para cada estatística: média (`mean()`) e variância (`var()`). Infelizmente, o output deste código gera uma tibble em um formato largo (*wide tibble*), com oito variáveis e apenas uma observação, o que não é ideal para podermos trabalhar com ela. Felizmente, podemos usar mais um parâmetro do `across()` para facilitar nossas vidas, `.names`:
+
+
+```{r}
+penguins |> 
+    summarise(
+        across(
+            .cols = c(
+                bill_length_mm, bill_depth_mm,
+                flipper_length_mm, body_mass_g
+            ),
+            .fns = c(
+                mean = \(.x) mean(.x, na.rm = TRUE),
+                var = \(.x) mean(.x, na.rm = TRUE)
+            ),
+            .names = "{.col}----{.fn}"
+        )
+    ) 
+```
+
+`.names` entra em cena para auxiliar nosso trabalho ao nos permitir modificar os nomes das variáveis inclusas em `.cols`. O parâmetro requer uma string, onde é possível adicionar `{.col}` para sinalizar o uso do nome da variável e `{.fn}` que indica o uso do nome da função (neste caso, ou `mean`, ou `var`). Entre eles, adicionei quatro traços `----`, que servirá como separador e irá facilitar nossas vidas na transformação de uma wide tibble para uma long tibble, através do `pivot_longer()`:
+
+```{r}
+penguins |> 
+    summarise(
+        across(
+            .cols = c(
+                bill_length_mm, bill_depth_mm,
+                flipper_length_mm, body_mass_g
+            ),
+            .fns = c(
+                mean = \(.x) mean(.x, na.rm = TRUE),
+                var = \(.x) mean(.x, na.rm = TRUE)
+            ),
+            .names = "{.col}----{.fn}"
+        )
+    ) |> 
+    pivot_longer(
+        cols = everything(),
+        names_sep = "----",
+        names_to = c("variable", "stat")
+    )
+```
+
+Assim, a tibble fica muito mais amigável para criação de novas variáveis e para trabalhar com ela.
+
+# Usando tidyselect helpers em conjunto com across( )
+
+Os helpers tidyselect são um grupo de verbos do `{tidyverse}` disponibilizadas para a seleção de variáveis. São úteis para podermos lidar com tibbles que possuem um número expressivo de variáveis, evitando digitação de muito código. Por exemplo, a tibble abaixo possui 74 variáveis:
+
+```{r}
+ames <- modeldata::ames
+
+ames
+```
+
+Digamos que queremos trabalhar com todas as variáveis numéricas do dataset `ames`. Ao invés de digitarmos todas as colunas, podemos utilizar os helpers tidyselect, como o `where()` em conjunto com `is.numeric` para selecionar todas as variáveis *onde* os resultados de `is.numeric` é igual a `TRUE`.
+
+```{r}
+ames |> 
+    summarise(
+        across(
+            .cols = where(is.numeric),
+            .fns = c(
+                mean = \(.x) mean(.x, na.rm = TRUE),
+                var = \(.x) mean(.x, na.rm = TRUE)
+            ),
+            .names = "{.col}----{.fn}"
+        )
+    ) |> 
+    pivot_longer(
+        cols = everything(),
+        names_sep = "----",
+        names_to = c("variable", "stat")
+    )
+```
+
+Também é possível usar mais helpers do tidyselect para filtrar ainda mais as colunas desejadas. Por exemplo, podemos combinar `where(is.numeric)` e `starts_with("Lot")` para aplicar transformações apenas para as variáveis numéricas que iniciam com o padrão "Lot".
+
+
+```{r}
+ames |> 
+    summarise(
+        across(
+            .cols = where(is.numeric) & starts_with("Lot"),
+            .fns = c(
+                mean = \(.x) mean(.x, na.rm = TRUE),
+                var = \(.x) mean(.x, na.rm = TRUE)
+            ),
+            .names = "{.col}----{.fn}"
+        )
+    ) |> 
+    pivot_longer(
+        cols = everything(),
+        names_sep = "----",
+        names_to = c("variable", "stat")
+    )
+```
+
+# Outras dicas
+
+Podemos reescrever a função `across()` de diversas maneiras:
+
+::: {.panel-tabset .nav-pills}
+
+## Ex. 1
+
+```{r}
+penguins |> 
+    summarise(
+        across(
+            .cols = c(
+                bill_length_mm, bill_depth_mm,
+                flipper_length_mm, body_mass_g
+            ),
+            .fns = \(.x) mean(.x, na.rm = TRUE)
+        )
+    ) 
+```
+
+## Ex. 2
+
+```{r}
+# com tidyselect helper ends_with()
+# operador lógico |
+
+penguins |> 
+    summarise(
+        across(
+            .cols = ends_with("_mm") | ends_with("_g"),
+            .fns = \(.x) mean(.x, na.rm = TRUE)
+        )
+    ) 
+```
+
+## Ex. 3
+
+```{r}
+# com tidyselect helper ends_with()
+# operador lógico |
+# expressão anônima reduzida ~
+
+penguins |> 
+    summarise(
+        across(
+            .cols = ends_with("_mm") | ends_with("_g"),
+            .fns = ~ mean(.x, na.rm = TRUE)
+        )
+    ) 
+```
+
+## Ex. 4
+
+```{r}
+# com tidyselect helper ends_with()
+# operador lógico |
+# expressão anônima reduzida ~
+# parâmetros implícitos
+
+penguins |> 
+    summarise(across(ends_with("_mm") | ends_with("_g"), ~ mean(.x, na.rm = T))) 
+```
+:::
+
+Também é possível utilizar o `across()` com `mutate()`:
+
+```{r}
+modeldata::ames |> 
+    mutate(across(matches("(Y|y)ear"), ~ make_date(year = .x))) |> 
+    select(where(is.Date))
+```
+
+Este é somente um exemplo dos mais diversos de como é possível combinar `across()` com `mutate()` ou `summarise()` para fazer bastante progresso em uma análise de dados, digitando bem menos e otimizando consideravelmente o código.

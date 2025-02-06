@@ -2,14 +2,15 @@
 
 // Colors
 $primary: #1A162D;
-$secondary: #FAFAFA; // FAAAAR FAFAFAFAFA FAAAAR BETTER
+$secondary: #F4F6F9;
 $tertiary: #FDEBA4;
 
 $black: #000000;
 $blue: #38577F;
+$light-blue: #8FB0E6;
 
 $light-yellow: #FDF4D1;
-$light-gray: #F2F2F2;
+$light-gray: #EDEFF1;
 
 // Base document colors
 
@@ -30,14 +31,52 @@ $code-block-bg: $light-gray;
 // Misc
 $link-color: $blue;
 
-.navbar a, .nav-link {
-  &:hover {
-    color: $light-yellow;
-  };
-  &:focus,
+/*  Navbar -----------------------------------------------------------------*/
+
+// Navbar Buttons
+a.nav-link {
+  color: $secondary;
+
   &.active {
-    color: $tertiary !important;
+    background-color: $secondary;
+    color: $primary !important;
+    border-radius: 3px;
   }
+
+  &.nav-link:not(.active) {
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 3px;
+  }
+
+  &.nav-link:not(.active):hover {
+    color: $secondary;
+    background-color: rgba(255, 255, 255, 0.25); 
+    border-radius: 3px;
+  }
+
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: $secondary !important;
+}
+
+nav .nav-item:not(.compact) {
+  margin-left: 0.25rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-left: .75rem;
+  padding-right: .75rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+// Navbar
+nav.navbar-expand-lg {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 /*-- scss:rules --*/
@@ -63,6 +102,13 @@ div.quarto-about-trestles .about-entity {
 
 /* Blog post --------------------------------------------------------------*/
 
+.quarto-title-banner .quarto-title .title {
+  font-weight: 800;
+}
+#title-block-header.quarto-title-block.default .keywords, #title-block-header.quarto-title-block.default .description, #title-block-header.quarto-title-block.default .abstract {
+  margin-top: 0.15rem;
+}
+
 /* Tabset navpills customization */
 .tab-content {
   border-color: #dee2e6;
@@ -71,23 +117,20 @@ div.quarto-about-trestles .about-entity {
 .nav-tabs {
     --bs-nav-tabs-border-color: #dee2e6;
     --bs-nav-tabs-link-hover-border-color: #dee2e6;
-    --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #FAFAFA;
+    --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #F4F6F9;
 }
 
 .nav-pills {
-    --bs-nav-pills-link-active-bg: #FAFAFA;
+    --bs-nav-pills-link-active-bg: $secondary;
     --bs-nav-pills-border-radius: 0.0rem;
 }
 
-/* Back to top color and shadow tweak */
-#quarto-back-to-top {
- box-shadow:  0 .2rem .5rem #dee2e6, 0 0 .05rem #2B2B2B;
- background-color: $light-yellow;
- color: #2B2B2B;
-}
+.nav-pills .nav-link {
+  color: $blue;
 
-.nav-link.active {
-    color: #728DB8 !important;
+  &:hover {
+    color: $light-blue !important;
+  }
 }
 
 .quarto-grid-item .card-title {
@@ -99,10 +142,10 @@ div.quarto-about-trestles .about-entity {
 div.card-text.listing-description {
   font-size: .825em;
   font-weight: normal;
-  color: darkslategrey;
+  color: #404040;
 }
 
 .quarto-grid-item .card-text-small {
   font-size: .7em;
-  color: darkslategray;
+  color: #404040;
 }

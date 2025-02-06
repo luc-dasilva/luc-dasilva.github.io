@@ -8,6 +8,9 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/blogposts/limpeza-dados-janitor/index.html",
+      "/blog/blogposts/using-across/index.html",
+      "/blog/blogposts/gerenciando-dependencias-renv/index.html",
       "/blog/blogposts/introducao-r/index.html",
       "/blog/blogposts/importacao-excel/index.html",
       "/blog/blogposts/introducao-tidyverse/index.html"
