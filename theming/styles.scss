@@ -79,11 +79,20 @@ nav.navbar-expand-lg {
   padding-bottom: 1em;
 }
 
+@media (max-width: 768px) {
+  .me-auto {
+    margin-top: 1rem;
+  }
+}
+
 /*-- scss:rules --*/
 
 /* Navbar social media buttons tweak */
+@media (max-width: 768px) {
 .navbar-nav.navbar-nav-scroll.ms-auto {
     flex-direction: row;
+    margin-top: 1rem;
+  }
 }
 
 /*  About Me ---------------------------------------------------------------*/
@@ -148,4 +157,10 @@ div.card-text.listing-description {
 .quarto-grid-item .card-text-small {
   font-size: .7em;
   color: #404040;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+  border-left: 1px solid #38577f;
+  color: #38577f !important;
+  border-radius: 0%;
 }
