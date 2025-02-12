@@ -1,6 +1,6 @@
 ---
 title: Lucas da Silva
-image: img/profile.png
+image: img/profile_new.jpg
 page-layout: full
 title-block-banner: false
 about:
@@ -26,8 +26,8 @@ about:
       target: _blank
 ---
 
-Olá! Sou Lucas da Silva, ex-intercambista pelo programa [Gira Mundo](https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo){.external target="_blank"}. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos no CCAA, onde concluí o curso de inglês em 2020. No ano seguinte, atuei como professor de língua inglesa. Atualmente, sou graduando em Ciências Contábeis pela [Universidade Federal da Paraíba](https://www.ufpb.br/){.external target="_blank"}.
+Olá! Sou Lucas da Silva, graduando em Ciências Contábeis pela [Universidade Federal da Paraíba](https://www.ufpb.br/){.external target="_blank"}. Fui ex-intercambista pelo programa [Gira Mundo](https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo){.external target="_blank"} em 2018. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos no CCAA, onde concluí o curso de inglês em 2020. No ano seguinte, atuei como professor de língua inglesa.
 
-Ao longo da graduação, participei de diversos projetos de pesquisa e extensão, nos quais desenvolvi habilidades em análise de dados utilizando a [linguagem de programação R](https://cran.r-project.org/){.external target="_blank"} e diversos pacotes, como o [Tidyverse](https://www.tidyverse.org/){.external target="_blank"}, além de frameworks como [Shiny](https://shiny.posit.co/){.external target="_blank"} e [Quarto](https://quarto.org/){.external target="_blank"}. Essa experiência me proporcionou uma base sólida em **Data Science** e influenciou meu interesse nas áreas de **Audit & Assurance, Forensics, FP&A e M&A**.
+Ao longo da graduação, participei de diversos projetos de pesquisa e extensão, nos quais desenvolvi habilidades em análise de dados utilizando a [linguagem de programação R](https://cran.r-project.org/){.external target="_blank"} e diversos pacotes, como o [Tidyverse](https://www.tidyverse.org/){.external target="_blank"}, além de frameworks como [Shiny](https://shiny.posit.co/){.external target="_blank"} e [Quarto](https://quarto.org/){.external target="_blank"}. Essa experiência me proporcionou uma base sólida em **Data Science** e influenciou meu interesse em outras ferramentas, como **Python** e **SQL**, e em áreas de atuação profissional, como **Audit & Assurance, Forensics, FP&A e M&A**.
 
-Fora do ambiente acadêmico e profissional, gosto de acompanhar esportes, pedalar e jogar videogames e boardgames.
+Fora do ambiente acadêmico e profissional, gosto de acompanhar esportes, de experimentar distros linux e de jogos de bloquinhos quadrados.

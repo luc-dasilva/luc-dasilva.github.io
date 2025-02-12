@@ -8,6 +8,7 @@ website:
     favicon: img/favicon.png
     back-to-top-navigation: false
     navbar:
+      # logo: img/favicon.png
       pinned: true
       title: false
       left:
