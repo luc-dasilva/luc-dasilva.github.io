@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 website:
+    google-analytics: "G-PM1MXTXH7M"
     title: Lucas da Silva
     search: false  
     favicon: img/favicon.png
