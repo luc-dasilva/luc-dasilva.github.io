@@ -1,7 +1,6 @@
 ---
 title: "Transformando dados com across( )"
 date: "2024-10-08"
-author: Lucas da Silva
 description: "Fazendo mais com menos."
 image: "img/dplyr_across.png"
 toc: true

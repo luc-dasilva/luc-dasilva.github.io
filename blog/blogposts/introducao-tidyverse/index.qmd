@@ -1,7 +1,6 @@
 ---
 title: "Uma breve introdução ao Tidyverse"
 date: "2024-08-05"
-author: Lucas da Silva
 description: "Um resumo do essencial para iniciar no mundo do Tidyverse."
 image: "img/tidyverse.png"
 toc: true

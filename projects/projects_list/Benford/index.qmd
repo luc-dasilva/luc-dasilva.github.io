@@ -1,0 +1,77 @@
+---
+title: "Dashboard - Analisando Fraudes com a Lei de Benford"
+date: "2025-04-20"
+image: "img/benford_thumb.png"
+description: "Ferramenta analítica para processos de auditoria, utilizando técnicas estatísticas e visualização de dados para identificar anomalias em transações financeiras."
+monofontoptions: 
+  - Scale=0.55
+---
+
+[<i class="bi bi-bar-chart-fill"></i> Acessar Dashboard](https://luc-dasilva.shinyapps.io/benfordlaw/){.btn .btn-outline-primary .btn role="button"}
+[<i class="bi bi-info-circle-fill"></i> Sobre](#sobre-este-projeto){.btn .btn-outline-primary .btn role="button"}
+[<i class="bi bi-book-fill"></i> Metodologia](#metodologia){.btn .btn-outline-primary .btn role="button"}
+[<i class="bi bi-github"></i> Código-Fonte](https://github.com/luc-dasilva/benford_law){.btn .btn-outline-primary .btn role="button"} 
+
+A Lei de Benford, um dos pilares metodológicos deste dashboard, é um fenômeno estatístico que postula que em muitas coleções naturais de dados numéricos, a distribuição dos primeiros dígitos não é uniforme. Pelo contrário, o dígito 1 aparece como primeiro dígito em aproximadamente 30% dos números, enquanto dígitos maiores ocorrem com frequência progressivamente menor. Esta lei matemática tem aplicações poderosas na detecção de fraudes, pois dados manipulados ou fabricados tendem a não seguir este padrão natural de distribuição, permitindo aos auditores identificar conjuntos de dados que merecem investigação mais aprofundada. 
+
+## Sobre Este Projeto
+
+Utilizando a Lei de Benford, este Dashboard Analítico de Auditoria foi desenvolvido para demonstrar uma aplicação prática de técnicas de ciência de dados à auditoria. Ele apresenta:
+
+- **Habilidades Técnicas**: Programação em R, análise estatística, ciência de dados, visualização de dados
+- **Conhecimento de Auditoria**: Aplicação de técnicas de auditoria aceitas como a Lei de Benford
+- **Conhecimento de Negócios**: Interpretação de anomalias financeiras no contexto empresarial
+
+### Processo de Desenvolvimento
+
+1. **Análise de Requisitos**: Identificação de preocupações-chave de auditoria e abordagens analíticas
+2. **Modelagem de Dados**: Estruturas de dados projetadas para suportar a detecção de anomalias
+3. **Desenvolvimento do Dashboard**: Criação de visualizações interativas usando Shiny e Echarts
+4. **Documentação**: Fornecimento de explicações metodológicas claras e guias de usuário
+
+### Extensões Potenciais
+
+- Integração com sistemas de monitoramento contínuo
+- Modelos de Machine Learning para detecção de anomalias mais sofisticada
+- Incorporação de fatores de risco específicos do setor
+- Funcionalidades de relatórios automatizados
+
+## Metodologia
+
+Este dashboard emprega três técnicas principais para detecção de anomalias em dados financeiros:
+
+### 1. Análise da Lei de Benford
+
+A Lei de Benford afirma que em muitos conjuntos de dados numéricos de ocorrência natural, os primeiros dígitos seguem uma distribuição específica, com 1 aparecendo como primeiro dígito em cerca de 30% das vezes. Dados financeiros que se desviam significativamente desse padrão podem justificar uma investigação mais aprofundada.
+
+Foi utilizado o pacote `benford.analysis` do R para realizar testes estatísticos na distribuição do primeiro dígito:
+
+- Teste qui-quadrado para medir o ajuste geral
+- Desvio Médio Absoluto (DMA) para quantificar o desvio das frequências esperadas
+
+### 2. Análise de Z-Score
+
+Os Z-scores medem quantos desvios padrão um ponto de dados está da média. Calculamos z-scores para cada valor de transação dentro do contexto de sua conta:
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+Onde:
+
+- X é o valor da transação
+- μ é o valor médio da transação para aquela conta
+- σ é o desvio padrão dos valores de transação para aquela conta
+
+Quanto maior o valor absoluto do z-score, mais incomum a transação é:
+
+- Z-score próximo de 0: Quantia da transação é próxima da média
+- Z-score > 2.5: A transação é classificada com outlier
+- Z-score > 3: A transação é altamente incomum
+- Z-score positivos indicam quantidades acima da média
+- Z-scores negativos indicam quantidades abaixo da média
+
+
+### 3. Análise de Séries Temporais
+
+O dashboard visualiza volumes e valores de transações ao longo do tempo para identificar padrões incomuns ou picos que possam indicar períodos problemáticos que requerem exame mais detalhado.

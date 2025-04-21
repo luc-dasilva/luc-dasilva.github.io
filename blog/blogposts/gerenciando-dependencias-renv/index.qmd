@@ -1,7 +1,6 @@
 ---
 title: "Gerenciando dependências com {renv}"
 date: "2024-09-19"
-author: Lucas da Silva
 description: "Garantindo a reprodutibilidade do seu código de maneira simples."
 image: "img/renv.png"
 toc: true

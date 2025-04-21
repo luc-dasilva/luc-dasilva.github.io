@@ -1,7 +1,6 @@
 ---
 title: "Limpando dados com {janitor}"
 date: "2024-11-12"
-author: Lucas da Silva
 description: "Ferramentas poderosas para facilitar a hora da faxina."
 image: "img/janitor_cleaning.png"
 toc: true

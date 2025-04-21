@@ -1,7 +1,6 @@
 ---
 title: "Planilhas do Excel no R"
 date: "2024-08-07"
-author: Lucas da Silva
 description: "Dados do Excel ao R de maneira fácil e rápida."
 image: "img/readxl.png"
 toc: true
@@ -96,18 +95,18 @@ Para o `read_excel()` importar outra planilha é necessário especificar o núme
 
 ```{r}
 # Por padrão, o read_excel importa a primeira planilha do arquivo Excel
-# Ou seja, neste caso o read_excel importa a planilha chamada "iris" por padrão
+# Ou seja, neste caso o read_excel importa a planilha chamada "mtcars" por padrão
 read_excel(example_xlsx)
 
 # Podemos especificar qual planilha queremos importar com o nome ou número da planilha
-# Ou seja, podemos importar a planilha "iris" com seu próprio nome
-read_excel(example_xlsx, sheet = "iris")
+# Ou seja, podemos importar a planilha "mtcars" com seu próprio nome
+read_excel(example_xlsx, sheet = "mtcars")
 
-# Ou podemos importar a planilha "iris" com o número
+# Ou podemos importar a planilha "mtcars" com o número
 read_excel(example_xlsx, sheet = 1)
 
 # Podemos especificar outra planilha pelo seu nome:
-read_excel(example_xlsx, "mtcars")
+read_excel(example_xlsx, "quakes")
 
 # Ou podemos especificar essa mesma planilha pelo seu número:
 read_excel(example_xlsx, sheet = 2)
@@ -152,7 +151,8 @@ Para definir cada coluna individualmente, podemos fazer o seguinte:
 ```{r}
 read_excel(
     example_xlsx,
-    col_types = c("numeric", "numeric", "guess", "guess", "text")
+    sheet = "quakes",
+    col_types = c("numeric", "numeric", "numeric", "numeric", "guess")
 )
 ```
 
@@ -183,7 +183,6 @@ excel_sheets(example_xlsx)
 dataset_1 <- read_excel(example_xlsx, sheet = 1)
 dataset_2 <- read_excel(example_xlsx, sheet = 2)
 dataset_3 <- read_excel(example_xlsx, sheet = 3)
-dataset_4 <- read_excel(example_xlsx, sheet = 4)
 ```
 
 Neste método apenas é possível importar cada planilha de um arquivo individualmente. Não é preciso de muito *brainpower* para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).

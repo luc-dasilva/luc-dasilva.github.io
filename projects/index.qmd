@@ -1,0 +1,12 @@
+---
+listing: 
+    contents: projects_list
+    sort: "date desc"
+    sort-ui: false
+    filter-ui: false
+    type: grid
+    categories: false
+    grid-columns: 2
+    image-height: 33vmin
+page-layout: full
+---

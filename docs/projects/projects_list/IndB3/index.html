@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Dashboard que transforma dados financeiros públicos em insights através de uma interface interativa.">
 
-<title>Lucas da Silva</title>
+<title>Lucas da Silva - Dashboard - IndicadoresB3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,17 +24,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<link href="./img/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../../../img/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -59,13 +61,42 @@ gtag('js', new Date());
 gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -74,19 +105,19 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Sobre mim</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv/cv_lucas.pdf" target="_blank"> 
+    <a class="nav-link" href="../../../cv/cv_lucas.pdf" target="_blank"> 
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects/index.html"> 
+    <a class="nav-link" href="../../../projects/index.html"> 
 <span class="menu-text">Projetos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -114,51 +145,174 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Dashboard - IndicadoresB3</h1>
+                  <div>
+        <div class="description">
+          Dashboard que transforma dados financeiros públicos em insights através de uma interface interativa.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Data de Publicação</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">30 de janeiro de 2025</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Data de Modificação</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">20 de abril de 2025</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles content column-page">
-  <div class="about-entity">
-    <img src="img/profile_new.jpg" class="about-image
-  round " style="height: 12rem; width: 12rem;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Lucas da Silva</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://www.linkedin.com/in/luc-dasilva/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="mailto:lucasgomes.wdcs@gmail.com" class="about-link" rel="" target="_blank">
-    <i class="bi bi-envelope-fill"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://github.com/luc-dasilva" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://wa.me/5583987901308" class="about-link" rel="" target="_blank">
-    <i class="bi bi-whatsapp"></i>
-     <span class="about-link-text">Whatsapp</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<p>Olá! Sou Lucas da Silva, graduando em Ciências Contábeis pela <a href="https://www.ufpb.br/" class="external" target="_blank">Universidade Federal da Paraíba</a>.</p>
-<p>Durante minha formação estudantil, fui selecionado pelo programa de intercâmbio estadual <a href="https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo" class="external" target="_blank">Gira Mundo</a>, onde tive a oportunidade de estudar em Ontário, Canadá, por seis meses. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos no CCAA, onde concluí o curso de inglês e, posteriormente, atuei como professor de língua inglesa.</p>
-<p>Ao longo da minha graduação, fui pesquisador bolsista e participei de diversos de extensão, nos quais desenvolvi habilidades com a <a href="https://cran.r-project.org/" class="external" target="_blank">linguagem de programação R</a> e seus diversos pacotes, como o <a href="https://www.tidyverse.org/" class="external" target="_blank">Tidyverse</a>, além de seus <em>frameworks</em>, como <a href="https://shiny.posit.co/" class="external" target="_blank">Shiny</a> e <a href="https://quarto.org/" class="external" target="_blank">Quarto</a>. Essas experiências me proporcionaram uma base sólida em <strong>Data Science</strong>, em <strong>Estatística</strong> e em <strong>Finanças</strong> e, eventualmente, influenciaram meus interesses em outras ferramentas, como <strong>PowerBI</strong>, <strong>Python</strong> e <strong>SQL</strong>, e em algumas áreas de atuação profissional, como <strong>Auditoria, Forensics e FP&amp;A</strong>.</p>
-<p>Fora do ambiente acadêmico e profissional gosto de acompanhar esportes, de experimentar diferentes distribuições linux e de jogos de bloquinhos quadrados.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main></div>
-</div>
- <!-- /main -->
+
+
+
+<p><a href="https://luc-dasilva.shinyapps.io/indicadoresb3/" class="btn btn-outline-primary" role="button"><i class="bi bi-bar-chart-fill"></i> Acessar Dashboard</a> <a href="#sobre-este-projeto" class="btn btn-outline-primary" role="button"><i class="bi bi-info-circle-fill"></i> Sobre</a> <a href="#metodologia" class="btn btn-outline-primary" role="button"><i class="bi bi-book-fill"></i> Metodologia</a> <a href="https://github.com/luc-dasilva/indicadores_b3" class="btn btn-outline-primary" role="button"><i class="bi bi-github"></i> Código-Fonte</a></p>
+<section id="indicadoresb3" class="level1">
+<h1>IndicadoresB3</h1>
+<p>O IndicadoresB3 permite aos usuários explorar demonstrações financeiras trimestrais e anuais das empresas listadas na B3 (Brasil, Bolsa, Balcão), com visualizações dinâmicas de indicadores financeiros críticos.</p>
+<section id="sobre-este-projeto" class="level2">
+<h2 class="anchored" data-anchor-id="sobre-este-projeto">Sobre Este Projeto</h2>
+<p>Utilizando dados abertos da Comissão de Valores Mobiliários (CVM), o IndicadoresB3 foi desenvolvido para demonstrar uma aplicação prática de técnicas de ciência de dados à análise financeira. Ele apresenta:</p>
+<ul>
+<li><strong>Habilidades Técnicas</strong>: Programação em R, ciência de dados aplicada aos dados financeiros, visualização de dados</li>
+<li><strong>Conhecimento Financeiro</strong>: Análise de demonstrações contábeis, indicadores financeiros, avaliação de desempenho empresarial</li>
+<li><strong>Conhecimento de Negócios</strong>: Interpretação contextual de métricas financeiras por setor e segmento</li>
+</ul>
+<section id="processo-de-desenvolvimento" class="level3">
+<h3 class="anchored" data-anchor-id="processo-de-desenvolvimento">Processo de Desenvolvimento</h3>
+<ol type="1">
+<li><strong>Coleta de Dados</strong>: Importação automática de demonstrações financeiras do portal de dados abertos da CVM</li>
+<li><strong>Processamento e Limpeza</strong>: Transformação e normalização dos dados contábeis para análise</li>
+<li><strong>Modelagem</strong>: Cálculo de indicadores financeiros relevantes e métricas comparativas</li>
+<li><strong>Desenvolvimento do Dashboard</strong>: Criação de visualizações interativas usando Shiny, bs4Dash e Echarts4r</li>
+<li><strong>Documentação</strong>: Fornecimento de explicações metodológicas e guias de usuário</li>
+</ol>
+</section>
+<section id="extensões-potenciais" class="level3">
+<h3 class="anchored" data-anchor-id="extensões-potenciais">Extensões Potenciais</h3>
+<ul>
+<li>Análises preditivas de desempenho financeiro</li>
+<li>Comparação de indicadores com médias setoriais</li>
+<li>Alertas para variações significativas em métricas-chave</li>
+<li>Funcionalidades de exportação de relatórios customizados</li>
+</ul>
+</section>
+</section>
+<section id="metodologia" class="level2">
+<h2 class="anchored" data-anchor-id="metodologia">Metodologia</h2>
+<p>Este dashboard emprega três componentes principais para análise financeira:</p>
+<section id="análise-de-demonstrações-financeiras" class="level3">
+<h3 class="anchored" data-anchor-id="análise-de-demonstrações-financeiras">1. Análise de Demonstrações Financeiras</h3>
+<p>O dashboard apresenta dados dos principais relatórios contábeis:</p>
+<ul>
+<li><strong>Demonstração de Resultado (DR)</strong>: Análise da receita, custos, despesas e resultados operacionais</li>
+<li><strong>Balanço Patrimonial - Ativo (BPA)</strong>: Análise da estrutura de ativos da empresa</li>
+<li><strong>Balanço Patrimonial - Passivo (BPP)</strong>: Análise da estrutura de capital e endividamento</li>
+</ul>
+<p>Para cada demonstração financeira, são exibidos dados de até 5 anos (2020-2024), permitindo a análise de tendências e variações percentuais entre períodos.</p>
+</section>
+<section id="indicadores-de-rentabilidade" class="level3">
+<h3 class="anchored" data-anchor-id="indicadores-de-rentabilidade">2. Indicadores de Rentabilidade</h3>
+<p>São calculados indicadores como:</p>
+<ul>
+<li><strong>Retorno sobre Patrimônio Líquido (ROE)</strong>: Mede a rentabilidade gerada em relação ao capital próprio investido</li>
+</ul>
+<p><span class="math display">\[
+ROE = \frac{\text{Lucro Líquido}}{\text{Patrimônio Líquido}}
+\]</span></p>
+<p>Este indicador é fundamental para avaliar a eficiência da empresa na geração de lucros a partir do capital dos acionistas.</p>
+</section>
+<section id="análise-de-liquidez" class="level3">
+<h3 class="anchored" data-anchor-id="análise-de-liquidez">3. Análise de Liquidez</h3>
+<p>O dashboard calcula e visualiza três indicadores de liquidez fundamentais:</p>
+<ul>
+<li><p><strong>Liquidez Corrente</strong>: Capacidade de pagamento de obrigações de curto prazo</p>
+<p><span class="math display">\[
+\text{Liquidez Corrente} = \frac{\text{Ativo Circulante}}{\text{Passivo Circulante}}
+\]</span></p></li>
+<li><p><strong>Liquidez Seca</strong>: Capacidade de pagamento excluindo estoques</p>
+<p><span class="math display">\[
+\text{Liquidez Seca} = \frac{\text{Ativo Circulante} - \text{Estoques}}{\text{Passivo Circulante}}
+\]</span></p></li>
+<li><p><strong>Liquidez Imediata</strong>: Capacidade de pagamento utilizando apenas recursos de alta liquidez</p>
+<p><span class="math display">\[
+\text{Liquidez Imediata} = \frac{\text{Disponibilidades}}{\text{Passivo Circulante}}
+\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="interface-do-dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="interface-do-dashboard">Interface do Dashboard</h2>
+<p>O dashboard é composto por três abas principais:</p>
+<ol type="1">
+<li><strong>Dashboard</strong>: Visão geral do desempenho financeiro, incluindo:
+<ul>
+<li>Informações cadastrais da empresa</li>
+<li>Receita e resultado do último período</li>
+<li>Evolução trimestral da receita</li>
+<li>Análise de margens (bruta e líquida)</li>
+<li>Comparativo entre receita e resultado ao longo do tempo</li>
+</ul></li>
+<li><strong>Indicadores</strong>: Análise de indicadores financeiros:
+<ul>
+<li>Evolução do ROE ao longo do tempo</li>
+<li>Indicadores de liquidez (corrente, seca e imediata)</li>
+</ul></li>
+<li><strong>Demonstrações</strong>: Visualização detalhada das demonstrações financeiras:
+<ul>
+<li>Demonstação do Resultado completa com análise de variação percentual entre períodos</li>
+<li>Balanço Patrimonial - Ativo com análise de variação</li>
+<li>Balanço Patrimonial - Passivo com análise de variação</li>
+</ul></li>
+</ol>
+</section>
+<section id="uso-do-dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="uso-do-dashboard">Uso do Dashboard</h2>
+<ol type="1">
+<li>Selecione a empresa desejada no menu lateral</li>
+<li>Navegue entre as abas para analisar diferentes aspectos financeiros</li>
+<li>Interaja com os gráficos para visualizar informações detalhadas</li>
+</ol>
+</section>
+<section id="considerações-técnicas" class="level2">
+<h2 class="anchored" data-anchor-id="considerações-técnicas">Considerações Técnicas</h2>
+<p>O projeto utiliza diversas bibliotecas R para processamento e visualização:</p>
+<ul>
+<li><strong>tidyverse</strong>: Para importação, limpeza e transformação de dados</li>
+<li><strong>shiny</strong> e <strong>bs4Dash</strong>: Para a interface interativa</li>
+<li><strong>echarts4r</strong>: Para visualizações gráficas dinâmicas</li>
+<li><strong>reactable</strong>: Para tabelas interativas responsivas</li>
+</ul>
+<p>Os dados financeiros são processados seguindo as práticas contábeis padrozinadas, com ajustes para garantir a comparabilidade entre diferentes empresas e períodos.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -179,6 +333,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

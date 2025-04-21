@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Lucas da Silva">
 <meta name="description" content="Dados do Excel ao R de maneira fácil e rápida.">
 <title>Lucas da Silva - Planilhas do Excel no R</title>
 <style>
@@ -106,8 +105,8 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://luc-dasilva.shinyapps.io/indb3/" target="_blank"> 
-<span class="menu-text">IndB3</span></a>
+    <a class="nav-link" href="../../../projects/index.html"> 
+<span class="menu-text">Projetos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../blog/index.html"> 
@@ -149,12 +148,6 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Autor</div>
-      <div class="quarto-title-meta-contents">
-               <p>Lucas da Silva </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Data de Publicação</div>
@@ -201,8 +194,8 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span><span class="co">#&gt; ✔ dplyr     1.1.4     ✔ readr     2.1.5</span></span>
 <span><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.1</span></span>
 <span><span class="co">#&gt; ✔ ggplot2   3.5.1     ✔ tibble    3.2.1</span></span>
-<span><span class="co">#&gt; ✔ lubridate 1.9.3     ✔ tidyr     1.3.1</span></span>
-<span><span class="co">#&gt; ✔ purrr     1.0.2     </span></span>
+<span><span class="co">#&gt; ✔ lubridate 1.9.4     ✔ tidyr     1.3.1</span></span>
+<span><span class="co">#&gt; ✔ purrr     1.0.4     </span></span>
 <span><span class="co">#&gt; ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
@@ -233,80 +226,6 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span></span>
 <span><span class="co"># Lê o arquivo</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa </span></span>
-<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2 setosa </span></span>
-<span><span class="co">#&gt; 5          5           3.6          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4 setosa </span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Por padrão, o <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> importa a primeira planilha do arquivo Excel. Para saber quantas planilhas um arquivo de Excel possui, usamos o <code><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets()</a></code>.</p>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">example_xlsx</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "iris"     "mtcars"   "chickwts" "quakes"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Para o <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> importar outra planilha é necessário especificar o número ou nome com o parâmetro <em>sheet</em> (o segundo parâmetro).</p>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Por padrão, o read_excel importa a primeira planilha do arquivo Excel</span></span>
-<span><span class="co"># Ou seja, neste caso o read_excel importa a planilha chamada "iris" por padrão</span></span>
-<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa </span></span>
-<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2 setosa </span></span>
-<span><span class="co">#&gt; 5          5           3.6          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4 setosa </span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span>
-<span></span>
-<span><span class="co"># Podemos especificar qual planilha queremos importar com o nome ou número da planilha</span></span>
-<span><span class="co"># Ou seja, podemos importar a planilha "iris" com seu próprio nome</span></span>
-<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="st">"iris"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa </span></span>
-<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2 setosa </span></span>
-<span><span class="co">#&gt; 5          5           3.6          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4 setosa </span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span>
-<span></span>
-<span><span class="co"># Ou podemos importar a planilha "iris" com o número</span></span>
-<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa </span></span>
-<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2 setosa </span></span>
-<span><span class="co">#&gt; 5          5           3.6          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4 setosa </span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span>
-<span></span>
-<span><span class="co"># Podemos especificar outra planilha pelo seu nome:</span></span>
-<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, <span class="st">"mtcars"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 32 × 11</span></span>
-<span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1  21       6   160   110  3.9   2.62  16.5     0     1     4     4</span></span>
-<span><span class="co">#&gt; 2  21       6   160   110  3.9   2.88  17.0     0     1     4     4</span></span>
-<span><span class="co">#&gt; 3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1</span></span>
-<span><span class="co">#&gt; 4  21.4     6   258   110  3.08  3.22  19.4     1     0     3     1</span></span>
-<span><span class="co">#&gt; 5  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2</span></span>
-<span><span class="co">#&gt; 6  18.1     6   225   105  2.76  3.46  20.2     1     0     3     1</span></span>
-<span><span class="co">#&gt; # ℹ 26 more rows</span></span>
-<span></span>
-<span><span class="co"># Ou podemos especificar essa mesma planilha pelo seu número:</span></span>
-<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 32 × 11</span></span>
 <span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
 <span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
@@ -318,61 +237,142 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span><span class="co">#&gt; 6  18.1     6   225   105  2.76  3.46  20.2     1     0     3     1</span></span>
 <span><span class="co">#&gt; # ℹ 26 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Por padrão, o <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> importa a primeira planilha do arquivo Excel. Para saber quantas planilhas um arquivo de Excel possui, usamos o <code><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets()</a></code>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">example_xlsx</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "mtcars"   "chickwts" "quakes"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para o <code><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel()</a></code> importar outra planilha é necessário especificar o número ou nome com o parâmetro <em>sheet</em> (o segundo parâmetro).</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Por padrão, o read_excel importa a primeira planilha do arquivo Excel</span></span>
+<span><span class="co"># Ou seja, neste caso o read_excel importa a planilha chamada "mtcars" por padrão</span></span>
+<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 32 × 11</span></span>
+<span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  21       6   160   110  3.9   2.62  16.5     0     1     4     4</span></span>
+<span><span class="co">#&gt; 2  21       6   160   110  3.9   2.88  17.0     0     1     4     4</span></span>
+<span><span class="co">#&gt; 3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1</span></span>
+<span><span class="co">#&gt; 4  21.4     6   258   110  3.08  3.22  19.4     1     0     3     1</span></span>
+<span><span class="co">#&gt; 5  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2</span></span>
+<span><span class="co">#&gt; 6  18.1     6   225   105  2.76  3.46  20.2     1     0     3     1</span></span>
+<span><span class="co">#&gt; # ℹ 26 more rows</span></span>
+<span></span>
+<span><span class="co"># Podemos especificar qual planilha queremos importar com o nome ou número da planilha</span></span>
+<span><span class="co"># Ou seja, podemos importar a planilha "mtcars" com seu próprio nome</span></span>
+<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="st">"mtcars"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 32 × 11</span></span>
+<span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  21       6   160   110  3.9   2.62  16.5     0     1     4     4</span></span>
+<span><span class="co">#&gt; 2  21       6   160   110  3.9   2.88  17.0     0     1     4     4</span></span>
+<span><span class="co">#&gt; 3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1</span></span>
+<span><span class="co">#&gt; 4  21.4     6   258   110  3.08  3.22  19.4     1     0     3     1</span></span>
+<span><span class="co">#&gt; 5  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2</span></span>
+<span><span class="co">#&gt; 6  18.1     6   225   105  2.76  3.46  20.2     1     0     3     1</span></span>
+<span><span class="co">#&gt; # ℹ 26 more rows</span></span>
+<span></span>
+<span><span class="co"># Ou podemos importar a planilha "mtcars" com o número</span></span>
+<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 32 × 11</span></span>
+<span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  21       6   160   110  3.9   2.62  16.5     0     1     4     4</span></span>
+<span><span class="co">#&gt; 2  21       6   160   110  3.9   2.88  17.0     0     1     4     4</span></span>
+<span><span class="co">#&gt; 3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1</span></span>
+<span><span class="co">#&gt; 4  21.4     6   258   110  3.08  3.22  19.4     1     0     3     1</span></span>
+<span><span class="co">#&gt; 5  18.7     8   360   175  3.15  3.44  17.0     0     0     3     2</span></span>
+<span><span class="co">#&gt; 6  18.1     6   225   105  2.76  3.46  20.2     1     0     3     1</span></span>
+<span><span class="co">#&gt; # ℹ 26 more rows</span></span>
+<span></span>
+<span><span class="co"># Podemos especificar outra planilha pelo seu nome:</span></span>
+<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, <span class="st">"quakes"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1,000 × 5</span></span>
+<span><span class="co">#&gt;     lat  long depth   mag stations</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 -20.4  182.   562   4.8       41</span></span>
+<span><span class="co">#&gt; 2 -20.6  181.   650   4.2       15</span></span>
+<span><span class="co">#&gt; 3 -26    184.    42   5.4       43</span></span>
+<span><span class="co">#&gt; 4 -18.0  182.   626   4.1       19</span></span>
+<span><span class="co">#&gt; 5 -20.4  182.   649   4         11</span></span>
+<span><span class="co">#&gt; 6 -19.7  184.   195   4         12</span></span>
+<span><span class="co">#&gt; # ℹ 994 more rows</span></span>
+<span></span>
+<span><span class="co"># Ou podemos especificar essa mesma planilha pelo seu número:</span></span>
+<span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 71 × 2</span></span>
+<span><span class="co">#&gt;   weight feed     </span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;    </span></span>
+<span><span class="co">#&gt; 1    179 horsebean</span></span>
+<span><span class="co">#&gt; 2    160 horsebean</span></span>
+<span><span class="co">#&gt; 3    136 horsebean</span></span>
+<span><span class="co">#&gt; 4    227 horsebean</span></span>
+<span><span class="co">#&gt; 5    217 horsebean</span></span>
+<span><span class="co">#&gt; 6    168 horsebean</span></span>
+<span><span class="co">#&gt; # ℹ 65 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="intervalo-de-células" class="level2"><h2 class="anchored" data-anchor-id="intervalo-de-células">Intervalo de células</h2>
 <p>Exitem diversas formas de sinalizar quais células devem ser lidas. É até possível especificar a planilha em específico, se for fornecido um intervalo no estilo do Excel.</p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Número máximo de linhas para importar</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, n_max <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 3 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 11</span></span>
+<span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  21       6   160   110  3.9   2.62  16.5     0     1     4     4</span></span>
+<span><span class="co">#&gt; 2  21       6   160   110  3.9   2.88  17.0     0     1     4     4</span></span>
+<span><span class="co">#&gt; 3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1</span></span>
 <span></span>
 <span><span class="co"># Número de linhas para pular</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, skip <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 147 × 5</span></span>
-<span><span class="co">#&gt;   `4.7` `3.2` `1.3` `0.2` setosa</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; </span></span>
-<span><span class="co">#&gt; 1   4.6   3.1   1.5   0.2 setosa</span></span>
-<span><span class="co">#&gt; 2   5     3.6   1.4   0.2 setosa</span></span>
-<span><span class="co">#&gt; 3   5.4   3.9   1.7   0.4 setosa</span></span>
-<span><span class="co">#&gt; 4   4.6   3.4   1.4   0.3 setosa</span></span>
-<span><span class="co">#&gt; 5   5     3.4   1.5   0.2 setosa</span></span>
-<span><span class="co">#&gt; 6   4.4   2.9   1.4   0.2 setosa</span></span>
-<span><span class="co">#&gt; # ℹ 141 more rows</span></span>
+<span><span class="co">#&gt; New names:</span></span>
+<span><span class="co">#&gt; • `4` -&gt; `4...2`</span></span>
+<span><span class="co">#&gt; • `1` -&gt; `1...8`</span></span>
+<span><span class="co">#&gt; • `1` -&gt; `1...9`</span></span>
+<span><span class="co">#&gt; • `4` -&gt; `4...10`</span></span>
+<span><span class="co">#&gt; • `1` -&gt; `1...11`</span></span>
+<span><span class="co">#&gt; # A tibble: 29 × 11</span></span>
+<span><span class="co">#&gt;   `22.8` `4...2` `108`  `93` `3.85` `2.3199999999999998` `18.61` `1...8`</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;                &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1   21.4       6  258    110   3.08                 3.22    19.4       1</span></span>
+<span><span class="co">#&gt; 2   18.7       8  360    175   3.15                 3.44    17.0       0</span></span>
+<span><span class="co">#&gt; 3   18.1       6  225    105   2.76                 3.46    20.2       1</span></span>
+<span><span class="co">#&gt; 4   14.3       8  360    245   3.21                 3.57    15.8       0</span></span>
+<span><span class="co">#&gt; 5   24.4       4  147.    62   3.69                 3.19    20         1</span></span>
+<span><span class="co">#&gt; 6   22.8       4  141.    95   3.92                 3.15    22.9       1</span></span>
+<span><span class="co">#&gt; # ℹ 23 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 3 more variables: `1...9` &lt;dbl&gt;, `4...10` &lt;dbl&gt;, `1...11` &lt;dbl&gt;</span></span>
 <span></span>
 <span><span class="co"># Intervalo de linhas e colunas para importar</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, range <span class="op">=</span> <span class="st">"C1:E4"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 3</span></span>
-<span><span class="co">#&gt;   Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          1.3         0.2 setosa</span></span>
+<span><span class="co">#&gt;    disp    hp  drat</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1   160   110  3.9 </span></span>
+<span><span class="co">#&gt; 2   160   110  3.9 </span></span>
+<span><span class="co">#&gt; 3   108    93  3.85</span></span>
 <span></span>
 <span><span class="co"># Intervado de linhas para importar</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/cellranger/man/cell_rows.html">cell_rows</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 3 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa</span></span>
+<span><span class="co">#&gt; # A tibble: 3 × 11</span></span>
+<span><span class="co">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  21       6   160   110  3.9   2.62  16.5     0     1     4     4</span></span>
+<span><span class="co">#&gt; 2  21       6   160   110  3.9   2.88  17.0     0     1     4     4</span></span>
+<span><span class="co">#&gt; 3  22.8     4   108    93  3.85  2.32  18.6     1     1     4     1</span></span>
 <span></span>
 <span><span class="co"># Intervalo de colunas para importar</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/cellranger/man/cell_cols.html">cell_cols</a></span><span class="op">(</span><span class="st">"B:D"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 3</span></span>
-<span><span class="co">#&gt;   Sepal.Width Petal.Length Petal.Width</span></span>
-<span><span class="co">#&gt;         &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1         3.5          1.4         0.2</span></span>
-<span><span class="co">#&gt; 2         3            1.4         0.2</span></span>
-<span><span class="co">#&gt; 3         3.2          1.3         0.2</span></span>
-<span><span class="co">#&gt; 4         3.1          1.5         0.2</span></span>
-<span><span class="co">#&gt; 5         3.6          1.4         0.2</span></span>
-<span><span class="co">#&gt; 6         3.9          1.7         0.4</span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span>
+<span><span class="co">#&gt; # A tibble: 32 × 3</span></span>
+<span><span class="co">#&gt;     cyl  disp    hp</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1     6   160   110</span></span>
+<span><span class="co">#&gt; 2     6   160   110</span></span>
+<span><span class="co">#&gt; 3     4   108    93</span></span>
+<span><span class="co">#&gt; 4     6   258   110</span></span>
+<span><span class="co">#&gt; 5     8   360   175</span></span>
+<span><span class="co">#&gt; 6     6   225   105</span></span>
+<span><span class="co">#&gt; # ℹ 26 more rows</span></span>
 <span></span>
 <span><span class="co"># Intervalo de linhas e colunas de uma planilha específica</span></span>
 <span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, range <span class="op">=</span> <span class="st">"mtcars!B1:D5"</span><span class="op">)</span></span>
@@ -389,33 +389,35 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Para especificar o tipo de dado de colunas, usamos o parâmetro <strong>col_types</strong>. Para definir todas as variáveis como, por exemplo, <em>strings</em>, usamos:</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, col_types <span class="op">=</span> <span class="st">"text"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1 5.1          3.5         1.4          0.2         setosa </span></span>
-<span><span class="co">#&gt; 2 4.9          3           1.4          0.2         setosa </span></span>
-<span><span class="co">#&gt; 3 4.7          3.2         1.3          0.2         setosa </span></span>
-<span><span class="co">#&gt; 4 4.6          3.1         1.5          0.2         setosa </span></span>
-<span><span class="co">#&gt; 5 5            3.6         1.4          0.2         setosa </span></span>
-<span><span class="co">#&gt; 6 5.4          3.9         1.7          0.4         setosa </span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">#&gt; # A tibble: 32 × 11</span></span>
+<span><span class="co">#&gt;   mpg                cyl   disp  hp    drat  wt               qsec           </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;              &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;            &lt;chr&gt;          </span></span>
+<span><span class="co">#&gt; 1 21                 6     160   110   3.9   2.62             16.46          </span></span>
+<span><span class="co">#&gt; 2 21                 6     160   110   3.9   2.875            17.02          </span></span>
+<span><span class="co">#&gt; 3 22.8               4     108   93    3.85  2.3199999999999… 18.61          </span></span>
+<span><span class="co">#&gt; 4 21.4               6     258   110   3.08  3.2149999999999… 19.44000000000…</span></span>
+<span><span class="co">#&gt; 5 18.7               8     360   175   3.15  3.44             17.02          </span></span>
+<span><span class="co">#&gt; 6 18.100000000000001 6     225   105   2.76  3.46             20.22          </span></span>
+<span><span class="co">#&gt; # ℹ 26 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 4 more variables: vs &lt;chr&gt;, am &lt;chr&gt;, gear &lt;chr&gt;, carb &lt;chr&gt;</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para definir cada coluna individualmente, podemos fazer o seguinte:</p>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span></span>
 <span>    <span class="va">example_xlsx</span>,</span>
-<span>    col_types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"guess"</span>, <span class="st">"guess"</span>, <span class="st">"text"</span><span class="op">)</span></span>
+<span>    sheet <span class="op">=</span> <span class="st">"quakes"</span>,</span>
+<span>    col_types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"numeric"</span>, <span class="st">"guess"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 150 × 5</span></span>
-<span><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span></span>
-<span><span class="co">#&gt;          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  </span></span>
-<span><span class="co">#&gt; 1          5.1         3.5          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 2          4.9         3            1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 3          4.7         3.2          1.3         0.2 setosa </span></span>
-<span><span class="co">#&gt; 4          4.6         3.1          1.5         0.2 setosa </span></span>
-<span><span class="co">#&gt; 5          5           3.6          1.4         0.2 setosa </span></span>
-<span><span class="co">#&gt; 6          5.4         3.9          1.7         0.4 setosa </span></span>
-<span><span class="co">#&gt; # ℹ 144 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">#&gt; # A tibble: 1,000 × 5</span></span>
+<span><span class="co">#&gt;     lat  long depth   mag stations</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1 -20.4  182.   562   4.8       41</span></span>
+<span><span class="co">#&gt; 2 -20.6  181.   650   4.2       15</span></span>
+<span><span class="co">#&gt; 3 -26    184.    42   5.4       43</span></span>
+<span><span class="co">#&gt; 4 -18.0  182.   626   4.1       19</span></span>
+<span><span class="co">#&gt; 5 -20.4  182.   649   4         11</span></span>
+<span><span class="co">#&gt; 6 -19.7  184.   195   4         12</span></span>
+<span><span class="co">#&gt; # ℹ 994 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Os tipos de colunas disponíveis são:</p>
 <ul>
@@ -456,12 +458,11 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Para ler múltiplas planilhas em um arquivo de Excel, podemos fazer um código <em>quick and dirty</em> para resolver nosso problema…</p>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://readxl.tidyverse.org/reference/excel_sheets.html">excel_sheets</a></span><span class="op">(</span><span class="va">example_xlsx</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "iris"     "mtcars"   "chickwts" "quakes"</span></span>
+<span><span class="co">#&gt; [1] "mtcars"   "chickwts" "quakes"</span></span>
 <span></span>
 <span><span class="va">dataset_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">dataset_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
-<span><span class="va">dataset_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="va">dataset_4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">dataset_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readxl.tidyverse.org/reference/read_excel.html">read_excel</a></span><span class="op">(</span><span class="va">example_xlsx</span>, sheet <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Neste método apenas é possível importar cada planilha de um arquivo individualmente. Não é preciso de muito <em>brainpower</em> para perceber que essa prática não é muito eficiente se for necessário fazer isso com diversos arquivos de Excel (ou se o arquivo de Excel tenha diversas planilhas).</p>
 <p>Por isso, é recomendável usar outro pacote da coleção <code>tidyverse</code> em combinação como o <code>readxl</code>, o <code>purrr</code>, que nos oferece as ferramentas necessárias para automatizar tarefas repetitivas. Para conhecer o <code>purrr</code> e suas funcionalidades, basta ficar atento no blog que irei abordar sobre este e de outros pacotes.</p>

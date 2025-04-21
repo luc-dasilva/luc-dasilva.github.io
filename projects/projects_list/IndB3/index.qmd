@@ -1,0 +1,126 @@
+---
+title: "Dashboard - IndicadoresB3"
+date: "2025-01-30"
+date-modified: "2025-04-20"
+image: "img/ind_thumb.png"
+description: "Dashboard que transforma dados financeiros públicos em insights através de uma interface interativa."
+monofontoptions: 
+  - Scale=0.55
+---
+
+[<i class="bi bi-bar-chart-fill"></i> Acessar Dashboard](https://luc-dasilva.shinyapps.io/indicadoresb3/){.btn .btn-outline-primary .btn role="button"}
+[<i class="bi bi-info-circle-fill"></i> Sobre](#sobre-este-projeto){.btn .btn-outline-primary .btn role="button"}
+[<i class="bi bi-book-fill"></i> Metodologia](#metodologia){.btn .btn-outline-primary .btn role="button"}
+[<i class="bi bi-github"></i> Código-Fonte](https://github.com/luc-dasilva/indicadores_b3){.btn .btn-outline-primary .btn role="button"} 
+
+# IndicadoresB3
+
+O IndicadoresB3 permite aos usuários explorar demonstrações financeiras trimestrais e anuais das empresas listadas na B3 (Brasil, Bolsa, Balcão), com visualizações dinâmicas de indicadores financeiros críticos.
+
+## Sobre Este Projeto
+
+Utilizando dados abertos da Comissão de Valores Mobiliários (CVM), o IndicadoresB3 foi desenvolvido para demonstrar uma aplicação prática de técnicas de ciência de dados à análise financeira. Ele apresenta:
+
+- **Habilidades Técnicas**: Programação em R, ciência de dados aplicada aos dados financeiros, visualização de dados
+- **Conhecimento Financeiro**: Análise de demonstrações contábeis, indicadores financeiros, avaliação de desempenho empresarial
+- **Conhecimento de Negócios**: Interpretação contextual de métricas financeiras por setor e segmento
+
+### Processo de Desenvolvimento
+
+1. **Coleta de Dados**: Importação automática de demonstrações financeiras do portal de dados abertos da CVM
+2. **Processamento e Limpeza**: Transformação e normalização dos dados contábeis para análise
+3. **Modelagem**: Cálculo de indicadores financeiros relevantes e métricas comparativas
+4. **Desenvolvimento do Dashboard**: Criação de visualizações interativas usando Shiny, bs4Dash e Echarts4r
+5. **Documentação**: Fornecimento de explicações metodológicas e guias de usuário
+
+### Extensões Potenciais
+
+- Análises preditivas de desempenho financeiro
+- Comparação de indicadores com médias setoriais
+- Alertas para variações significativas em métricas-chave
+- Funcionalidades de exportação de relatórios customizados
+
+## Metodologia
+
+Este dashboard emprega três componentes principais para análise financeira:
+
+### 1. Análise de Demonstrações Financeiras
+
+O dashboard apresenta dados dos principais relatórios contábeis:
+
+- **Demonstração de Resultado (DR)**: Análise da receita, custos, despesas e resultados operacionais
+- **Balanço Patrimonial - Ativo (BPA)**: Análise da estrutura de ativos da empresa
+- **Balanço Patrimonial - Passivo (BPP)**: Análise da estrutura de capital e endividamento
+
+Para cada demonstração financeira, são exibidos dados de até 5 anos (2020-2024), permitindo a análise de tendências e variações percentuais entre períodos.
+
+### 2. Indicadores de Rentabilidade
+
+São calculados indicadores como:
+
+- **Retorno sobre Patrimônio Líquido (ROE)**: Mede a rentabilidade gerada em relação ao capital próprio investido
+
+$$
+ROE = \frac{\text{Lucro Líquido}}{\text{Patrimônio Líquido}}
+$$
+
+Este indicador é fundamental para avaliar a eficiência da empresa na geração de lucros a partir do capital dos acionistas.
+
+### 3. Análise de Liquidez
+
+O dashboard calcula e visualiza três indicadores de liquidez fundamentais:
+
+- **Liquidez Corrente**: Capacidade de pagamento de obrigações de curto prazo
+  
+  $$
+  \text{Liquidez Corrente} = \frac{\text{Ativo Circulante}}{\text{Passivo Circulante}}
+  $$
+
+- **Liquidez Seca**: Capacidade de pagamento excluindo estoques
+  
+  $$
+  \text{Liquidez Seca} = \frac{\text{Ativo Circulante} - \text{Estoques}}{\text{Passivo Circulante}}
+  $$
+
+- **Liquidez Imediata**: Capacidade de pagamento utilizando apenas recursos de alta liquidez
+  
+  $$
+  \text{Liquidez Imediata} = \frac{\text{Disponibilidades}}{\text{Passivo Circulante}}
+  $$
+
+## Interface do Dashboard
+
+O dashboard é composto por três abas principais:
+
+1. **Dashboard**: Visão geral do desempenho financeiro, incluindo:
+   - Informações cadastrais da empresa
+   - Receita e resultado do último período
+   - Evolução trimestral da receita
+   - Análise de margens (bruta e líquida)
+   - Comparativo entre receita e resultado ao longo do tempo
+
+2. **Indicadores**: Análise de indicadores financeiros:
+   - Evolução do ROE ao longo do tempo
+   - Indicadores de liquidez (corrente, seca e imediata)
+
+3. **Demonstrações**: Visualização detalhada das demonstrações financeiras:
+   - Demonstação do Resultado completa com análise de variação percentual entre períodos
+   - Balanço Patrimonial - Ativo com análise de variação
+   - Balanço Patrimonial - Passivo com análise de variação
+
+## Uso do Dashboard
+
+1. Selecione a empresa desejada no menu lateral
+2. Navegue entre as abas para analisar diferentes aspectos financeiros
+3. Interaja com os gráficos para visualizar informações detalhadas
+
+## Considerações Técnicas
+
+O projeto utiliza diversas bibliotecas R para processamento e visualização:
+
+- **tidyverse**: Para importação, limpeza e transformação de dados
+- **shiny** e **bs4Dash**: Para a interface interativa
+- **echarts4r**: Para visualizações gráficas dinâmicas
+- **reactable**: Para tabelas interativas responsivas
+
+Os dados financeiros são processados seguindo as práticas contábeis padrozinadas, com ajustes para garantir a comparabilidade entre diferentes empresas e períodos.

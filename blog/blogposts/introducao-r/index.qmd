@@ -1,7 +1,6 @@
 ---
 title: "Iniciando no R: instalação do R e Rstudio"
 date: "2024-08-26"
-author: Lucas da Silva
 description: "Setup do ambiente para ciência de dados."
 image: "img/rstudio.png"
 toc: true

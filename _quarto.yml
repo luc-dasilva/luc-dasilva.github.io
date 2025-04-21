@@ -18,9 +18,8 @@ website:
         - href: cv/cv_lucas.pdf
           text: Currículo
           target: _blank
-        - href: https://luc-dasilva.shinyapps.io/indb3/
-          text: IndB3
-          target: _blank
+        - href: projects/index.qmd
+          text: Projetos
         - href: blog/index.qmd
           text: Blog
       right: 
