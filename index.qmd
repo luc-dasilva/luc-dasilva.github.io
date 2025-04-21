@@ -21,7 +21,7 @@ about:
       href: https://github.com/luc-dasilva
       target: _blank
     - icon: whatsapp
-      text: Whatsapp
+      text: WhatsApp
       href: https://wa.me/5583987901308
       target: _blank
 ---
