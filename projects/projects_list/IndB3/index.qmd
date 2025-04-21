@@ -70,22 +70,22 @@ Este indicador é fundamental para avaliar a eficiência da empresa na geração
 
 O dashboard calcula e visualiza três indicadores de liquidez fundamentais:
 
-- **Liquidez Corrente**: Capacidade de pagamento de obrigações de curto prazo
+- **Liquidez Corrente (LC)**: Capacidade de pagamento de obrigações de curto prazo
   
   $$
-  \text{Liquidez Corrente} = \frac{\text{Ativo Circulante}}{\text{Passivo Circulante}}
+  LC = \frac{\text{Ativo Circulante}}{\text{Passivo Circulante}}
   $$
 
-- **Liquidez Seca**: Capacidade de pagamento excluindo estoques
+- **Liquidez Seca (LS)**: Capacidade de pagamento excluindo estoques
   
   $$
-  \text{Liquidez Seca} = \frac{\text{Ativo Circulante} - \text{Estoques}}{\text{Passivo Circulante}}
+  LS = \frac{\text{Ativo Circulante} - \text{Estoques}}{\text{Passivo Circulante}}
   $$
 
-- **Liquidez Imediata**: Capacidade de pagamento utilizando apenas recursos de alta liquidez
+- **Liquidez Imediata (LI)**: Capacidade de pagamento utilizando apenas recursos de alta liquidez
   
   $$
-  \text{Liquidez Imediata} = \frac{\text{Disponibilidades}}{\text{Passivo Circulante}}
+  LI = \frac{\text{Disponibilidades}}{\text{Passivo Circulante}}
   $$
 
 ## Interface do Dashboard
