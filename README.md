@@ -1,0 +1,1 @@
+Este é o repositório do meu website pessoal/profissional, desenvolvido utilizando o Quarto. O site serve como portfólio para apresentar minha formação acadêmica, experiências profissionais, projetos e blog.
