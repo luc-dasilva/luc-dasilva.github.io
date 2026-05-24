@@ -82,7 +82,6 @@ toc: false
 [Curso de Língua Inglesa]{.h5} [MAI 2019 -- JUL 2020]{.cv-date}
 
 - Conclusão do curso com bolsa de estudos pós-intercâmbio.
-- Atuação posterior como professor de inglês.
 
 ::: {.d-inline-flex style="align-items:baseline"}
 ::: p-2

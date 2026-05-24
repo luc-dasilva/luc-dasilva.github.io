@@ -9,23 +9,23 @@ about:
   image-width: 12rem
   links: 
     - icon: linkedin
-      text: LinkedIn
+      text: LINKEDIN
       href: https://www.linkedin.com/in/luc-dasilva/
       target: _blank
     - icon: envelope-fill
-      text: Email
+      text: EMAIL
       href: mailto:lucasgomes.wdcs@gmail.com
       target: _blank
     - icon: github
-      text: GitHub
+      text: GITHUB
       href: https://github.com/luc-dasilva
       target: _blank
     - icon: book-fill
-      text: Lattes
+      text: LATTES
       href: https://lattes.cnpq.br/8704813354955934
       target: _blank
     - icon: mortarboard-fill
-      text: Orcid
+      text: ORCID
       href: https://orcid.org/0009-0000-7615-168X
       target: _blank
 ---
