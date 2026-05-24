@@ -1,0 +1,11 @@
+<script>
+  (function () {
+    if (window.location.pathname.includes('/blog/')) {
+      document.querySelectorAll('a.nav-link').forEach(function (el) {
+        if (el.textContent.trim().toUpperCase() === 'BLOG') {
+          el.classList.add('active');
+        }
+      });
+    }
+  })();
+</script>

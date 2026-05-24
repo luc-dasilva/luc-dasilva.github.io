@@ -1,6 +1,6 @@
 ---
 title: Lucas da Silva
-image: img/profile_new.jpg
+image: img/MrFox.webp
 page-layout: full
 title-block-banner: false
 about:
@@ -20,16 +20,20 @@ about:
       text: GitHub
       href: https://github.com/luc-dasilva
       target: _blank
-    - icon: whatsapp
-      text: WhatsApp
-      href: https://wa.me/5583987901308
+    - icon: book-fill
+      text: Lattes
+      href: https://lattes.cnpq.br/8704813354955934
+      target: _blank
+    - icon: mortarboard-fill
+      text: Orcid
+      href: https://orcid.org/0009-0000-7615-168X
       target: _blank
 ---
 
-Olá! Sou Lucas da Silva, graduando em Ciências Contábeis pela [Universidade Federal da Paraíba](https://www.ufpb.br/){.external target="_blank"}.
+Olá! Sou Lucas da Silva, graduado em Ciências Contábeis pela [Universidade Federal da Paraíba](https://www.ufpb.br/){.external target="_blank"}.
 
-Durante minha formação estudantil, fui selecionado pelo programa de intercâmbio estadual [Gira Mundo](https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo){.external target="_blank"}, onde tive a oportunidade de estudar em Ontário, Canadá, por seis meses. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos no CCAA, onde concluí o curso de inglês e, posteriormente, atuei como professor de língua inglesa.
+Durante minha formação estudantil, fui selecionado pelo programa de intercâmbio [Gira Mundo](https://paraiba.pb.gov.br/diretas/secretaria-da-educacao/programas/programa-gira-mundo){.external target="_blank"}, onde tive a oportunidade de estudar na província de Ontário, Canadá, por seis meses. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos na escola de idiomas CCAA, onde concluí o curso de inglês. Posteriormente, atuei como professor de língua inglesa.
 
-Ao longo da minha graduação, fui pesquisador bolsista e participei de diversos programas de extensão, nos quais desenvolvi habilidades com a [linguagem de programação R](https://cran.r-project.org/){.external target="_blank"} e seus diversos pacotes, como o [Tidyverse](https://www.tidyverse.org/){.external target="_blank"}, além de seus *frameworks*, como [Shiny](https://shiny.posit.co/){.external target="_blank"} e [Quarto](https://quarto.org/){.external target="_blank"}. Essas experiências me proporcionaram uma base sólida em **Data Science**, em **Estatística** e em **Finanças**  e, eventualmente, influenciaram meus interesses em outras ferramentas, como **PowerBI**, **Python** e **SQL**, e em algumas áreas de atuação profissional, como **Auditoria, Forensics e FP&A**.
+Ao longo da minha graduação, participei de diversos programas de extensão e fui pesquisador bolsista na linha de pesquisa em **finanças empíricas**, onde desenvolvi habilidades com a [linguagem de programação R](https://cran.r-project.org/){.external target="_blank"}, seus diversos pacotes, como o [Tidyverse](https://www.tidyverse.org/){.external target="_blank"}, e seus *frameworks*, como [Shiny](https://shiny.posit.co/){.external target="_blank"} e [Quarto](https://quarto.org/){.external target="_blank"}. Essas experiências me proporcionaram uma base sólida em **Análise de Dados**, em **Estatística** e em **Finanças**  e, eventualmente, influenciaram meus interesses em outras ferramentas, como **Python**, **PowerBI**, e **SQL**, além de algumas áreas de atuação profissional, como **Auditoria Contábil** e **Análise de Dados**.
 
 Fora do ambiente acadêmico e profissional gosto de acompanhar esportes, de experimentar diferentes distribuições linux e de jogos de bloquinhos quadrados.

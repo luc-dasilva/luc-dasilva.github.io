@@ -1,0 +1,136 @@
+---
+title: ""
+anchor-sections: false
+toc: false
+---
+
+## Experiência
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### Cartório Sidnei Perfeito
+:::
+:::
+
+[Analista de Dados]{.h5} [FEV 2026 -- ATUALMENTE]{.cv-date}
+
+- Desenvolvimento de relatórios e dashboards interativos.
+- Automação de processos de BI.
+- Análise e visualização de dados.
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### BR Auditoria
+:::
+:::
+
+[Assistente de Auditoria]{.h5} [NOV 2025 -- FEV 2026]{.cv-date}
+
+- Uso de scripts para análise de grandes volumes de XMLs e extratos bancários, rastreando fluxo financeiro e identificando padrões não detectáveis manualmente.
+- Detecção de fraudes via testes estatísticos contra superfaturamento, desvio de recursos, confusão patrimonial e falhas fiscais.
+- Confronto de períodos e entidades para medir eficiência e identificar má-fé.
+- Cruzamento de análise digital com depoimentos e trabalho de campo.
+- Elaboração de relatórios técnicos com achados e recomendações de controle interno.
+
+[Estagiário de Auditoria]{.h5} [AGO 2025 -- NOV 2025]{.cv-date}
+
+- Suporte às atividades de auditoria investigativa orientada a dados.
+- Análise de documentos fiscais e financeiros para identificação de inconsistências.
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### Universidade Federal da Paraíba
+:::
+:::
+
+[Assistente de Pesquisa]{.h5} [SET 2022 -- NOV 2025]{.cv-date}
+
+- Pesquisador bolsista com atuação na linha de pesquisa de finanças empíricas.
+- Desenvolvimento de habilidades em R, Tidyverse, Shiny e Quarto aplicadas a projetos acadêmicos em Data Science, Estatística e Finanças.
+- Participação em publicações e congressos científicos (XIX Congresso Anpcont).
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### Colégio Novo Astral
+:::
+:::
+
+[Professor de Língua Inglesa]{.h5} [JAN 2021 -- DEZ 2021]{.cv-date}
+
+- Aulas de inglês para turmas do ensino fundamental e médio.
+
+## Formação
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### Universidade Federal da Paraíba
+:::
+:::
+
+[Bacharelado em Ciências Contábeis]{.h5} [MAR 2020 -- MAI 2026]{.cv-date}
+
+- CRA: 9.26
+- Láurea Acadêmica
+- Atividades extracurriculares: pesquisa quantitativa, programas de extensão, congressos acadêmicos.
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### Centro de Cultura Anglo Americana (CCAA)
+:::
+:::
+
+[Curso de Língua Inglesa]{.h5} [MAI 2019 -- JUL 2020]{.cv-date}
+
+- Conclusão do curso com bolsa de estudos pós-intercâmbio.
+- Atuação posterior como professor de inglês.
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+### Walkerton District Community School
+:::
+:::
+
+[Intercâmbio — Programa Gira Mundo]{.h5} [SET 2018 -- FEV 2019]{.cv-date}
+
+- Intercâmbio estadual de seis meses em Ontário, Canadá.
+- Bolsa de estudos concedida pelo governo do estado da Paraíba.
+
+## Habilidades
+
+[Conhecimento Técnico e Ferramentas]{.h5}
+
+- Contabilidade, Estatística, Finanças, Auditoria, Informática
+- **Data Science:** Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL
+- **BI e Visualização:** Power BI
+- **Documentação:** Markdown, LaTeX, Git / GitHub
+
+[Idiomas]{.h5}
+
+- Português — nativo
+- Inglês — fluente (C2, EF SET 2025)
+
+## Certificações
+
+- **XXXIII Encontro de Iniciação Científica** | Universidade Federal da Paraíba | 2025
+- **XIX Congresso Anpcont** | Anpcont | 2025
+- **Data Analyst Associate** | Datacamp | 2025
+- **Microsoft Excel 2016 — Avançado** | Fundação Bradesco | 2025
+- **Forensic Accounting and Fraud Examination** | West Virginia University | 2025
+- **Auditing II: The Practice of Auditing** | University of Illinois | 2025
+- **EF SET English Certificate (C2 Proficient)** | Education First | 2025
+- **Auditing I: Conceptual Foundations** | University of Illinois | 2024
+- **XII Encontro de Iniciação Científica** | Universidade Federal da Paraíba | 2024
+
+## Projetos
+
+[IndicadoresB3]{.h5} [2025]{.cv-date}
+
+Dashboard de indicadores financeiros das empresas listadas na B3, com análise de múltiplos, rentabilidade e endividamento.
+
+[Lei de Benford]{.h5} [2025]{.cv-date}
+
+Dashboard de análise de fraudes financeiras baseado na Lei de Benford, aplicado à auditoria de dados contábeis e fiscais.
+
+[Investiramente]{.h5} [2024 - 2025]{.cv-date}
+
+Portal independente de informações confiáveis e de qualidade sobre economia e finanças de maneira simplificada e acessível para todos os públicos.

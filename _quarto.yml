@@ -9,15 +9,13 @@ website:
     favicon: img/favicon.png
     back-to-top-navigation: false
     navbar:
-      # logo: img/favicon.png
       pinned: true
       title: false
       left:
         - href: index.qmd
           text: Sobre mim
-        - href: cv/cv_lucas.pdf
+        - href: cv/index.qmd
           text: Currículo
-          target: _blank
         - href: projects/index.qmd
           text: Projetos
         - href: blog/index.qmd
@@ -36,14 +34,17 @@ website:
 format:
   html:
     theme: theming/styles.scss
-    title-block-banner: true
+    anchor-sections: false
+    title-block-banner: false
     code-link: true
-    mainfont:  "Lato, Open Sans, sans-serif"
-    monofont: "Source Code Pro, Consolas, monospace"
+    mainfont: "JetBrains Mono, JetBrainsMono Nerd Font Mono, Cascadia Code, monospace"
+    monofont: "JetBrains Mono, JetBrainsMono Nerd Font Mono, Cascadia Code, monospace"
     toc: false
+    toc-depth: 1
     lang: pt-BR
-    monobackgroundcolor: "#EDEFF1"
+    monobackgroundcolor: "#151515"
     code-copy: hover
+    include-after-body:
+      - theming/navbar-active.html
 
 editor: source
-

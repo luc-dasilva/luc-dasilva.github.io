@@ -1,172 +1,334 @@
 /*-- scss:defaults --*/
 
-// Colors
-$primary: #1A162D;
-$secondary: #F4F6F9;
-$tertiary: #FDEBA4;
+/*
+ * THEME: Boxy TUI — luc-dasilva.github.io
+ * Espelha exatamente a paleta dos dotfiles do sistema.
+ *
+ * Bg:        #0C0C0C
+ * Fg:        #EDEDED
+ * Accent:    #3A96DD  (azul / cursor / bordas ativas)
+ * Selection: #0037DA  (azul escuro / focused)
+ * Good:      #13A00E  (verde)
+ * Bad:       #C50F1F  (vermelho)
+ * Dim Bg:    #151515
+ * Border:    #333333
+ */
 
-$black: #000000;
-$blue: #38577F;
-$light-blue: #8FB0E6;
+// ── Paleta ──────────────────────────────────────────────────────────────────
+$tui-bg:        #0C0C0C;
+$tui-bg-dim:    #151515;
+$tui-fg:        #EDEDED;
+$tui-blue:      #3A96DD;
+$tui-blue-dark: #0037DA;
+$tui-green:     #13A00E;
+$tui-red:       #C50F1F;
+$tui-border:    #333333;
+$tui-yellow:    #ecb500;
+$tui-dim-text:  #767676;
 
-$light-yellow: #FDF4D1;
-$light-gray: #EDEFF1;
-
-// Base document colors
-
-// Navbar
-$navbar-bg: $primary;
-$navbar-fg: $secondary;
-$menu-text: $tertiary;
-
-// Body and Footer
-$body-color: $black; 
-$body-bg: $secondary;
-$footer-bg: $light-yellow; 
-
-// Code Blocks
-$code-color: $primary;
-$code-block-bg: $light-gray;
-
-// Misc
-$link-color: $blue;
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
-body {
-  font-family: 'Lato', sans-serif;
-}
-
-/*  Navbar -----------------------------------------------------------------*/
-
-// Navbar Buttons
-a.nav-link {
-  color: $secondary;
-
-  &.active {
-    background-color: $secondary;
-    color: $primary !important;
-    border-radius: 3px;
-  }
-
-  &.nav-link:not(.active) {
-    transition: background-color 0.3s ease-in-out;
-    border-radius: 3px;
-  }
-
-  &.nav-link:not(.active):hover {
-    color: $secondary;
-    background-color: rgba(255, 255, 255, 0.25); 
-    border-radius: 3px;
-  }
-
-}
-
-.nav-link:hover, .nav-link:focus {
-  color: $secondary !important;
-}
-
-nav .nav-item:not(.compact) {
-  margin-left: 0.25rem;
-}
-
-.navbar-expand-lg .navbar-nav .nav-link {
-  padding-left: .75rem;
-  padding-right: .75rem;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-}
+// ── Quarto SCSS variables ────────────────────────────────────────────────────
+$primary:              $tui-blue;
+$secondary:            $tui-fg;
+$body-bg:              $tui-bg;
+$body-color:           $tui-fg;
+$link-color:           $tui-blue;
+$link-hover-color:     $tui-fg;
+$font-family-base:     "JetBrains Mono", "JetBrainsMono Nerd Font Mono", "Cascadia Code", monospace;
+$font-family-code:     "JetBrains Mono", "JetBrainsMono Nerd Font Mono", "Cascadia Code", monospace;
+$font-size-root:       13px;
+$line-height-base:     1.65;
+$headings-font-weight: 700;
+$border-radius:        0;
+$border-color:         $tui-border;
 
 // Navbar
-nav.navbar-expand-lg {
-  padding-left: 1.25em;
-  padding-right: 1.25em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
+$navbar-bg:            $tui-bg;
+$navbar-fg:            $tui-fg;
 
-@media (max-width: 768px) {
-  .me-auto {
-    margin-top: 1rem;
-  }
-}
+// Code
+$code-color:           $tui-blue;
+$code-block-bg:        $tui-bg-dim;
+
+// Footer
+$footer-bg:            $tui-bg;
+$footer-fg:            $tui-dim-text;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 /*-- scss:rules --*/
 
-/* Navbar social media buttons tweak */
+// ── Reset: zero border-radius everywhere ────────────────────────────────────
+*, *::before, *::after {
+  border-radius: 0 !important;
+}
+
+// ── Body ────────────────────────────────────────────────────────────────────
+body {
+  background-color: $tui-bg;
+  color: $tui-fg;
+  font-family: $font-family-base;
+  font-size: 13px;
+}
+
+a {
+  color: $tui-blue;
+  text-decoration: none;
+  transition: none;
+
+  &:hover {
+    color: $tui-fg;
+    text-decoration: underline;
+  }
+}
+
+// ── Navbar ───────────────────────────────────────────────────────────────────
+nav.navbar {
+  background-color: $tui-bg !important;
+  border-bottom: 2px solid $tui-blue;
+  padding: 0 10px;
+}
+
+a.nav-link {
+  color: $tui-fg !important;
+  font-weight: 700;
+  padding: 6px 10px !important;
+  transition: none;
+  text-transform: uppercase;
+
+  &.active {
+    background-color: $tui-blue-dark !important;
+    color: $tui-fg !important;
+  }
+
+  &:hover:not(.active) {
+    color: $tui-blue !important;
+    background-color: transparent !important;
+  }
+}
+
+.navbar-nav .nav-link i {
+  color: $tui-fg;
+}
+
+.navbar-nav .nav-link:hover i {
+  color: $tui-blue;
+}
+
+nav .nav-item:not(.compact) {
+  margin-left: 0.15rem;
+}
+
 @media (max-width: 768px) {
-.navbar-nav.navbar-nav-scroll.ms-auto {
+  .me-auto { margin-top: 1rem; }
+
+  .navbar-nav.navbar-nav-scroll.ms-auto {
     flex-direction: row;
     margin-top: 1rem;
   }
 }
 
-/*  About Me ---------------------------------------------------------------*/
-
-/* Resizes about page photo container */
-@media(min-width: 992px) {
-    div.quarto-about-trestles .about-entity {
-        flex:0 0 22%;
-    }
+// ── About (trestles) ─────────────────────────────────────────────────────────
+@media (min-width: 992px) {
+  div.quarto-about-trestles .about-entity {
+    flex: 0 0 22%;
+  }
 }
 
-/* A bit more padding */
 div.quarto-about-trestles .about-entity {
-    padding-top: 1em;
+  padding-top: 1em;
+  border-right: 2px solid $tui-border !important;
 }
 
-/* Blog post --------------------------------------------------------------*/
-
-.quarto-title-banner .quarto-title .title {
-  font-weight: 600;
-}
-#title-block-header.quarto-title-block.default .keywords, #title-block-header.quarto-title-block.default .description, #title-block-header.quarto-title-block.default .abstract {
-  margin-top: 0.15rem;
+// Foto: retangular com borda azul e sombra offset
+.about-image {
+  border: 2px solid $tui-blue !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0px $tui-blue-dark;
 }
 
-/* Tabset navpills customization */
-.tab-content {
-  border-color: #dee2e6;
-}
-
-.nav-tabs {
-    --bs-nav-tabs-border-color: #dee2e6;
-    --bs-nav-tabs-link-hover-border-color: #dee2e6;
-    --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #F4F6F9;
-}
-
-.nav-pills {
-    --bs-nav-pills-link-active-bg: $secondary;
-    --bs-nav-pills-border-radius: 0.0rem;
-}
-
-.nav-pills .nav-link {
-  color: $blue;
+// Botões de contato
+.about-link {
+  background-color: $tui-bg-dim !important;
+  border: 1px solid $tui-border !important;
+  color: $tui-fg !important;
+  font-family: $font-family-base;
+  font-weight: 700;
+  transition: none;
 
   &:hover {
-    color: $light-blue !important;
+    background-color: $tui-blue-dark !important;
+    border-color: $tui-blue !important;
+    color: $tui-fg !important;
+  }
+}
+
+// ── Títulos ──────────────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-base;
+  font-weight: 700;
+  color: $tui-fg;
+}
+
+h2 {
+  border-bottom: 1px solid $tui-border;
+  padding-bottom: 4px;
+}
+
+// ── Código ───────────────────────────────────────────────────────────────────
+code, pre {
+  font-family: $font-family-base !important;
+  font-size: 0.9em;
+  background-color: $tui-bg-dim;
+  color: $tui-blue;
+}
+
+pre {
+  border: 1px solid $tui-border;
+  padding: 0.75rem;
+}
+
+div.sourceCode {
+  background-color: $tui-bg-dim !important;
+  border: 1px solid $tui-border !important;
+}
+
+// ── Cards (Blog, Projetos) ────────────────────────────────────────────────────
+.card {
+  background-color: $tui-bg-dim;
+  border: 1px solid $tui-border !important;
+  box-shadow: none;
+  transition: none;
+
+  &:hover {
+    border-color: $tui-blue !important;
+    box-shadow: 3px 3px 0px $tui-blue-dark;
   }
 }
 
 .quarto-grid-item .card-title {
-  margin-bottom: .1em;
-  font-weight: 500;
-  font-size: 1em;
+  font-weight: 700;
+  font-size: 0.95em;
+  color: $tui-fg;
+  margin-bottom: 0.1em;
 }
 
 div.card-text.listing-description {
-  font-size: .825em;
-  font-weight: normal;
-  color: #404040;
+  font-size: 0.825em;
+  color: $tui-dim-text;
 }
 
 .quarto-grid-item .card-text-small {
-  font-size: .7em;
-  color: #404040;
+  font-size: 0.7em;
+  color: $tui-dim-text;
 }
 
-.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
-  border-left: 1px solid #38577f;
-  color: #38577f !important;
-  border-radius: 0%;
+// ── TOC sidebar ──────────────────────────────────────────────────────────────
+.sidebar nav[role=doc-toc] ul > li > a.active,
+.sidebar nav[role=doc-toc] ul > li > ul > li > a.active {
+  border-left: 2px solid $tui-blue;
+  background-color: $tui-blue-dark;
+  color: $tui-fg !important;
+  padding-left: 6px;
+}
+
+// ── Tabs / Pills ─────────────────────────────────────────────────────────────
+.nav-tabs {
+  --bs-nav-tabs-border-color: #{$tui-border};
+  --bs-nav-tabs-link-hover-border-color: #{$tui-border};
+  --bs-nav-tabs-link-active-border-color: #{$tui-blue};
+}
+
+.tab-content {
+  border-color: $tui-border;
+}
+
+.nav-pills {
+  --bs-nav-pills-border-radius: 0;
+}
+
+.nav-pills .nav-link {
+  color: $tui-blue;
+
+  &:hover { color: $tui-fg !important; }
+  &.active { background-color: $tui-blue-dark !important; }
+}
+
+// ── Title banner (blog posts) ──────────────────────────────────────────────
+.quarto-title-banner {
+  background-color: $tui-bg-dim;
+  border-bottom: 2px solid $tui-blue;
+}
+
+.quarto-title-banner .quarto-title .title {
+  font-weight: 700;
+  color: $tui-fg;
+}
+
+#title-block-header.quarto-title-block.default .keywords,
+#title-block-header.quarto-title-block.default .description,
+#title-block-header.quarto-title-block.default .abstract {
+  margin-top: 0.15rem;
+  color: $tui-dim-text;
+}
+
+// ── Seleção de texto ──────────────────────────────────────────────────────────
+::selection {
+  background-color: $tui-blue-dark;
+  color: $tui-fg;
+}
+
+// ── Scrollbar (Webkit) ────────────────────────────────────────────────────────
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: $tui-bg; }
+::-webkit-scrollbar-thumb { background: $tui-border; }
+::-webkit-scrollbar-thumb:hover { background: $tui-blue; }
+
+// ── Footer ────────────────────────────────────────────────────────────────────
+.nav-footer {
+  background-color: $tui-bg !important;
+  border-top: 1px solid $tui-border;
+  color: $tui-dim-text;
+  font-size: 0.8em;
+}
+
+// ── Buttons ───────────────────────────────────────────────────────────────────
+.btn, button {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.btn-primary {
+  background-color: $tui-blue-dark;
+  border-color: $tui-blue;
+  color: $tui-fg;
+
+  &:hover {
+    background-color: $tui-blue;
+    border-color: $tui-blue;
+    color: $tui-fg;
+  }
+}
+
+// ── CV-specific ───────────────────────────────────────────────────────────────
+.cv-date {
+  float: right;
+  color: $tui-dim-text;
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+.h5 {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: $tui-blue;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+// Separador entre entradas do CV
+#quarto-document-content hr {
+  border: none;
+  border-top: 1px solid $tui-border;
+  margin: 0.75rem 0;
 }
