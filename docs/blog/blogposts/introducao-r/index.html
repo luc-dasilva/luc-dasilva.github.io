@@ -66,12 +66,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-027ed1c094c69dcfe985c1cc188f6ccb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-bbbcb1828d853e2454feffe1b3f20f0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -113,10 +112,10 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Sobre mim</span></a>
+<span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv/cv_lucas.pdf" target="_blank"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
@@ -155,19 +154,8 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Nesta página</h2>
-   
-  <ul>
-  <li><a href="#instalando-o-r" id="toc-instalando-o-r" class="nav-link active" data-scroll-target="#instalando-o-r">Instalando o R</a></li>
-  <li><a href="#instalando-o-rstudio" id="toc-instalando-o-rstudio" class="nav-link" data-scroll-target="#instalando-o-rstudio">Instalando o RStudio</a>
-  <ul class="collapse">
-  <li><a href="#explorando-a-interface-do-rstudio" id="toc-explorando-a-interface-do-rstudio" class="nav-link" data-scroll-target="#explorando-a-interface-do-rstudio">Explorando a Interface do RStudio</a></li>
-  <li><a href="#primeiros-passos-no-r" id="toc-primeiros-passos-no-r" class="nav-link" data-scroll-target="#primeiros-passos-no-r">Primeiros Passos no R</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -206,7 +194,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Aprender apenas as funções necessárias do R para determinada tafera, como ciência de dados, é compreensível. De todo modo, aprender a programar e como a linguagem de programação R funciona deve estar nos planos de todo cientista de dados. Saber programar fará você um analista mais flexível e irá aprimorar sua excelência em data science em todos os aspectos, entender os fundamentos do R faz todo o processo de aprendizagem mais simples.</p>
 <p>Portanto, abordaremos a instalação do R e do RStudio, exploraremos a interface do RStudio e daremos os primeiros passos na linguagem R.</p>
 <section id="instalando-o-r" class="level2">
-<h2 class="anchored" data-anchor-id="instalando-o-r">Instalando o R</h2>
+<h2 data-anchor-id="instalando-o-r">Instalando o R</h2>
 <p>Para começar, você deve ter sua própria cópia do R. Felizmente, o R é totalmente gratuito e fácil de baixar. O R é gerenciado por um time de desenvolvedores que disponibilizam a linguagem no <a href="https://cran.r-project.org/">CRAN</a>. O CRAN oferece opções de download para Windows, Mac e Linux.</p>
 <ul>
 <li><p><strong>Windows</strong>: No site do CRAN, selecione o link de download para Windows e escolha a versão “base” do R. Baixe o instalador e execute-o. O instalador adicionará um atalho do R na sua área de trabalho.</p></li>
@@ -216,11 +204,11 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>O R <strong>não é um programa que você simplesmente dá dois <em>clicks</em></strong> para começar a usar, como o Microsoft Word ou Google Chrome. R é uma linguagem de programação, como Python, C, Javascript ou Rust. A maneira de usar o R é escrever comandos na linguagem R e pedir para seu computador interpretá-los. Antigamente, as pessoas executavam o código em R diretamente na linha de comando. Hoje em dia quase todo mundo usa um aplicativo para escrever código em R chamado RStudio e eu recomendo que você faça o mesmo.</p>
 </section>
 <section id="instalando-o-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="instalando-o-rstudio">Instalando o RStudio</h2>
+<h2 data-anchor-id="instalando-o-rstudio">Instalando o RStudio</h2>
 <p>Agora sim, o Rstudio <em>é um programa</em> como o Microsoft Word ou Google Chrome, exceto que ao invés de te ajudar a escrever em português ou navegar na internet, o RStudio te ajuda a em escrever em R e a criar <em>scripts</em>. Existem outros aplicativos para auxiliar o código em R, mas recomendo o RStudio pois ele faz escrever código em R (e em outras linguagens de programação, como Python) muito mais simples.</p>
 <p>Para instalá-lo, visite o site da <a href="https://posit.co/">Posit</a> e baixe a versão correspondente ao seu sistema operacional. Após a instalação, abra o RStudio como qualquer outro programa.</p>
 <section id="explorando-a-interface-do-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="explorando-a-interface-do-rstudio">Explorando a Interface do RStudio</h3>
+<h3 data-anchor-id="explorando-a-interface-do-rstudio">Explorando a Interface do RStudio</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/ui.png" class="img-fluid figure-img"></p>
@@ -243,7 +231,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </div>
 </section>
 <section id="primeiros-passos-no-r" class="level3">
-<h3 class="anchored" data-anchor-id="primeiros-passos-no-r">Primeiros Passos no R</h3>
+<h3 data-anchor-id="primeiros-passos-no-r">Primeiros Passos no R</h3>
 <p>A interface do RStudio é simples. Você escreve seu código em R na última linha do painel do Console no RStudio e pressiona Enter para executar. O código que você escreve é chamado de comando, pois você está dando uma ordem ao computador para fazer algo para você. A linha em que você escreve o comando é chamada de linha de comando.</p>
 <p>Quando você digita um comando na linha de comando e pressiona Enter, seu computador executa o comando e mostra os resultados. Por exemplo, se você digitar <code>1 + 1</code> e pressionar Enter, o RStudio vai mostrar o seguinte:</p>
 <div class="cell">
@@ -266,15 +254,19 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </section>
 
 </main> <!-- /main -->
+<script>
+  (function () {
+    if (window.location.pathname.includes('/blog/')) {
+      document.querySelectorAll('a.nav-link').forEach(function (el) {
+        if (el.textContent.trim().toUpperCase() === 'BLOG') {
+          el.classList.add('active');
+        }
+      });
+    }
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

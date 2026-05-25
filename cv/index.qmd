@@ -57,7 +57,7 @@ toc: false
 
 [Professor de Língua Inglesa]{.h5} [JAN 2021 -- DEZ 2021]{.cv-date}
 
-- Aulas de inglês para turmas do ensino fundamental e médio.
+- Aulas de inglês para turmas do ensino fundamental.
 
 ## Formação
 

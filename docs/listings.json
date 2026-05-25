@@ -1,8 +1,9 @@
 [
   {
-    "listing": "/blog.html",
+    "listing": "/projects/index.html",
     "items": [
-      "/blog/blogpost1.html"
+      "/projects/projects_list/Benford/index.html",
+      "/projects/projects_list/IndB3/index.html"
     ]
   },
   {
@@ -14,13 +15,6 @@
       "/blog/blogposts/introducao-r/index.html",
       "/blog/blogposts/importacao-excel/index.html",
       "/blog/blogposts/introducao-tidyverse/index.html"
-    ]
-  },
-  {
-    "listing": "/projects/index.html",
-    "items": [
-      "/projects/projects_list/Benford/index.html",
-      "/projects/projects_list/IndB3/index.html"
     ]
   }
 ]

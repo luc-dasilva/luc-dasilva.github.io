@@ -66,12 +66,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-027ed1c094c69dcfe985c1cc188f6ccb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-bbbcb1828d853e2454feffe1b3f20f0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -113,10 +112,10 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Sobre mim</span></a>
+<span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv/cv_lucas.pdf" target="_blank"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
@@ -160,17 +159,8 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#o-que-é-o-renv" id="toc-o-que-é-o-renv" class="nav-link active" data-scroll-target="#o-que-é-o-renv">O que é o renv?</a>
-  <ul class="collapse">
-  <li><a href="#principais-funções-do-renv" id="toc-principais-funções-do-renv" class="nav-link" data-scroll-target="#principais-funções-do-renv">Principais funções do renv</a></li>
-  </ul></li>
-  <li><a href="#instalando-e-inicializando-o-renv" id="toc-instalando-e-inicializando-o-renv" class="nav-link" data-scroll-target="#instalando-e-inicializando-o-renv">Instalando e inicializando o renv</a>
-  <ul class="collapse">
-  <li><a href="#instalando-pacotes-dentro-do-renv" id="toc-instalando-pacotes-dentro-do-renv" class="nav-link" data-scroll-target="#instalando-pacotes-dentro-do-renv">Instalando pacotes dentro do renv</a></li>
-  <li><a href="#criando-um-snapshot" id="toc-criando-um-snapshot" class="nav-link" data-scroll-target="#criando-um-snapshot">Criando um snapshot</a></li>
-  <li><a href="#restaurando-pacotes" id="toc-restaurando-pacotes" class="nav-link" data-scroll-target="#restaurando-pacotes">Restaurando pacotes</a></li>
-  <li><a href="#verificando-o-status-do-ambiente" id="toc-verificando-o-status-do-ambiente" class="nav-link" data-scroll-target="#verificando-o-status-do-ambiente">Verificando o status do ambiente</a></li>
-  </ul></li>
+  <li><a href="#o-que-é-o-renv" id="toc-o-que-é-o-renv" class="nav-link active" data-scroll-target="#o-que-é-o-renv">O que é o renv?</a></li>
+  <li><a href="#instalando-e-inicializando-o-renv" id="toc-instalando-e-inicializando-o-renv" class="nav-link" data-scroll-target="#instalando-e-inicializando-o-renv">Instalando e inicializando o renv</a></li>
   <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">Conclusão</a></li>
   </ul>
 </nav>
@@ -221,7 +211,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <li>Compartilhar ambientes de desenvolvimento de maneira segura.</li>
 </ul>
 <section id="principais-funções-do-renv" class="level2">
-<h2 class="anchored" data-anchor-id="principais-funções-do-renv">Principais funções do renv</h2>
+<h2 data-anchor-id="principais-funções-do-renv">Principais funções do renv</h2>
 <p>Tudo isso pode soar complicado, mas no fim das contas, tudo que devemos saber são meras quatro funções:</p>
 <table class="caption-top table">
 <colgroup>
@@ -265,7 +255,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </div>
 <p>Isso cria um ambiente <code>{renv}</code> no diretório do seu projeto e gera um arquivo de bloqueio (<em>renv.lock</em>), onde ficam registradas as versões dos pacotes utilizados.</p>
 <section id="instalando-pacotes-dentro-do-renv" class="level2">
-<h2 class="anchored" data-anchor-id="instalando-pacotes-dentro-do-renv">Instalando pacotes dentro do renv</h2>
+<h2 data-anchor-id="instalando-pacotes-dentro-do-renv">Instalando pacotes dentro do renv</h2>
 <p>Ao trabalhar com um projeto gerenciado pelo <code>{renv}</code>, você deve instalar os pacotes usando a função <code>renv::install()</code>, em vez de <code>install.packages()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"lubridate"</span>)</span>
@@ -274,7 +264,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Isso garante que o pacote <code>{lubridate}</code> seja instalado apenas no ambiente do projeto, sem interferir nos pacotes globais do R.</p>
 </section>
 <section id="criando-um-snapshot" class="level2">
-<h2 class="anchored" data-anchor-id="criando-um-snapshot">Criando um snapshot</h2>
+<h2 data-anchor-id="criando-um-snapshot">Criando um snapshot</h2>
 <p>Sempre que adicionar ou atualizar pacotes, é importante capturar um <strong>snapshot</strong> do estado atual do ambiente, garantindo que todas as dependências estejam documentadas no arquivo <em>renv.lock</em>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -282,7 +272,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Se você compartilhar esse arquivo com colegas ou versioná-lo no Git, qualquer pessoa poderá restaurar as mesmas versões dos pacotes.</p>
 </section>
 <section id="restaurando-pacotes" class="level2">
-<h2 class="anchored" data-anchor-id="restaurando-pacotes">Restaurando pacotes</h2>
+<h2 data-anchor-id="restaurando-pacotes">Restaurando pacotes</h2>
 <p>Se precisar recuperar as versões exatas dos pacotes de um projeto, basta rodar:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -290,7 +280,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Isso reinstala todas as dependências conforme especificadas no arquivo <em>renv.lock</em>, garantindo a reprodutibilidade do seu código.</p>
 </section>
 <section id="verificando-o-status-do-ambiente" class="level2">
-<h2 class="anchored" data-anchor-id="verificando-o-status-do-ambiente">Verificando o status do ambiente</h2>
+<h2 data-anchor-id="verificando-o-status-do-ambiente">Verificando o status do ambiente</h2>
 <p>Para conferir se o ambiente está sincronizado e identificar pacotes não documentados, use:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -307,15 +297,19 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </section>
 
 </main> <!-- /main -->
+<script>
+  (function () {
+    if (window.location.pathname.includes('/blog/')) {
+      document.querySelectorAll('a.nav-link').forEach(function (el) {
+        if (el.textContent.trim().toUpperCase() === 'BLOG') {
+          el.classList.add('active');
+        }
+      });
+    }
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

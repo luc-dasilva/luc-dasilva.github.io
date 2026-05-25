@@ -66,12 +66,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-027ed1c094c69dcfe985c1cc188f6ccb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-bbbcb1828d853e2454feffe1b3f20f0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -113,10 +112,10 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Sobre mim</span></a>
+<span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv/cv_lucas.pdf" target="_blank"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
@@ -162,11 +161,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
   <ul>
   <li><a href="#instalação" id="toc-instalação" class="nav-link active" data-scroll-target="#instalação">Instalação</a></li>
   <li><a href="#exemplos-de-arquivos-excel" id="toc-exemplos-de-arquivos-excel" class="nav-link" data-scroll-target="#exemplos-de-arquivos-excel">Exemplos de arquivos Excel</a></li>
-  <li><a href="#importação-arquivos-de-excel-e-planilhas" id="toc-importação-arquivos-de-excel-e-planilhas" class="nav-link" data-scroll-target="#importação-arquivos-de-excel-e-planilhas">Importação arquivos de Excel e planilhas</a>
-  <ul class="collapse">
-  <li><a href="#intervalo-de-células" id="toc-intervalo-de-células" class="nav-link" data-scroll-target="#intervalo-de-células">Intervalo de células</a></li>
-  <li><a href="#especificação-de-colunas" id="toc-especificação-de-colunas" class="nav-link" data-scroll-target="#especificação-de-colunas">Especificação de colunas</a></li>
-  </ul></li>
+  <li><a href="#importação-arquivos-de-excel-e-planilhas" id="toc-importação-arquivos-de-excel-e-planilhas" class="nav-link" data-scroll-target="#importação-arquivos-de-excel-e-planilhas">Importação arquivos de Excel e planilhas</a></li>
   <li><a href="#importação-de-várias-planilhas" id="toc-importação-de-várias-planilhas" class="nav-link" data-scroll-target="#importação-de-várias-planilhas">Importação de várias planilhas</a></li>
   <li><a href="#exportação-de-arquivos-excel" id="toc-exportação-de-arquivos-excel" class="nav-link" data-scroll-target="#exportação-de-arquivos-excel">Exportação de arquivos Excel</a></li>
   </ul>
@@ -216,11 +211,11 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Attaching core tidyverse packages ───────────────────── tidyverse 2.0.0 ──</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ dplyr     1.1.4     ✔ readr     2.1.5</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ forcats   1.0.0     ✔ stringr   1.5.1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ ggplot2   3.5.1     ✔ tibble    3.2.1</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ lubridate 1.9.4     ✔ tidyr     1.3.1</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ purrr     1.0.4     </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ dplyr     1.2.0     ✔ readr     2.2.0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ forcats   1.0.1     ✔ stringr   1.6.0</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ ggplot2   4.0.2     ✔ tibble    3.3.1</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ lubridate 1.9.5     ✔ tidyr     1.3.2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✔ purrr     1.2.1     </span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></span>
@@ -240,7 +235,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <p>Para obter o caminho de um dos exemplos listados, devemos simplesmente usar a função <code>readxl_example()</code> com um dos arquivos disponíveis.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readxl_example</span>(<span class="st">"datasets.xlsx"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "/home/lucasdasilva/R/x86_64-redhat-linux-gnu-library/4.4/readxl/extdata/datasets.xlsx"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "/home/gatomestre/.cache/R/renv/cache/v5/linux-fedora-43/R-4.5/x86_64-redhat-linux-gnu/readxl/1.4.5/18948de59f05d38a44d3e5065a76b4b6/readxl/extdata/datasets.xlsx"</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="importação-arquivos-de-excel-e-planilhas" class="level1">
@@ -251,7 +246,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Salva o caminho no objeto "exemplo_xlsx"</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>example_xlsx <span class="ot">&lt;-</span> <span class="fu">readxl_example</span>(<span class="st">"datasets.xlsx"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>example_xlsx</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "/home/lucasdasilva/R/x86_64-redhat-linux-gnu-library/4.4/readxl/extdata/datasets.xlsx"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "/home/gatomestre/.cache/R/renv/cache/v5/linux-fedora-43/R-4.5/x86_64-redhat-linux-gnu/readxl/1.4.5/18948de59f05d38a44d3e5065a76b4b6/readxl/extdata/datasets.xlsx"</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lê o arquivo</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(example_xlsx)</span>
@@ -341,7 +336,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 65 more rows</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="intervalo-de-células" class="level2">
-<h2 class="anchored" data-anchor-id="intervalo-de-células">Intervalo de células</h2>
+<h2 data-anchor-id="intervalo-de-células">Intervalo de células</h2>
 <p>Exitem diversas formas de sinalizar quais células devem ser lidas. É até possível especificar a planilha em específico, se for fornecido um intervalo no estilo do Excel.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número máximo de linhas para importar</span></span>
@@ -416,7 +411,7 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </div>
 </section>
 <section id="especificação-de-colunas" class="level2">
-<h2 class="anchored" data-anchor-id="especificação-de-colunas">Especificação de colunas</h2>
+<h2 data-anchor-id="especificação-de-colunas">Especificação de colunas</h2>
 <p>Especificação de colunas é o que define que tipo de dado cada coluna do arquivo Excel será ao ser importado. Por padrão, o <code>read_excel()</code> analisa as primeiras 1000 observações e faz um chute educado sobre qual tipo de dado cada variável possui. É possível aumentar o número de linhas com o parâmetro <strong>guess_max</strong>.</p>
 <p>Para especificar o tipo de dado de colunas, usamos o parâmetro <strong>col_types</strong>. Para definir todas as variáveis como, por exemplo, <em>strings</em>, usamos:</p>
 <div class="cell">
@@ -534,15 +529,19 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 </section>
 
 </main> <!-- /main -->
+<script>
+  (function () {
+    if (window.location.pathname.includes('/blog/')) {
+      document.querySelectorAll('a.nav-link').forEach(function (el) {
+        if (el.textContent.trim().toUpperCase() === 'BLOG') {
+          el.classList.add('active');
+        }
+      });
+    }
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

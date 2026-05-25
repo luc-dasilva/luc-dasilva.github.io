@@ -31,12 +31,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-027ed1c094c69dcfe985c1cc188f6ccb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-bbbcb1828d853e2454feffe1b3f20f0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -107,10 +106,10 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../../index.html"> 
-<span class="menu-text">Sobre mim</span></a>
+<span class="menu-text">Sobre</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../cv/cv_lucas.pdf" target="_blank"> 
+    <a class="nav-link" href="../../../cv/index.html"> 
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
@@ -186,7 +185,7 @@ window.Quarto = {
 <p><a href="https://luc-dasilva.shinyapps.io/benfordlaw/" class="btn btn-outline-primary" role="button"><i class="bi bi-bar-chart-fill"></i> Acessar Dashboard</a> <a href="#sobre-este-projeto" class="btn btn-outline-primary" role="button"><i class="bi bi-info-circle-fill"></i> Sobre</a> <a href="#metodologia" class="btn btn-outline-primary" role="button"><i class="bi bi-book-fill"></i> Metodologia</a> <a href="https://github.com/luc-dasilva/benford_law" class="btn btn-outline-primary" role="button"><i class="bi bi-github"></i> Código-Fonte</a></p>
 <p>A Lei de Benford, um dos pilares metodológicos deste dashboard, é um fenômeno estatístico que postula que em muitas coleções naturais de dados numéricos, a distribuição dos primeiros dígitos não é uniforme. Pelo contrário, o dígito 1 aparece como primeiro dígito em aproximadamente 30% dos números, enquanto dígitos maiores ocorrem com frequência progressivamente menor. Esta lei matemática tem aplicações poderosas na detecção de fraudes, pois dados manipulados ou fabricados tendem a não seguir este padrão natural de distribuição, permitindo aos auditores identificar conjuntos de dados que merecem investigação mais aprofundada.</p>
 <section id="sobre-este-projeto" class="level2">
-<h2 class="anchored" data-anchor-id="sobre-este-projeto">Sobre Este Projeto</h2>
+<h2 data-anchor-id="sobre-este-projeto">Sobre Este Projeto</h2>
 <p>Utilizando a Lei de Benford, este Dashboard Analítico de Auditoria foi desenvolvido para demonstrar uma aplicação prática de técnicas de ciência de dados à auditoria. Ele apresenta:</p>
 <ul>
 <li><strong>Habilidades Técnicas</strong>: Programação em R, análise estatística, ciência de dados, visualização de dados</li>
@@ -194,7 +193,7 @@ window.Quarto = {
 <li><strong>Conhecimento de Negócios</strong>: Interpretação de anomalias financeiras no contexto empresarial</li>
 </ul>
 <section id="processo-de-desenvolvimento" class="level3">
-<h3 class="anchored" data-anchor-id="processo-de-desenvolvimento">Processo de Desenvolvimento</h3>
+<h3 data-anchor-id="processo-de-desenvolvimento">Processo de Desenvolvimento</h3>
 <ol type="1">
 <li><strong>Análise de Requisitos</strong>: Identificação de preocupações-chave de auditoria e abordagens analíticas</li>
 <li><strong>Modelagem de Dados</strong>: Estruturas de dados projetadas para suportar a detecção de anomalias</li>
@@ -203,7 +202,7 @@ window.Quarto = {
 </ol>
 </section>
 <section id="extensões-potenciais" class="level3">
-<h3 class="anchored" data-anchor-id="extensões-potenciais">Extensões Potenciais</h3>
+<h3 data-anchor-id="extensões-potenciais">Extensões Potenciais</h3>
 <ul>
 <li>Integração com sistemas de monitoramento contínuo</li>
 <li>Modelos de Machine Learning para detecção de anomalias mais sofisticada</li>
@@ -213,10 +212,10 @@ window.Quarto = {
 </section>
 </section>
 <section id="metodologia" class="level2">
-<h2 class="anchored" data-anchor-id="metodologia">Metodologia</h2>
+<h2 data-anchor-id="metodologia">Metodologia</h2>
 <p>Este dashboard emprega três técnicas principais para detecção de anomalias em dados financeiros:</p>
 <section id="análise-da-lei-de-benford" class="level3">
-<h3 class="anchored" data-anchor-id="análise-da-lei-de-benford">1. Análise da Lei de Benford</h3>
+<h3 data-anchor-id="análise-da-lei-de-benford">1. Análise da Lei de Benford</h3>
 <p>A Lei de Benford afirma que em muitos conjuntos de dados numéricos de ocorrência natural, os primeiros dígitos seguem uma distribuição específica, com 1 aparecendo como primeiro dígito em cerca de 30% das vezes. Dados financeiros que se desviam significativamente desse padrão podem justificar uma investigação mais aprofundada.</p>
 <p>Foi utilizado o pacote <code>benford.analysis</code> do R para realizar testes estatísticos na distribuição do primeiro dígito:</p>
 <ul>
@@ -225,7 +224,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="análise-de-z-score" class="level3">
-<h3 class="anchored" data-anchor-id="análise-de-z-score">2. Análise de Z-Score</h3>
+<h3 data-anchor-id="análise-de-z-score">2. Análise de Z-Score</h3>
 <p>Os Z-scores medem quantos desvios padrão um ponto de dados está da média. Calculamos z-scores para cada valor de transação dentro do contexto de sua conta:</p>
 <p><span class="math display">\[
 Z = \frac{X - \mu}{\sigma}
@@ -246,7 +245,7 @@ Z = \frac{X - \mu}{\sigma}
 </ul>
 </section>
 <section id="análise-de-séries-temporais" class="level3">
-<h3 class="anchored" data-anchor-id="análise-de-séries-temporais">3. Análise de Séries Temporais</h3>
+<h3 data-anchor-id="análise-de-séries-temporais">3. Análise de Séries Temporais</h3>
 <p>O dashboard visualiza volumes e valores de transações ao longo do tempo para identificar padrões incomuns ou picos que possam indicar períodos problemáticos que requerem exame mais detalhado.</p>
 
 
@@ -254,15 +253,19 @@ Z = \frac{X - \mu}{\sigma}
 </section>
 
 </main> <!-- /main -->
+<script>
+  (function () {
+    if (window.location.pathname.includes('/blog/')) {
+      document.querySelectorAll('a.nav-link').forEach(function (el) {
+        if (el.textContent.trim().toUpperCase() === 'BLOG') {
+          el.classList.add('active');
+        }
+      });
+    }
+  })();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
