@@ -100,7 +100,7 @@ toc: false
 
 - Contabilidade, Estatística, Finanças, Auditoria, Informática
 - **Data Science:** Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL
-- **BI e Visualização:** Power BI
+- **BI e Visualização:** Power BI, Tableau
 - **Documentação:** Markdown, LaTeX, Git / GitHub
 
 [Idiomas]{.h5}
@@ -118,7 +118,7 @@ toc: false
 - **Auditing II: The Practice of Auditing** | University of Illinois | 2025
 - **EF SET English Certificate (C2 Proficient)** | Education First | 2025
 - **Auditing I: Conceptual Foundations** | University of Illinois | 2024
-- **XII Encontro de Iniciação Científica** | Universidade Federal da Paraíba | 2024
+- **XXXII Encontro de Iniciação Científica** | Universidade Federal da Paraíba | 2024
 
 ## Projetos
 
