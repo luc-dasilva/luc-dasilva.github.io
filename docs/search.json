@@ -25,14 +25,14 @@
     "href": "cv/index.html#habilidades",
     "title": "Lucas da Silva",
     "section": "Habilidades",
-    "text": "Habilidades\nConhecimento Técnico e Ferramentas\n\nContabilidade, Estatística, Finanças, Auditoria, Informática\nData Science: Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL\nBI e Visualização: Power BI, Tableau\nDocumentação: Markdown, LaTeX, Git / GitHub\n\nIdiomas\n\nPortuguês — nativo\nInglês — fluente (C2, EF SET 2025)"
+    "text": "Habilidades\nConhecimento Técnico e Ferramentas\n\nContabilidade, Estatística, Finanças, Auditoria, Informática\nData Science: Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL\nBI e Visualização: Power BI\nDocumentação: Markdown, LaTeX, Git / GitHub\n\nIdiomas\n\nPortuguês — nativo\nInglês — fluente (C2, EF SET 2025)"
   },
   {
     "objectID": "cv/index.html#certificações",
     "href": "cv/index.html#certificações",
     "title": "Lucas da Silva",
     "section": "Certificações",
-    "text": "Certificações\n\nXXXIII Encontro de Iniciação Científica | Universidade Federal da Paraíba | 2025\nXIX Congresso Anpcont | Anpcont | 2025\nData Analyst Associate | Datacamp | 2025\nMicrosoft Excel 2016 — Avançado | Fundação Bradesco | 2025\nForensic Accounting and Fraud Examination | West Virginia University | 2025\nAuditing II: The Practice of Auditing | University of Illinois | 2025\nEF SET English Certificate (C2 Proficient) | Education First | 2025\nAuditing I: Conceptual Foundations | University of Illinois | 2024\nXXXII Encontro de Iniciação Científica | Universidade Federal da Paraíba | 2024"
+    "text": "Certificações\n\nXXXIII Encontro de Iniciação Científica | Universidade Federal da Paraíba | 2025\nXIX Congresso Anpcont | Anpcont | 2025\nData Analyst Associate | Datacamp | 2025\nMicrosoft Excel 2016 — Avançado | Fundação Bradesco | 2025\nForensic Accounting and Fraud Examination | West Virginia University | 2025\nAuditing II: The Practice of Auditing | University of Illinois | 2025\nEF SET English Certificate (C2 Proficient) | Education First | 2025\nAuditing I: Conceptual Foundations | University of Illinois | 2024\nXII Encontro de Iniciação Científica | Universidade Federal da Paraíba | 2024"
   },
   {
     "objectID": "cv/index.html#projetos",
@@ -193,7 +193,7 @@
     "href": "index.html",
     "title": "Lucas da Silva",
     "section": "",
-    "text": "Olá! Sou Lucas da Silva, graduado em Ciências Contábeis pela Universidade Federal da Paraíba.\nDurante minha formação estudantil, fui selecionado pelo programa de intercâmbio Gira Mundo, onde tive a oportunidade de estudar na província de Ontário, Canadá, por seis meses. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos na escola de idiomas CCAA, onde concluí o curso de inglês. Posteriormente, atuei como professor de língua inglesa.\nAo longo da minha graduação, participei de diversos programas de extensão e fui pesquisador bolsista na linha de pesquisa em finanças empíricas, onde desenvolvi habilidades com a linguagem de programação R, seus diversos pacotes, como o Tidyverse, e seus frameworks, como Shiny e Quarto. Essas experiências me proporcionaram uma base sólida em Análise de Dados, em Estatística e em Finanças e, eventualmente, influenciaram meus interesses em outras ferramentas, como Python, PowerBI, e SQL, além de algumas áreas de atuação profissional, como Auditoria Contábil e Análise de Dados.\nFora do ambiente acadêmico e profissional gosto de acompanhar esportes, de experimentar diferentes distribuições linux e de jogos de bloquinhos quadrados."
+    "text": "Olá! Sou Lucas da Silva, graduado em Ciências Contábeis pela Universidade Federal da Paraíba.\nDurante minha formação estudantil, fui selecionado pelo programa de intercâmbio Gira Mundo, onde tive a oportunidade de estudar na província de Ontário, Canadá, por seis meses. Ao retornar ao Brasil, fui contemplado com uma bolsa de estudos na escola de idiomas CCAA, onde concluí o curso de inglês. Posteriormente, atuei como professor de língua inglesa.\nAo longo da minha graduação, participei de diversos programas de extensão e fui pesquisador bolsista na linha de pesquisa em finanças empíricas, onde desenvolvi habilidades com a linguagem de programação R, seus diversos pacotes, como o Tidyverse, e seus frameworks, como Shiny e Quarto. Essas experiências me proporcionaram uma base sólida em Análise de Dados, em Estatística e em Finanças e, eventualmente, influenciaram meus interesses em outras ferramentas, como Python e SQL, além de algumas áreas de atuação profissional, como Análise de Dados.\nFora do ambiente acadêmico e profissional gosto de acompanhar esportes, de experimentar diferentes distribuições linux e de jogos de bloquinhos quadrados."
   },
   {
     "objectID": "projects/projects_list/Benford/index.html",
