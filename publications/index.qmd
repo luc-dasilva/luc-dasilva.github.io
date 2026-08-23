@@ -1,0 +1,15 @@
+---
+title: ""
+anchor-sections: false
+toc: false
+---
+
+## Congressos
+
+[Cinco fatores no mundo emergente: a incerteza global importa?]{.h5} [SET 2026]{.cv-date}
+
+Silva, L. G. da, Wickboldt, L. A., & Passos, L. C. (2026, setembro). *Cinco fatores no mundo emergente: a incerteza global importa?* [Apresentação de trabalho]. EnANPAD 2026, Fortaleza, CE, Brasil.
+
+[O modelo de precificação de cinco fatores na América Latina: qual incerteza importa?]{.h5} [DEZ 2025]{.cv-date}
+
+Silva, L. G. da, Wickboldt, L. A., Passos, L. C., Silva, G. R. A., & Cabral, L. M. M. do A. C. (2025, dezembro). *O modelo de precificação de cinco fatores na América Latina: qual incerteza importa?* [Apresentação de trabalho]. XIX Congresso Anpcont, Brasília, DF, Brasil.

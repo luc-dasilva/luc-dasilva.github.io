@@ -16,8 +16,10 @@ website:
           text: Sobre
         - href: cv/index.qmd
           text: Currículo
-        - href: projects/index.qmd
-          text: Projetos
+        - href: publications/index.qmd
+          text: Publicações
+        # - href: projects/index.qmd
+        #   text: Projetos
         - href: blog/index.qmd
           text: Blog
       right: 

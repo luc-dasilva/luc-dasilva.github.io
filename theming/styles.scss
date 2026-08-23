@@ -264,6 +264,11 @@ div.card-text.listing-description {
   color: $tui-fg;
 }
 
+// ── Subtítulo (about/landing page) ──────────────────────────────────────────
+.quarto-title .subtitle.lead {
+  font-size: 1.05rem;
+}
+
 #title-block-header.quarto-title-block.default .keywords,
 #title-block-header.quarto-title-block.default .description,
 #title-block-header.quarto-title-block.default .abstract {

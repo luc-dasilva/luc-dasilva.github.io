@@ -1,5 +1,6 @@
 ---
 title: Lucas da Silva
+subtitle: Analista/Cientista de Dados
 image: img/MrFox.webp
 page-layout: full
 title-block-banner: false
@@ -36,4 +37,4 @@ Durante minha formação estudantil, fui selecionado pelo programa de intercâmb
 
 Ao longo da minha graduação, participei de diversos programas de extensão e fui pesquisador bolsista na linha de pesquisa em **finanças empíricas**, onde desenvolvi habilidades com a [linguagem de programação R](https://www.r-project.org/about.html){.external target="_blank"}, seus diversos pacotes, como o [Tidyverse](https://www.tidyverse.org/){.external target="_blank"}, e seus *frameworks*, como [Shiny](https://shiny.posit.co/){.external target="_blank"} e [Quarto](https://quarto.org/){.external target="_blank"}. Essas experiências me proporcionaram uma base sólida em **Análise de Dados**, em **Estatística** e em **Finanças**  e, eventualmente, influenciaram meus interesses em outras ferramentas, como **Python** e **SQL**, além de algumas áreas de atuação profissional, como **Análise de Dados** e **Ciência de Dados**.
 
-Fora do ambiente acadêmico e profissional gosto de acompanhar esportes, de experimentar diferentes distribuições linux e de jogos de bloquinhos quadrados.
+Fora do ambiente acadêmico e profissional gosto de acompanhar esportes, de tecnologia, de jogos de tabuleiro e de jogos de bloquinhos quadrados.

@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>index – Lucas da Silva</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -31,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bbbcb1828d853e2454feffe1b3f20f0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-92aa6c7904f87a08be89a49456771c43.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Nenhum resultado",
@@ -83,8 +89,8 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <span class="menu-text">Currículo</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects/index.html"> 
-<span class="menu-text">Projetos</span></a>
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publicações</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../blog/index.html"> 
@@ -216,8 +222,8 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <ul>
 <li>Contabilidade, Estatística, Finanças, Auditoria, Informática</li>
 <li><strong>Data Science:</strong> Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL</li>
-<li><strong>BI e Visualização:</strong> Power BI</li>
-<li><strong>Documentação:</strong> Markdown, LaTeX, Git / GitHub</li>
+<li><strong>BI e Visualização:</strong> Power BI, Tableau</li>
+<li><strong>Documentação:</strong> Markdown, LaTeX, Typist, Git, GitHub</li>
 </ul>
 <p><span class="h5">Idiomas</span></p>
 <ul>
@@ -236,16 +242,16 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
 <li><strong>Auditing II: The Practice of Auditing</strong> | University of Illinois | 2025</li>
 <li><strong>EF SET English Certificate (C2 Proficient)</strong> | Education First | 2025</li>
 <li><strong>Auditing I: Conceptual Foundations</strong> | University of Illinois | 2024</li>
-<li><strong>XII Encontro de Iniciação Científica</strong> | Universidade Federal da Paraíba | 2024</li>
+<li><strong>XXXII Encontro de Iniciação Científica</strong> | Universidade Federal da Paraíba | 2024</li>
 </ul>
 </section>
 <section id="projetos" class="level2">
 <h2 data-anchor-id="projetos">Projetos</h2>
-<p><span class="h5">IndicadoresB3</span> <span class="cv-date">2025</span></p>
+<p><a href="../projects/projects_list/IndB3/index.html"><span class="h5">IndicadoresB3</span></a> <span class="cv-date">2025</span></p>
 <p>Dashboard de indicadores financeiros das empresas listadas na B3, com análise de múltiplos, rentabilidade e endividamento.</p>
-<p><span class="h5">Lei de Benford</span> <span class="cv-date">2025</span></p>
+<p><a href="../projects/projects_list/Benford/index.html"><span class="h5">Lei de Benford</span></a> <span class="cv-date">2025</span></p>
 <p>Dashboard de análise de fraudes financeiras baseado na Lei de Benford, aplicado à auditoria de dados contábeis e fiscais.</p>
-<p><span class="h5">Investiramente</span> <span class="cv-date">2024 - 2025</span></p>
+<p><a href="https://www.instagram.com/investiramente/" class="external" target="_blank"><span class="h5">Investiramente</span></a> <span class="cv-date">2024 - 2025</span></p>
 <p>Portal independente de informações confiáveis e de qualidade sobre economia e finanças de maneira simplificada e acessível para todos os públicos.</p>
 
 
@@ -307,13 +313,14 @@ gtag('config', 'G-PM1MXTXH7M', { 'anonymize_ip': true});
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

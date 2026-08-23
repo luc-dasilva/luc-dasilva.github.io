@@ -101,7 +101,7 @@ toc: false
 - Contabilidade, Estatística, Finanças, Auditoria, Informática
 - **Data Science:** Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL
 - **BI e Visualização:** Power BI, Tableau
-- **Documentação:** Markdown, LaTeX, Git / GitHub
+- **Documentação:** Markdown, LaTeX, Typist, Git, GitHub
 
 [Idiomas]{.h5}
 
@@ -122,14 +122,14 @@ toc: false
 
 ## Projetos
 
-[IndicadoresB3]{.h5} [2025]{.cv-date}
+[[IndicadoresB3]{.h5}](../projects/projects_list/IndB3/index.qmd) [2025]{.cv-date}
 
 Dashboard de indicadores financeiros das empresas listadas na B3, com análise de múltiplos, rentabilidade e endividamento.
 
-[Lei de Benford]{.h5} [2025]{.cv-date}
+[[Lei de Benford]{.h5}](../projects/projects_list/Benford/index.qmd) [2025]{.cv-date}
 
 Dashboard de análise de fraudes financeiras baseado na Lei de Benford, aplicado à auditoria de dados contábeis e fiscais.
 
-[Investiramente]{.h5} [2024 - 2025]{.cv-date}
+[[Investiramente]{.h5}](https://www.instagram.com/investiramente/){.external target="_blank"} [2024 - 2025]{.cv-date}
 
 Portal independente de informações confiáveis e de qualidade sobre economia e finanças de maneira simplificada e acessível para todos os públicos.
