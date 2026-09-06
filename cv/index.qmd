@@ -101,7 +101,7 @@ toc: false
 - Contabilidade, Estatística, Finanças, Auditoria, Informática
 - **Data Science:** Microsoft Excel, Google Sheets, R (Tidyverse, Shiny, Quarto), Python, SQL
 - **BI e Visualização:** Power BI, Tableau
-- **Documentação:** Markdown, LaTeX, Typist, Git, GitHub
+- **Documentação:** Markdown, LaTeX, Typst, Git, GitHub
 
 [Idiomas]{.h5}
 
