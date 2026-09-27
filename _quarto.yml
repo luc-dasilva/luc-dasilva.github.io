@@ -46,6 +46,8 @@ format:
     lang: pt-BR
     monobackgroundcolor: "#151515"
     code-copy: hover
+    include-in-header:
+      - theming/font-preconnect.html
     include-after-body:
       - theming/navbar-active.html
 

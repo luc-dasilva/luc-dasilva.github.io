@@ -53,7 +53,7 @@ $code-block-bg:        $tui-bg-dim;
 $footer-bg:            $tui-bg;
 $footer-fg:            $tui-dim-text;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=optional');
 
 /*-- scss:rules --*/
 
@@ -82,10 +82,17 @@ a {
 }
 
 // ── Navbar ───────────────────────────────────────────────────────────────────
+$navbar-height: 42px;
+
 nav.navbar {
   background-color: $tui-bg !important;
   border-bottom: 2px solid $tui-blue;
   padding: 0 10px;
+  min-height: $navbar-height;
+}
+
+body.nav-fixed {
+  padding-top: $navbar-height;
 }
 
 a.nav-link {
