@@ -26,7 +26,7 @@ toc: false
 
 [Assistente de Auditoria]{.h5} [NOV 2025 -- FEV 2026]{.cv-date}
 
-- Uso de scripts para análise de grandes volumes de XMLs e extratos bancários, rastreando fluxo financeiro e identificando padrões não detectáveis manualmente.
+- Uso de código para análise de grandes volumes de notas fiscais e extratos bancários, rastreando fluxo financeiro e identificando padrões não detectáveis manualmente.
 - Detecção de fraudes via testes estatísticos contra superfaturamento, desvio de recursos, confusão patrimonial e falhas fiscais.
 - Confronto de períodos e entidades para medir eficiência e identificar má-fé.
 - Cruzamento de análise digital com depoimentos e trabalho de campo.
