@@ -6,7 +6,7 @@ website:
     google-analytics: "G-PM1MXTXH7M"
     title: Lucas da Silva
     search: false  
-    favicon: img/favicon.png
+    favicon: img/themed_hex.png
     back-to-top-navigation: false
     navbar:
       pinned: true
